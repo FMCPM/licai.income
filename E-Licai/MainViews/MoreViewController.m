@@ -305,7 +305,7 @@
         [pCellObj.contentView addSubview:imageView];
         
         imageView = [[UIImageView alloc]initWithFrame:CGRectMake(285, 20, 10, 10)];
-        imageView.image = [UIImage imageNamed:@"point_orange.png"];
+        imageView.image = [UIImage imageNamed:@"point_red.png"];
         imageView.tag = 2004;
         [pCellObj.contentView addSubview:imageView];
         

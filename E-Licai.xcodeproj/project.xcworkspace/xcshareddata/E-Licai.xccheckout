@@ -7,16 +7,16 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>7372B8BC-3969-4224-BA34-FA5DB90AE942</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>E-Licai</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>45000e01-792f-ac49-abb5-1900ff332195++1029</key>
-		<string>https://115.29.248.32/svn/kunzhong/mycode/licai/licai.income</string>
+		<string>https://115.29.248.32/svn/kunzhong</string>
 		<key>BC17A59CEA37D1501615D9FB1ED2FF132349E5AE</key>
 		<string>github.com:chaiweiwei/cww_licai.income.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>E-Licai.xcodeproj/project.xcworkspace</string>
+	<string>E-Licai.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>45000e01-792f-ac49-abb5-1900ff332195++1029</key>
@@ -24,32 +24,27 @@
 		<key>BC17A59CEA37D1501615D9FB1ED2FF132349E5AE</key>
 		<string>../..</string>
 	</dict>
-	<key>IDESourceControlProjectRepositoryRootDictionary</key>
-	<dict>
-		<key>45000e01-792f-ac49-abb5-1900ff332195++1029</key>
-		<string>https://115.29.248.32/svn/kunzhong</string>
-	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://115.29.248.32/svn/kunzhong/mycode/licai/licai.income/E-Licai.xcodeproj/project.xcworkspace</string>
+	<string>github.com:chaiweiwei/cww_licai.income.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>45000e01-792f-ac49-abb5-1900ff332195++1029</string>
+	<string>BC17A59CEA37D1501615D9FB1ED2FF132349E5AE</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
-		<dict>
-			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
-			<string>public.vcs.subversion</string>
-			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>45000e01-792f-ac49-abb5-1900ff332195++1029</string>
-			<key>IDESourceControlWCCName</key>
-			<string>cww_licai.income</string>
-		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>BC17A59CEA37D1501615D9FB1ED2FF132349E5AE</string>
+			<key>IDESourceControlWCCName</key>
+			<string>cww_licai.income</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.subversion</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>45000e01-792f-ac49-abb5-1900ff332195++1029</string>
 			<key>IDESourceControlWCCName</key>
 			<string>cww_licai.income</string>
 		</dict>

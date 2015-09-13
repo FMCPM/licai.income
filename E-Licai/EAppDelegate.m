@@ -592,7 +592,7 @@
     //加载首页
     HomeViewController *pHomeViewController = [[HomeViewController alloc] init];
 
-    UINavigationController *pHomeNavController = [[UINavigationController alloc]initWithNavigationBarClass:[UINavigationBar class] rootViewController:pHomeViewController];
+    UINavigationController *pHomeNavController = [[UINavigationController alloc]initWithNavigationBarClass:[PrettyNavigationBar class] rootViewController:pHomeViewController];
 
     pHomeNavController.tabBarItem.title = NSLocalizedString(@"首页", nil);
     pHomeNavController.tabBarItem.image = IMG_WITH_ARG(@"Tab_Home");
@@ -610,7 +610,7 @@
     InComeMngHomePageView* pInComeViewController = [[InComeMngHomePageView alloc] init];
     UINavigationController *pInComeNavController = [[UINavigationController alloc]initWithNavigationBarClass:[PrettyNavigationBar class] rootViewController:pInComeViewController];
     
-    pInComeViewController.tabBarItem.title = NSLocalizedString(@"我的叮叮", nil);
+    pInComeViewController.tabBarItem.title = NSLocalizedString(@"账户", nil);
     pInComeViewController.tabBarItem.image = IMG_WITH_ARG(@"Tab_Money");
     [viewControllers addObject:pInComeNavController];
     

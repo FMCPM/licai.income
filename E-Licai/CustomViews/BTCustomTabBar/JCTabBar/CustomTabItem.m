@@ -24,7 +24,7 @@
     if([title isEqualToString:@"更多"] == true)
     {
         UIImageView* pRedPointView = [[UIImageView alloc] initWithFrame:CGRectMake(50, 2, 10, 10)];
-        pRedPointView.image = [UIImage imageNamed:@"orangepoint_count.png"];
+        pRedPointView.image = [UIImage imageNamed:@"point_red.png"];
         [tabItem addSubview:pRedPointView];
         
         [UaConfiguration sharedInstance].m_uiBuyCarHintImgView = pRedPointView;

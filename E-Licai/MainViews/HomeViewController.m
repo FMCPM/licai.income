@@ -123,6 +123,10 @@
 
 }
 
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+}
+
 //停止定时器
 -(void)viewDidDisappear:(BOOL)animated
 {
@@ -135,10 +139,12 @@
 {//
 
     self.navigationController.navigationBar.translucent = NO;
-    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.71 green:0.09 blue:0.06 alpha:1];
     //标题
    // self.navigationItem.titleView = [UIOwnSkin navibarTitleView:@"首页" andFrame:CGRectMake(0, 0, 100, 40)];
     //标题
+    
+    PrettyNavigationBar *bar = (PrettyNavigationBar *)self.navigationController.navigationBar;
+    bar.backgroundImage = [UIImage imageNamed:@"action-black-button"];
     
     UIView* pTitleView = [[UIView alloc]initWithFrame:CGRectMake(0, 8, 107, 28)];
     UIImageView* pImgView =[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 23, 23)];

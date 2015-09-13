@@ -26,7 +26,7 @@
     [button addSubview:pImageView];
     
     UILabel* pLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, 10, 45, 20)];
-    pLabel.textColor = COLOR_FONT_2;
+    pLabel.textColor = [UIColor whiteColor];
     pLabel.textAlignment  = UITextAlignmentLeft;
     pLabel.text  = @"返回";
     pLabel.font  =[UIFont systemFontOfSize:14];
@@ -272,7 +272,7 @@
     pLabel.backgroundColor = [UIColor clearColor];
     pLabel.font = [UIFont boldSystemFontOfSize:16];
     pLabel.text = strTitle;
-    pLabel.textColor = COLOR_FONT_1;
+    pLabel.textColor = [UIColor whiteColor];
     pLabel.textAlignment = UITextAlignmentCenter;
     
     return  pLabel;

@@ -27,10 +27,9 @@
 		E016AAFA1A288EF60006E989 /* icon_refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = E016AAF81A288EF60006E989 /* icon_refresh.png */; };
 		E0195FC21A24A59C00B45E0C /* icon_buycar.png in Resources */ = {isa = PBXBuildFile; fileRef = E0195FBC1A24A59C00B45E0C /* icon_buycar.png */; };
 		E0195FC31A24A59C00B45E0C /* icon_password.png in Resources */ = {isa = PBXBuildFile; fileRef = E0195FBD1A24A59C00B45E0C /* icon_password.png */; };
-		E0195FC41A24A59C00B45E0C /* point_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = E0195FBE1A24A59C00B45E0C /* point_blue.png */; };
+		E0195FC41A24A59C00B45E0C /* point_red.png in Resources */ = {isa = PBXBuildFile; fileRef = E0195FBE1A24A59C00B45E0C /* point_red.png */; };
 		E0195FC51A24A59C00B45E0C /* point_gray.png in Resources */ = {isa = PBXBuildFile; fileRef = E0195FBF1A24A59C00B45E0C /* point_gray.png */; };
 		E0195FC61A24A59C00B45E0C /* point_green.png in Resources */ = {isa = PBXBuildFile; fileRef = E0195FC01A24A59C00B45E0C /* point_green.png */; };
-		E0195FC71A24A59C00B45E0C /* point_red.png in Resources */ = {isa = PBXBuildFile; fileRef = E0195FC11A24A59C00B45E0C /* point_red.png */; };
 		E0239E281A29DF3300AD21EF /* TopNavBarItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = E0239E271A29DF3300AD21EF /* TopNavBarItemView.m */; };
 		E0239E2C1A29E4E200AD21EF /* CarLoanInfoTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E0239E2A1A29E4E200AD21EF /* CarLoanInfoTableCell.m */; };
 		E0239E2D1A29E4E200AD21EF /* CarLoanInfoTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0239E2B1A29E4E200AD21EF /* CarLoanInfoTableCell.xib */; };
@@ -501,10 +500,9 @@
 		E01883CD18CDB34F006DC467 /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
 		E0195FBC1A24A59C00B45E0C /* icon_buycar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_buycar.png; sourceTree = "<group>"; };
 		E0195FBD1A24A59C00B45E0C /* icon_password.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_password.png; sourceTree = "<group>"; };
-		E0195FBE1A24A59C00B45E0C /* point_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = point_blue.png; sourceTree = "<group>"; };
+		E0195FBE1A24A59C00B45E0C /* point_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = point_red.png; sourceTree = "<group>"; };
 		E0195FBF1A24A59C00B45E0C /* point_gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = point_gray.png; sourceTree = "<group>"; };
 		E0195FC01A24A59C00B45E0C /* point_green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = point_green.png; sourceTree = "<group>"; };
-		E0195FC11A24A59C00B45E0C /* point_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = point_red.png; sourceTree = "<group>"; };
 		E021175619259E54008C2C85 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		E0239E261A29DF3300AD21EF /* TopNavBarItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopNavBarItemView.h; sourceTree = "<group>"; };
 		E0239E271A29DF3300AD21EF /* TopNavBarItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopNavBarItemView.m; sourceTree = "<group>"; };
@@ -1738,10 +1736,9 @@
 				E016AAF81A288EF60006E989 /* icon_refresh.png */,
 				E0195FBC1A24A59C00B45E0C /* icon_buycar.png */,
 				E0195FBD1A24A59C00B45E0C /* icon_password.png */,
-				E0195FBE1A24A59C00B45E0C /* point_blue.png */,
+				E0195FBE1A24A59C00B45E0C /* point_red.png */,
 				E0195FBF1A24A59C00B45E0C /* point_gray.png */,
 				E0195FC01A24A59C00B45E0C /* point_green.png */,
-				E0195FC11A24A59C00B45E0C /* point_red.png */,
 				E0A094FE1A237168001ED4A9 /* icon_more_item_0.png */,
 				E0A094FF1A237168001ED4A9 /* icon_more_item_1.png */,
 				E0A095001A237168001ED4A9 /* icon_more_item_2.png */,
@@ -2611,7 +2608,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = EYp;
-				LastTestingUpgradeCheck = 0610;
+				LastTestingUpgradeCheck = 0700;
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = ytinfo;
 				TargetAttributes = {
@@ -2741,7 +2738,6 @@
 				E02EE55C1A12E67F008A8C8B /* startImg1_i5.png in Resources */,
 				E02EE55B1A12E67F008A8C8B /* startImg1.png in Resources */,
 				E02EEC821A132C5D008A8C8B /* cell_delete_2.png in Resources */,
-				E0195FC71A24A59C00B45E0C /* point_red.png in Resources */,
 				E044944F1A161CC900194DEB /* bg_top_navbar@2x.png in Resources */,
 				E0C917ED1A66074A0075AAC8 /* sns_sina.png in Resources */,
 				E02EEC721A132C5D008A8C8B /* bg_downarrow.png in Resources */,
@@ -2805,7 +2801,7 @@
 				E0A0950C1A237168001ED4A9 /* icon_more_item_5.png in Resources */,
 				E05B9BAC1A862A2000F56AC7 /* ShareSDKiPadSimpleShareViewUI.bundle in Resources */,
 				E0A094F11A2366F1001ED4A9 /* icon_account_0.png in Resources */,
-				E0195FC41A24A59C00B45E0C /* point_blue.png in Resources */,
+				E0195FC41A24A59C00B45E0C /* point_red.png in Resources */,
 				E02EE49E1A12E67F008A8C8B /* TempPopupView.xib in Resources */,
 				E05323611A1A285B00EB7D94 /* setup_help.png in Resources */,
 				E03E52C61A2EA91A005315F1 /* point_orange.png in Resources */,

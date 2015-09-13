@@ -1,0 +1,32 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "BC17A59CEA37D1501615D9FB1ED2FF132349E5AE",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "45000e01-792f-ac49-abb5-1900ff332195++1029" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "45000e01-792f-ac49-abb5-1900ff332195++1029" : 0,
+    "BC17A59CEA37D1501615D9FB1ED2FF132349E5AE" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "7372B8BC-3969-4224-BA34-FA5DB90AE942",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "45000e01-792f-ac49-abb5-1900ff332195++1029" : "cww_licai.income\/",
+    "BC17A59CEA37D1501615D9FB1ED2FF132349E5AE" : "cww_licai.income\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "E-Licai",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "E-Licai.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/115.29.248.32\/svn\/kunzhong",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "45000e01-792f-ac49-abb5-1900ff332195++1029"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:chaiweiwei\/cww_licai.income.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "BC17A59CEA37D1501615D9FB1ED2FF132349E5AE"
+    }
+  ]
+}

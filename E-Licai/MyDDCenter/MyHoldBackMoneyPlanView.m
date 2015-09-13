@@ -287,7 +287,7 @@
         
         //圆点
         UIImageView* pPointView = [[UIImageView alloc] initWithFrame:CGRectMake(100, 30, 10, 10)];
-        pPointView.image = [UIImage imageNamed:@"point_orange.png"];
+        pPointView.image = [UIImage imageNamed:@"point_red.png"];
         pPointView.tag = 2002;
         [pCellObj.contentView addSubview:pPointView];
         

@@ -192,7 +192,7 @@
     pLabel.backgroundColor = [UIColor clearColor];
     pLabel.font = [UIFont boldSystemFontOfSize:14];
     pLabel.text = @"";
-    pLabel.textColor = COLOR_FONT_1;
+    pLabel.textColor = [UIColor whiteColor];
     pLabel.tag = 1001;
     pLabel.textAlignment = UITextAlignmentCenter;
     [m_uiNavTitleButton addSubview:pLabel];

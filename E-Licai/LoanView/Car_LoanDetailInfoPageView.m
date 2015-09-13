@@ -620,7 +620,7 @@
 
         
         UIImageView*pLogoImgView = [[UIImageView alloc] initWithFrame:CGRectMake(5, 10, 10, 10)];
-        pLogoImgView.image = [UIImage imageNamed:@"point_blue.png"];
+        pLogoImgView.image = [UIImage imageNamed:@"point_red.png"];
         [pBkView addSubview:pLogoImgView];
         
         //标题

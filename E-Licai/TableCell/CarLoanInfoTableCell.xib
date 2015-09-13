@@ -2,13 +2,13 @@
 <archive type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="8.00">
 	<data>
 		<int key="IBDocument.SystemTarget">1296</int>
-		<string key="IBDocument.SystemVersion">13E28</string>
-		<string key="IBDocument.InterfaceBuilderVersion">6250</string>
-		<string key="IBDocument.AppKitVersion">1265.21</string>
-		<string key="IBDocument.HIToolboxVersion">698.00</string>
+		<string key="IBDocument.SystemVersion">14F27</string>
+		<string key="IBDocument.InterfaceBuilderVersion">7706</string>
+		<string key="IBDocument.AppKitVersion">1348.17</string>
+		<string key="IBDocument.HIToolboxVersion">758.70</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-			<string key="NS.object.0">6244</string>
+			<string key="NS.object.0">7703</string>
 		</object>
 		<array key="IBDocument.IntegratedClassDependencies">
 			<string>IBProxyObject</string>
@@ -73,6 +73,7 @@
 										<int key="IBUITextAlignment">1</int>
 										<object class="IBUIFontDescription" key="IBUIFontDescription" id="826824375">
 											<int key="type">1</int>
+											<int key="weightCategory">0</int>
 											<double key="pointSize">10</double>
 										</object>
 										<object class="NSFont" key="IBUIFont" id="904364745">
@@ -94,7 +95,7 @@
 										<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 										<object class="NSCustomResource" key="IBUIImage">
 											<string key="NSClassName">NSImage</string>
-											<string key="NSResourceName">point_blue.png</string>
+											<string key="NSResourceName">point_red.png</string>
 										</object>
 									</object>
 									<object class="IBUILabel" id="915864817">
@@ -118,6 +119,7 @@
 										<int key="IBUIBaselineAdjustment">0</int>
 										<object class="IBUIFontDescription" key="IBUIFontDescription" id="507338622">
 											<int key="type">1</int>
+											<int key="weightCategory">0</int>
 											<double key="pointSize">12</double>
 										</object>
 										<object class="NSFont" key="IBUIFont" id="504273087">
@@ -193,6 +195,7 @@
 										<int key="IBUIBaselineAdjustment">0</int>
 										<object class="IBUIFontDescription" key="IBUIFontDescription">
 											<int key="type">1</int>
+											<int key="weightCategory">0</int>
 											<double key="pointSize">16</double>
 										</object>
 										<object class="NSFont" key="IBUIFont">
@@ -391,6 +394,7 @@
 								<int key="IBUIBaselineAdjustment">0</int>
 								<object class="IBUIFontDescription" key="IBUIFontDescription">
 									<int key="type">1</int>
+									<int key="weightCategory">0</int>
 									<double key="pointSize">17</double>
 								</object>
 								<object class="NSFont" key="IBUIFont">
@@ -720,7 +724,7 @@
 			<string key="ico_product_item_0.png">{20, 20}</string>
 			<string key="ico_product_item_1.png">{20, 20}</string>
 			<string key="ico_product_item_2.png">{20, 20}</string>
-			<string key="point_blue.png">{60, 60}</string>
+			<string key="point_red.png">{60, 60}</string>
 		</dictionary>
 	</data>
 </archive>
