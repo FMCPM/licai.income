@@ -114,7 +114,7 @@
     
     UIButton* pButton = [UIButton buttonWithType:UIButtonTypeCustom];
     pButton.frame = CGRectMake(175, 5, 130, 30);
-    [UIOwnSkin setButtonBackground:pButton andColor:COLOR_BTN_BORDER_1];
+    [UIOwnSkin setButtonBackground:pButton andColor:COLOR_FONT_7];
     pButton.enabled = NO;
     pButton.titleLabel.font = [UIFont systemFontOfSize:14];
     [pButton setTitle:@"投标" forState:UIControlStateNormal];
@@ -403,7 +403,7 @@
          else
          {
              [m_uiTenderButton setTitle:@"投标" forState:UIControlStateNormal];
-             [UIOwnSkin setButtonBackground:m_uiTenderButton andColor:COLOR_BTN_BORDER_2];
+             [UIOwnSkin setButtonBackground:m_uiTenderButton andColor:COLOR_FONT_7];
          }
 
          [_uiMainTableView reloadData];
@@ -625,7 +625,7 @@
         
         //标题
         UILabel* pLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 8, 180, 16)];
-        pLabel.textColor = COLOR_FONT_6;
+        pLabel.textColor = COLOR_FONT_7;
         pLabel.textAlignment = NSTextAlignmentLeft;
         pLabel.numberOfLines = 0;
         pLabel.font = [UIFont systemFontOfSize:12];

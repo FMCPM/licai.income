@@ -16,7 +16,6 @@
     UILabel*        m_uiPcertLabel;
 }
 
-//
 - (id)initWithFrame:(CGRect)frame andPcert:(NSInteger)iPcert;
 
 -(void)setPcertValue:(float)fPcert;

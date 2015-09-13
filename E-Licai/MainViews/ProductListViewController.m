@@ -55,7 +55,7 @@
     //刷新的提示
     UILabel* pLabel = [[UILabel alloc] initWithFrame:CGRectMake(25, 5, 50, 20)];
     pLabel.backgroundColor = [UIColor clearColor];
-    pLabel.textColor = COLOR_FONT_3;
+    pLabel.textColor = COLOR_FONT_7;
     pLabel.font = [UIFont systemFontOfSize:14];
     pLabel.text = @"刷新";
     [pLeftNavButton addSubview:pLabel];

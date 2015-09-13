@@ -123,7 +123,7 @@
     [m_pInfoDataSet addDataSetRow_Ext:10 andName:@"cellImg" andValue:@"icon_more_item_7.png"];
     [m_pInfoDataSet addDataSetRow_Ext:10 andName:@"cellHeight" andValue:@"44"];
     
-    [m_pInfoDataSet addDataSetRow_Ext:11 andName:@"cellTitle" andValue:@"关于叮叮"];
+    [m_pInfoDataSet addDataSetRow_Ext:11 andName:@"cellTitle" andValue:@"关于萧然金融"];
     [m_pInfoDataSet addDataSetRow_Ext:11 andName:@"cellType" andValue:@"9"];
     [m_pInfoDataSet addDataSetRow_Ext:11 andName:@"cellImg" andValue:@"icon_more_item_8.png"];
     [m_pInfoDataSet addDataSetRow_Ext:11 andName:@"cellHeight" andValue:@"44"];

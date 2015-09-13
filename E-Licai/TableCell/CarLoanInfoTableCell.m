@@ -66,21 +66,21 @@
     pLabel = (UILabel*)[self.contentView viewWithTag:1005];
     if(pLabel)
     {
-        pLabel.textColor = COLOR_FONT_5;
+        pLabel.textColor = COLOR_FONT_7;
     }
     
     //融资期限的内容
     pLabel = (UILabel*)[self.contentView viewWithTag:1006];
     if(pLabel)
     {
-        pLabel.textColor = COLOR_FONT_1;
+        pLabel.textColor = COLOR_FONT_7;
     }
     
     //融资金额的内容
     pLabel = (UILabel*)[self.contentView viewWithTag:1007];
     if(pLabel)
     {
-        pLabel.textColor = COLOR_FONT_1;
+        pLabel.textColor = COLOR_FONT_7;
     }
     
     //
@@ -109,7 +109,7 @@
     
     
     
-    m_pWaterView = [[WaterPercentView alloc] initWithFrame:CGRectMake(235, 15, 50, 60) andPcert:45];
+    m_pWaterView = [[WaterPercentView alloc] initWithFrame:CGRectMake(235, 15, 72, 72) andPcert:45];
     [_uiCellView addSubview:m_pWaterView];
     
     UIImageView* pLineView = [[UIImageView alloc] initWithFrame:CGRectMake(15, 66, 220, 0.5)];

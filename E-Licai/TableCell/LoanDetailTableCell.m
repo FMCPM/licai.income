@@ -84,7 +84,7 @@
         pLabel.textColor = COLOR_FONT_2;
     }
        
-    m_pWaterView = [[WaterPercentView alloc] initWithFrame:CGRectMake(130, 58, 60, 70) andPcert:45];
+    m_pWaterView = [[WaterPercentView alloc] initWithFrame:CGRectMake(130, 58, 72, 72) andPcert:45];
     [self.contentView addSubview:m_pWaterView];
     
     UIImageView* pLineView = [[UIImageView alloc] initWithFrame:CGRectMake(160, 135, 0.5, 50)];
