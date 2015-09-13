@@ -53,7 +53,6 @@
     
     //右边注册按钮
     self.navigationItem.rightBarButtonItem = [UIOwnSkin navTextItemTarget:self action:@selector(onRightRegistClicked:) text:@"注册" andWidth:40];
-    
 	self.view.backgroundColor = [UIColor whiteColor];
     m_pTapGesture = nil;
     m_uiCurEditingField = nil;
@@ -72,8 +71,11 @@
 
 -(void)backNavButtonAction:(id)sender
 {
-
-   [self.navigationController popViewControllerAnimated:YES];
+    if(self.presentingViewController) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    } else {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 
 
 }

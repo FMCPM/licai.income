@@ -26,7 +26,7 @@
     [button addSubview:pImageView];
     
     UILabel* pLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, 10, 45, 20)];
-    pLabel.textColor = [UIColor whiteColor];
+    pLabel.textColor = COLOR_FONT_2;
     pLabel.textAlignment  = UITextAlignmentLeft;
     pLabel.text  = @"返回";
     pLabel.font  =[UIFont systemFontOfSize:14];
@@ -163,7 +163,7 @@
     }
 
     NSDictionary* textAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
-                                    [UIColor whiteColor],UITextAttributeTextColor,
+                                    COLOR_FONT_2,UITextAttributeTextColor,
                                     [UIFont boldSystemFontOfSize:14],UITextAttributeFont,
                                     [UIColor clearColor],UITextAttributeTextShadowColor,
                                     [NSValue valueWithCGSize:CGSizeMake(1, 1)],UITextAttributeTextShadowOffset,
@@ -172,6 +172,20 @@
     [pBarBtn setTitleTextAttributes:textAttributes forState:0];
     return pBarBtn;
     
+}
+
++(UIBarButtonItem*)navTextItemTarget:(id)target action:(SEL)action text:(NSString*)text andWidth:(NSInteger)iWidth color:(UIColor *)color;
+{
+    UIBarButtonItem *item = [self navTextItemTarget:target action:action text:text andWidth:iWidth];
+    NSDictionary* textAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
+                                    color,UITextAttributeTextColor,
+                                    [UIFont boldSystemFontOfSize:14],UITextAttributeFont,
+                                    [UIColor clearColor],UITextAttributeTextShadowColor,
+                                    [NSValue valueWithCGSize:CGSizeMake(1, 1)],UITextAttributeTextShadowOffset,
+                                    nil];
+
+    [item setTitleTextAttributes:textAttributes forState:0];
+    return item;
 }
 
 + (UIBarButtonItem *)spreadBtnTarget:(id)target action:(SEL)action
@@ -272,7 +286,7 @@
     pLabel.backgroundColor = [UIColor clearColor];
     pLabel.font = [UIFont boldSystemFontOfSize:16];
     pLabel.text = strTitle;
-    pLabel.textColor = [UIColor whiteColor];
+    pLabel.textColor = COLOR_FONT_1;
     pLabel.textAlignment = UITextAlignmentCenter;
     
     return  pLabel;

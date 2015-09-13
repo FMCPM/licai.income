@@ -158,7 +158,11 @@
 
 - (void)backNavButtonAction:(UIButton *)sender
 {
-    [self.navigationController popViewControllerAnimated:YES];
+    if(self.presentingViewController) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    } else {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 
 //启动投标

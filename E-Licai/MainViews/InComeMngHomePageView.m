@@ -59,7 +59,7 @@
     pLabel.backgroundColor = [UIColor clearColor];
     pLabel.font = [UIFont boldSystemFontOfSize:14];
     pLabel.text = @"账户";
-    pLabel.textColor = [UIColor whiteColor];
+    pLabel.textColor = COLOR_FONT_1;
     pLabel.tag = 1001;
     pLabel.textAlignment = UITextAlignmentCenter;
     [m_uiNavTitleButton addSubview:pLabel];
@@ -82,10 +82,10 @@
 	   
     
     //消息
-    self.navigationItem.rightBarButtonItem = [UIOwnSkin navTextItemTarget:self action:@selector(actionRightMessageClicked:) text:@"消息" andWidth:40];
+    self.navigationItem.rightBarButtonItem = [UIOwnSkin navTextItemTarget:self action:@selector(actionRightMessageClicked:) text:@"消息" andWidth:40 color:COLOR_FONT_1];
     
     //帮助
-    self.navigationItem.leftBarButtonItem = [UIOwnSkin navTextItemTarget:self action:@selector(actionLeftHelpClicked:) text:@"帮助" andWidth:40];
+    self.navigationItem.leftBarButtonItem = [UIOwnSkin navTextItemTarget:self action:@selector(actionLeftHelpClicked:) text:@"帮助" andWidth:40 color:COLOR_FONT_1];
     //设置背景
     self.view.backgroundColor = COLOR_VIEW_BACKGROUND;
     //m_MyDdInfoData = nil;

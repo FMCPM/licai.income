@@ -60,8 +60,8 @@
     //modify by lzq at 2014-1-03-13:导航条改成背景图
    //self.tintColor = [UIColor colorWithHex:0x303030];
     self.tintColor = [UIColor whiteColor];
-   // self.backgroundImage = [UIImage imageNamed:@"bg_top_navbar.png"];
-    self.backgroundColor = [UIColor colorWithRed:0.77 green:0.16 blue:0.06 alpha:1];
+    self.backgroundImage = [UIImage imageNamed:@"bg_top_navbar.png"];
+
     /*
     self.topLineColor = [UIColor colorWithRed:255.0/255 green:155.0/255 blue:19.0/255 alpha:1.0];
     self.gradientStartColor = [UIColor colorWithRed:255.0/255 green:123.0/255 blue:19.0/255 alpha:1.0];
@@ -180,8 +180,8 @@
     }
     else {
         [PrettyDrawing drawGradient:rect fromColor:self.gradientStartColor toColor:self.gradientEndColor];
-//        [self drawTopLine:rect];
-//        [self drawBottomLine:rect];
+        [self drawTopLine:rect];
+        [self drawBottomLine:rect];
     }
     //modif by lzq at 2014-12-30:导航栏不需要划线
     //[self dropShadow:self.shadowOpacity];

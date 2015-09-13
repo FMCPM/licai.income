@@ -72,9 +72,10 @@
         if([[UaConfiguration sharedInstance] userIsHaveLoadinSystem] == YES)
         {
             self.navigationItem.rightBarButtonItem = nil;
+           
         }else
         {
-            self.navigationItem.rightBarButtonItem = [UIOwnSkin navTextItemTarget:self action:@selector(onRightLoginClicked:) text:@"登录" andWidth:40];
+            self.navigationItem.rightBarButtonItem = [UIOwnSkin navTextItemTarget:self action:@selector(onRightLoginClicked:) text:@"登录" andWidth:40 color:[UIColor whiteColor]];
         }
         
         return;
@@ -139,6 +140,7 @@
 {//
 
     self.navigationController.navigationBar.translucent = NO;
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.82 green:0.24 blue:0.06 alpha:1];
     //标题
    // self.navigationItem.titleView = [UIOwnSkin navibarTitleView:@"首页" andFrame:CGRectMake(0, 0, 100, 40)];
     //标题
@@ -177,10 +179,10 @@
     LoginViewController* pLoginView = [[LoginViewController alloc] init];
     pLoginView.m_iLoadOrigin = 0;
     pLoginView.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:pLoginView animated:YES];
     
-    
- 
+    UINavigationController *nav = [[UINavigationController alloc] initWithNavigationBarClass:[PrettyNavigationBar class] rootViewController:pLoginView];
+    [self presentViewController:nav animated:YES completion:nil];
+
 }
 
 //第一次启动的时候，处理自动登录
@@ -192,7 +194,7 @@
     if([UaConfiguration sharedInstance].m_setLoginState.m_strUserLoginName.length < 1 || [UaConfiguration sharedInstance].m_setLoginState.m_strUserLoginPwd.length < 1)
     
     {
-        self.navigationItem.rightBarButtonItem = [UIOwnSkin navTextItemTarget:self action:@selector(onRightLoginClicked:) text:@"登录" andWidth:40];
+        self.navigationItem.rightBarButtonItem = [UIOwnSkin navTextItemTarget:self action:@selector(onRightLoginClicked:) text:@"登录" andWidth:40 color:[UIColor whiteColor]];
         
         return;
     }
@@ -402,7 +404,9 @@
     pLoanDetailView.m_strProductId = [m_homeInfoDataSet getFeildValue:0 andColumn:@"productId"];
     pLoanDetailView.m_strProductName = [m_homeInfoDataSet getFeildValue:0 andColumn:@"productName"];
     pLoanDetailView.m_iLoanType = [QDataSetObj convertToInt:strProductType];//产品类型
-    [self.navigationController pushViewController:pLoanDetailView animated:YES];
+    
+    UINavigationController *nav = [[UINavigationController alloc] initWithNavigationBarClass:[PrettyNavigationBar class] rootViewController:pLoanDetailView];
+    [self presentViewController:nav animated:YES completion:nil];
     
 }
 

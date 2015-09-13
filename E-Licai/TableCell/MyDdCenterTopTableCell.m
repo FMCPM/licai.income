@@ -30,12 +30,12 @@
 -(void)initCellDefaultSet
 {
 
-    self.contentView.backgroundColor = COLOR_VIEW_BK_03;
+    self.contentView.backgroundColor = COLOR_FONT_7;
     
     UIView* pLineView = [self.contentView viewWithTag:1005];
     if(pLineView)
     {
-        pLineView.backgroundColor = RGBCOLOR(252, 196, 127);
+        pLineView.backgroundColor = [UIColor colorWithRed:0.77 green:0.26 blue:0.28 alpha:1];
     }
 }
 

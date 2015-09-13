@@ -592,7 +592,7 @@
     //加载首页
     HomeViewController *pHomeViewController = [[HomeViewController alloc] init];
 
-    UINavigationController *pHomeNavController = [[UINavigationController alloc]initWithNavigationBarClass:[PrettyNavigationBar class] rootViewController:pHomeViewController];
+    UINavigationController *pHomeNavController = [[UINavigationController alloc]initWithNavigationBarClass:[UINavigationBar class] rootViewController:pHomeViewController];
 
     pHomeNavController.tabBarItem.title = NSLocalizedString(@"首页", nil);
     pHomeNavController.tabBarItem.image = IMG_WITH_ARG(@"Tab_Home");

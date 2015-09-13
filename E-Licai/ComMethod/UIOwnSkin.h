@@ -49,6 +49,8 @@
 
 +(UIBarButtonItem*)navTextItemTarget:(id)target action:(SEL)action text:(NSString*)text andWidth:(NSInteger)iWidth;
 
++(UIBarButtonItem*)navTextItemTarget:(id)target action:(SEL)action text:(NSString*)text andWidth:(NSInteger)iWidth color:(UIColor *)color;
+
 //导航条上的标题视图
 +(UILabel*)navibarTitleView:(NSString*)strTitle andFrame:(CGRect)rcFame;
 
