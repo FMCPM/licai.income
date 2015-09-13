@@ -39,12 +39,12 @@
        // m_uiPcertImgView.image = [UIImage imageNamed:[self getPcertImgName:iPcert]];
         [self addSubview:m_uiPcertImgView];
         
-        int iTopY = (frame.size.height - 20) / 2;
+        int iTopY = (frame.size.height - 30) / 2;
         //int iTopX = (frame.size.width - 20) / 2;
         
         m_uiPcertLabel = [[UILabel alloc] initWithFrame:CGRectMake(2, iTopY, frame.size.width-4, 30)];
         
-        m_uiPcertLabel.textColor = [UIColor colorWithHex:0xf0f0f0];
+        m_uiPcertLabel.textColor = [UIColor colorWithRed:0.79 green:0.62 blue:0.2 alpha:1];
         m_uiPcertLabel.backgroundColor = [UIColor clearColor];
         m_uiPcertLabel.font = [UIFont systemFontOfSize:26];
         m_uiPcertLabel.textAlignment = UITextAlignmentCenter;

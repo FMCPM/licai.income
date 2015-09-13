@@ -36,11 +36,11 @@
 -(void)initCellDefaultShow
 {
     UIButton* pButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    pButton.frame = CGRectMake(0, 0, 110, 120) ;
+    pButton.frame = CGRectMake(0, 0, 109, 109) ;
     [pButton addTarget:self action:@selector(actionWaterClicked:) forControlEvents:UIControlEventTouchUpInside];
     //[self.contentView addSubview:pButton];
     
-    m_uiWaterView = [[WaterPercentView alloc] initWithFrame:CGRectMake(105, 44, 110, 120) andPcert:0];
+    m_uiWaterView = [[WaterPercentView alloc] initWithFrame:CGRectMake(105, 44, 109, 109) andPcert:0];
     
     [self.contentView addSubview:m_uiWaterView];
     
@@ -49,12 +49,12 @@
     
     _uiTitleLabel.textColor = COLOR_FONT_1;
     _uiMidLabel_1.textColor = COLOR_FONT_2;
-    _uiMidLabel_11.textColor = COLOR_FONT_3;
+    _uiMidLabel_11.textColor = COLOR_FONT_7;
     _uiMidLabel_2.textColor = COLOR_FONT_2;
-    _uiMidLabel_21.textColor = COLOR_FONT_3;
+    _uiMidLabel_21.textColor = COLOR_FONT_7;
     _uiMidLabel_3.textColor = COLOR_FONT_2;
-    _uiMidLabel_31.textColor = COLOR_FONT_3;
-    _uiExtLabel.textColor = COLOR_FONT_3;
+    _uiMidLabel_31.textColor = COLOR_FONT_7;
+    _uiExtLabel.textColor = COLOR_FONT_7;
 }
 
 //设置百分比

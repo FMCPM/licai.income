@@ -18,7 +18,7 @@
 + (CustomTabItem *)tabItemWithTitle:(NSString *)title icon:(UIImage *)icon alternateIcon:(UIImage *)alternativeIcon {
     CustomTabItem *tabItem = [[CustomTabItem alloc] initWithTitle:title icon:icon] ;
     tabItem.titleColor = COLOR_FONT_2;
-    tabItem.titleSelectedColor = COLOR_FONT_3;
+    tabItem.titleSelectedColor = COLOR_FONT_7;
     tabItem.alternateIcon = alternativeIcon;
     tabItem.titleFont = [UIFont systemFontOfSize:13];
     if([title isEqualToString:@"更多"] == true)

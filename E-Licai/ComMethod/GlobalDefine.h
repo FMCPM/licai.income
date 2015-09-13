@@ -101,6 +101,10 @@ enum userLoginRet {
 #define COLOR_FONT_6    \
 [UIColor colorWithRed:35/255.0 green:118/255.0 blue:158/255.0 alpha:1.0]
 
+//字体颜色六，接近红色
+#define COLOR_FONT_7    \
+[UIColor colorWithRed:0.77 green:0.16 blue:0.06 alpha:1]
+
 
 //默认的背景色，有点淡蓝色
 #define COLOR_VIEW_BACKGROUND \

@@ -135,13 +135,22 @@
 {//
 
     self.navigationController.navigationBar.translucent = NO;
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.71 green:0.09 blue:0.06 alpha:1];
     //标题
    // self.navigationItem.titleView = [UIOwnSkin navibarTitleView:@"首页" andFrame:CGRectMake(0, 0, 100, 40)];
     //标题
-    UIView* pTitleView = [[UIView alloc]initWithFrame:CGRectMake(0, 8, 90, 28)];
-    UIImageView* pImgView =[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 90, 28)];
-    pImgView.image = [UIImage imageNamed:@"app_title.png"];
+    
+    UIView* pTitleView = [[UIView alloc]initWithFrame:CGRectMake(0, 8, 107, 28)];
+    UIImageView* pImgView =[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 23, 23)];
+    pImgView.image = [UIImage imageNamed:@"small_logo"];
     [pTitleView addSubview:pImgView];
+    
+    UILabel *label = [[UILabel alloc] init];
+    label.frame = CGRectMake(28, 0, 79, 28);
+    label.text = @"萧然金融";
+    label.font = [UIFont boldSystemFontOfSize:19.0f];
+    [pTitleView addSubview:label];
+    label.textColor = [UIColor whiteColor];
     
     self.navigationItem.titleView = pTitleView;
 
@@ -178,6 +187,7 @@
     
     {
         self.navigationItem.rightBarButtonItem = [UIOwnSkin navTextItemTarget:self action:@selector(onRightLoginClicked:) text:@"登录" andWidth:40];
+        
         return;
     }
     
@@ -516,7 +526,7 @@
         pLabel.textColor = COLOR_FONT_2;
         pLabel.textAlignment = NSTextAlignmentCenter;
         pLabel.font = [UIFont systemFontOfSize:12];
-        pLabel.text = @"改成账户资金安全由连连支付第三方托管";
+        pLabel.text = @"账户资金安全由中国建设银行托管";
         [pCellObj.contentView addSubview:pLabel];
 
         

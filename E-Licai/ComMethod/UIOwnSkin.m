@@ -163,7 +163,7 @@
     }
 
     NSDictionary* textAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
-                                    COLOR_FONT_2,UITextAttributeTextColor,
+                                    [UIColor whiteColor],UITextAttributeTextColor,
                                     [UIFont boldSystemFontOfSize:14],UITextAttributeFont,
                                     [UIColor clearColor],UITextAttributeTextShadowColor,
                                     [NSValue valueWithCGSize:CGSizeMake(1, 1)],UITextAttributeTextShadowOffset,
@@ -297,9 +297,9 @@
 {
     if(pButton == nil)
         return;
-    [pButton setBackgroundColor:COLOR_BUTTON_RECT];
+    [pButton setBackgroundColor:COLOR_FONT_7];
     pButton.layer.borderWidth = 1.0f;
-    pButton.layer.borderColor = COLOR_BUTTON_RECT.CGColor;
+    pButton.layer.borderColor = COLOR_FONT_7.CGColor;
     [pButton.layer setMasksToBounds:YES];
     pButton.layer.cornerRadius = 5.0f;
     [pButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
