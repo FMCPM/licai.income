@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "-[MYIntroductionView onCloseButtonTouched:]:MYIntroductionView.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.SkipButton">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[MyLauncherView initializeWithFrame:]:MyLauncherView.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "maxPageCount">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[MyLauncherView setupCurrentViewLayoutSettings]:MyLauncherView.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "minY">
+            </PersistentString>
+            <PersistentString
+               value = "minX">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[SwitchCountryView tableView:didSelectRowAtIndexPath:]:SwitchCountryView.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "m_strAreaCode">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[HomeLauncherView initializeWithFrame:]:HomeLauncherView.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "_itemHeight">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[CouponShopListPageView tableView:cellForRowAtIndexPath:]:CouponShopListPageView.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[m_pQShopDataSet getFeildValue:0 andColumn:@&quot;ShopName&quot;]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[ShopMapViewController showMapViewInfo]:ShopMapViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "_flLatitude">
+            </PersistentString>
+            <PersistentString
+               value = "_flLongitude">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[LoginStateSet encodeWithCoder:]:LoginStateSet.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "m_strUserLoginName">
+            </PersistentString>
+            <PersistentString
+               value = "m_strUserSinaToken">
+            </PersistentString>
+            <PersistentString
+               value = "m_strUserQQToken">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[PPRevealSideViewController gestureRecognizer:shouldReceiveTouch:]:PPRevealSideViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "_wasClosed">
+            </PersistentString>
+            <PersistentString
+               value = "_animationInProgress">
+            </PersistentString>
+            <PersistentString
+               value = "_currentPanDirection">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[PPRevealSideViewController setRootViewController:replaceToOrigin:]:PPRevealSideViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.view.bounds">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[HomeViewController actionEditItem:]:HomeViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "m_delegate">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[MyLauncherView layoutItems]:MyLauncherView.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "minX">
+            </PersistentString>
+            <PersistentString
+               value = "itemHeight">
+            </PersistentString>
+            <PersistentString
+               value = "itemsCount">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[LoginStateSet initWithCoder:]:LoginStateSet.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.m_strEntLoginName">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[UaConfiguration userIsHaveLoadinSystem]:UaConfiguration.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "_setLoginState">
+            </PersistentString>
+            <PersistentString
+               value = "_setCityData">
+            </PersistentString>
+            <PersistentString
+               value = "_setCityData.m_strProvinceID">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[HomeLauncherItem touchesMoved:withEvent:]:HomeLauncherItem.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self nextResponder">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[MyLauncherView updateFrames]:MyLauncherView.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "pControllHeight">
+            </PersistentString>
+            <PersistentString
+               value = "elf.frame.size.height">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[UserCenterViewController actionQuitClick:]:UserCenterViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[UaConfiguration sharedInstance].m_setLoginState">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[CKNetworkTestHelper startTest]:CKNetworkTestHelper.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[HomeLauncherView updateFrames]:HomeLauncherView.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.frame.size.width">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[HomeLauncherView touchesMoved:withEvent:]:HomeLauncherView.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.pagesScrollView.contentOffset.y">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "__70-[WebServiceHelper StartWebServiceMerhod:andMethodName:andCompletion:]_block_invoke:WebServiceHelper.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "methodMsg">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[SBPageFlowView reloadDataForScrollView:]:SBPageFlowView.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "_currentPageIndex">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[HomeLauncherView layoutItems]:HomeLauncherView.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "_itemHeight">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[HomeLauncherView layoutClassItems]:HomeLauncherView.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "_rowCount">
+            </PersistentString>
+            <PersistentString
+               value = "_itemHeight">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[CouponDetailInfoViewController viewDidLoad]:CouponDetailInfoViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "m_iCouponType">
+            </PersistentString>
+            <PersistentString
+               value = "m_iCouponID">
+            </PersistentString>
+            <PersistentString
+               value = "_pRowSetObj">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[HomeLauncherView setupCurrentViewLayoutSettings]:HomeLauncherView.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "minY">
+            </PersistentString>
+            <PersistentString
+               value = "paddingX">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

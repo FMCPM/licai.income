@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>6B9F5D58-3CFF-4D2F-B3AD-649A0B1BD7F2</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Hz-FashionStreet</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>C029F0C6-C53D-4978-A862-15FAC6FC4BEA</key>
+		<string>svn://130.130.12.60/IOS/FJ-E-YellowPage</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Hz-FashionStreet.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>C029F0C6-C53D-4978-A862-15FAC6FC4BEA</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectRepositoryRootDictionary</key>
+	<dict>
+		<key>C029F0C6-C53D-4978-A862-15FAC6FC4BEA</key>
+		<string>svn://130.130.12.60</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>svn://130.130.12.60/IOS/FJ-E-YellowPage/Hz-FashionStreet.xcodeproj</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>C029F0C6-C53D-4978-A862-15FAC6FC4BEA</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.subversion</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>C029F0C6-C53D-4978-A862-15FAC6FC4BEA</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Hz-FashionStreet</string>
+		</dict>
+	</array>
+</dict>
+</plist>

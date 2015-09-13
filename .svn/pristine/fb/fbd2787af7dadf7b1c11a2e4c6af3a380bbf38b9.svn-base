@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>D265D4BC-A311-4176-85B5-012146C0F3A8</string>
+	<key>IDESourceControlProjectName</key>
+	<string>E-EasyBuy</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>91D9FE6A-CEA9-4DE0-BCB8-5A0CEBB70D57</key>
+		<string>svn://130.130.12.60/ioscode</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Hz-EasyBuy/E-EasyBuy.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>91D9FE6A-CEA9-4DE0-BCB8-5A0CEBB70D57</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectRepositoryRootDictionary</key>
+	<dict>
+		<key>91D9FE6A-CEA9-4DE0-BCB8-5A0CEBB70D57</key>
+		<string>svn://130.130.12.60</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>svn://130.130.12.60/ioscode/Hz-E-EasyBuy/E-EasyBuy.xcodeproj</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>91D9FE6A-CEA9-4DE0-BCB8-5A0CEBB70D57</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.subversion</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>91D9FE6A-CEA9-4DE0-BCB8-5A0CEBB70D57</string>
+			<key>IDESourceControlWCCName</key>
+			<string>IosProject</string>
+		</dict>
+	</array>
+</dict>
+</plist>

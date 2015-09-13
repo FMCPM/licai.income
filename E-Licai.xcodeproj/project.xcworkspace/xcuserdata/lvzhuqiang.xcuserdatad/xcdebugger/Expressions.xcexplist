@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "__55-[GoodsBatchEditPageView loadShopGoodsListDataFromWeb:]_block_invoke:GoodsBatchEditPageView.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "m_iCurPageID">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[ShopClassFilterDropView initWithFrame:andType:]:ShopClassFilterDropView.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "frame.size.width">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>E8706E24-7509-4D48-9044-8D4DA335D7D9</string>
+	<key>IDESourceControlProjectName</key>
+	<string>E-FashionStreet</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>F00B4868-689A-4FE1-A439-104DC0B710F9</key>
+		<string>svn://130.130.12.60/ioscode</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Hz-FashionStreet/E-FashionStreet.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>F00B4868-689A-4FE1-A439-104DC0B710F9</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectRepositoryRootDictionary</key>
+	<dict>
+		<key>F00B4868-689A-4FE1-A439-104DC0B710F9</key>
+		<string>svn://130.130.12.60</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>svn://130.130.12.60/ioscode/Hz-FashionStreet/E-FashionStreet.xcodeproj</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>F00B4868-689A-4FE1-A439-104DC0B710F9</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.subversion</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>F00B4868-689A-4FE1-A439-104DC0B710F9</string>
+			<key>IDESourceControlWCCName</key>
+			<string>IosProject</string>
+		</dict>
+	</array>
+</dict>
+</plist>

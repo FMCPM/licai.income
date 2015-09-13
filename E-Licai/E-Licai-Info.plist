@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AlipayPrivateKey</key>
+	<string>MIICdQIBADANBgkqhkiG9w0BAQEFAASCAl8wggJbAgEAAoGBAO7TYuhKFEXz82vG
+/hBzfs0N+mDp/2KihWl5ru1oJsKJ+Mlt7sLY07J21xeFr3ZMFPdSvXfF5/XYxfPN
+aY0VVSFz1o8T9sWLEYnZHTmqHKBJUJtHgmoaFYS+RE4ykVpRRTgqE8qVxUY0V4JM
+VRpEg0ztmXdl/JGK4edQysm/frLDAgMBAAECgYBdatweZpOlhTXrK4xHnRW1Wcld
+TUpzJ4Ut68YL4RiAMf3ZtKGXH7826Jtb/RPUHxB4aanpBsWj+aX8ppWp9PU1/iuc
+QuGfzsXBsBTArnYSF1e48bsnCSJyUe3QLZxhrN3IVyntSfLB0iQ+D3WnSGEhIH0J
+3wuX/eQNCQeIGxJUwQJBAPiO6RbLDemQGcJXYenQCwen/Yp48XahRedzrPIGHx3p
+yRW4hJJimyGOzkujxJmfubwnBTbIK+4iPrAC/mB7PCECQQD1+eFiAQnspbGUvwZD
+855/7OZicytICMSSkSK4i1F6SR3rx4LPtKN0bguJOAsE7oZiba3P4V68ongnTQVb
+GDJjAkAwuGJ780VA2NwTuekZWYwv7f/GmrpJ1IbNPWFS91w2EtM1jLt/rhBWXZWW
+Qf2RVzui48sj18y0msXK3mtaIg3BAkBAu2z73Kge9hAAxDDC6zb4FYEfwY1PXLdW
+lwlbJZbgpqNQLGYZgUFO37L7fpsvxhHpj1Ghln7XB661MQjKy1hfAkAV3wWMRl8/
+L2fMx0IzoMzsAWSw+IrMIjoQEIvCIItXFkFYR5t4HflkLLh1+jaa13ajlGTCyxZo
+Qt5fzfCOfp33</string>
+	<key>AlipayPublicKey</key>
+	<string>MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDu02LoShRF8/Nrxv4Qc37NDfpg
+6f9iooVpea7taCbCifjJbe7C2NOydtcXha92TBT3Ur13xef12MXzzWmNFVUhc9aP
+E/bFixGJ2R05qhygSVCbR4JqGhWEvkROMpFaUUU4KhPKlcVGNFeCTFUaRINM7Zl3
+ZfyRiuHnUMrJv36ywwIDAQAB</string>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en</string>
+	<key>CFBundleDisplayName</key>
+	<string>叮叮理财</string>
+	<key>CFBundleExecutable</key>
+	<string>${EXECUTABLE_NAME}</string>
+	<key>CFBundleIconFiles</key>
+	<array>
+		<string>Icon.png</string>
+		<string>Icon@2x.png</string>
+	</array>
+	<key>CFBundleIcons</key>
+	<dict/>
+	<key>CFBundleIcons~ipad</key>
+	<dict/>
+	<key>CFBundleIdentifier</key>
+	<string>DD.LiCai.InCome</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>${PRODUCT_NAME}</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0.0</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>DD.LiCai.InCome</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>DD.LiCai.InCome</string>
+				<string>wb1708358465</string>
+				<string>wx6396b3112dc63088</string>
+				<string>QQ41D15186</string>
+			</array>
+		</dict>
+	</array>
+	<key>CFBundleVersion</key>
+	<string>1.0.0</string>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>YES</string>
+	<key>UIPrerenderedIcon</key>
+	<true/>
+	<key>UIRequiredDeviceCapabilities</key>
+	<array>
+		<string>armv7</string>
+	</array>
+	<key>UIStatusBarHidden</key>
+	<true/>
+	<key>UIStatusBarStyle</key>
+	<string>UIStatusBarStyleBlackOpaque</string>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+	</array>
+</dict>
+</plist>
