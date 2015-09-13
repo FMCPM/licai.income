@@ -58,8 +58,8 @@
     UILabel* pLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 15, 100, 16)];
     pLabel.backgroundColor = [UIColor clearColor];
     pLabel.font = [UIFont boldSystemFontOfSize:14];
-    pLabel.text = @"我的叮叮";
-    pLabel.textColor = COLOR_FONT_1;
+    pLabel.text = @"账户";
+    pLabel.textColor = [UIColor whiteColor];
     pLabel.tag = 1001;
     pLabel.textAlignment = UITextAlignmentCenter;
     [m_uiNavTitleButton addSubview:pLabel];
