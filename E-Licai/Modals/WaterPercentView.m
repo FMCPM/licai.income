@@ -98,7 +98,7 @@
     m_uiPcertLabel.font = [UIFont systemFontOfSize:iFontSize];
     if(iSellType == 1)//在售产品
     {
-        m_uiPcertLabel.textColor = [UIColor colorWithHex:0xf0f0f0];
+        m_uiPcertLabel.textColor = COLOR_FONT_7;
         [self setPcertValue:fPcert];
     }
     else if(iSellType == 2) //即将开始

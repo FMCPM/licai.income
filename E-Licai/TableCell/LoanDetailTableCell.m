@@ -84,18 +84,18 @@
         pLabel.textColor = COLOR_FONT_2;
     }
        
-    m_pWaterView = [[WaterPercentView alloc] initWithFrame:CGRectMake(130, 58, 72, 72) andPcert:45];
+    m_pWaterView = [[WaterPercentView alloc] initWithFrame:CGRectMake((self.frame.size.width - 108)/2.0f, 58, 108, 108) andPcert:45];
     [self.contentView addSubview:m_pWaterView];
     
-    UIImageView* pLineView = [[UIImageView alloc] initWithFrame:CGRectMake(160, 135, 0.5, 50)];
-    pLineView.backgroundColor = COLOR_CELL_LINE_DEFAULT;
-    [self.contentView addSubview:pLineView];
-    
+//    UIImageView* pLineView = [[UIImageView alloc] initWithFrame:CGRectMake(160, 167, 0.5, 50)];
+//    pLineView.backgroundColor = COLOR_CELL_LINE_DEFAULT;
+//    [self.contentView addSubview:pLineView];
+//    
 }
 
 -(void)setProductPcertValue:(float)fValue
 {
-    [m_pWaterView setPcertValue:fValue andFontSize:12 andType:1 andStatus:0];
+    [m_pWaterView setPcertValue:fValue andFontSize:20 andType:1 andStatus:0];
 }
 
 

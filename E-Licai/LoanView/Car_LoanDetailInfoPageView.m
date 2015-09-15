@@ -473,7 +473,7 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if(indexPath.row == 0)
-        return 220;
+        return 256;
     if(indexPath.row == 1)
     {
         NSString* strContent1 = [m_pInfoDataSet getFeildValue:0 andColumn:@"contents1"];
