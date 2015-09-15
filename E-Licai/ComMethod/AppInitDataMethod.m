@@ -473,7 +473,7 @@
         NSMutableAttributedString *strLabelAtr = [[NSMutableAttributedString alloc] initWithString:strOraString];
         [strLabelAtr addAttribute:NSForegroundColorAttributeName value:COLOR_FONT_1 range:NSMakeRange(0,keyRange.location)];
         
-        [strLabelAtr addAttribute:NSForegroundColorAttributeName value:COLOR_FONT_3 range:NSMakeRange(keyRange.location,keyRange.length)];
+        [strLabelAtr addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithRed:0.97 green:0.44 blue:0.42 alpha:1] range:NSMakeRange(keyRange.location,keyRange.length)];
         int iLength = strOraString.length;
         int iBegin = keyRange.location+keyRange.length;
         [strLabelAtr addAttribute:NSForegroundColorAttributeName value:COLOR_FONT_1 range:NSMakeRange(iBegin,iLength-iBegin)];

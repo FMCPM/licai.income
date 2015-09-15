@@ -522,7 +522,7 @@
         //
         UIButton* pButton = [UIButton buttonWithType:UIButtonTypeCustom];
         pButton.frame = CGRectMake(70, 4, 180, 35);
-        [UIOwnSkin setButtonBackground:pButton];
+        [UIOwnSkin setButtonBackground:pButton bgColor:COLOR_FONT_7 tColor:[UIColor whiteColor]];
         pButton.layer.cornerRadius = 15.0;
         pButton.titleLabel.textAlignment = NSTextAlignmentCenter;
         [pButton setTitle:@"立即购买" forState:UIControlStateNormal];

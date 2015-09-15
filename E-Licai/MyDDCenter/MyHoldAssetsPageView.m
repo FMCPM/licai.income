@@ -263,7 +263,7 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if(indexPath.row == 0)
-        return 170;
+        return 180;
     return 220;
 }
 
@@ -301,15 +301,12 @@
         pCellObj.selectionStyle = UITableViewCellSelectionStyleNone;
         
         //背景
-        UIView* pBkView = [[UIView alloc] initWithFrame:CGRectMake(10, 10, self.view.frame.size.width-20, 50)];
+        UIView* pBkView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 60)];
         pBkView.backgroundColor = COLOR_VIEW_BK_02;
-        pBkView.layer.borderWidth = 1.0f;
-        pBkView.layer.borderColor = COLOR_VIEW_BK_02.CGColor;
-        pBkView.layer.cornerRadius = 10.0f;
         [pCellObj.contentView addSubview:pBkView];
         
         //总资产的标题
-        UILabel* pLable = [[UILabel alloc] initWithFrame:CGRectMake(10, 15, 120, 20)];
+        UILabel* pLable = [[UILabel alloc] initWithFrame:CGRectMake(20, 15, 120, 30)];
         pLable.textAlignment = NSTextAlignmentLeft;
         pLable.backgroundColor = [UIColor clearColor];
         pLable.font = [UIFont systemFontOfSize:14];
@@ -319,17 +316,17 @@
         [pBkView addSubview:pLable];
         
         //资产的值
-        pLable = [[UILabel alloc] initWithFrame:CGRectMake(190, 8, 100, 20)];
+        pLable = [[UILabel alloc] initWithFrame:CGRectMake(190, 8, 100, 30)];
         pLable.backgroundColor = [UIColor clearColor];
         pLable.font = [UIFont systemFontOfSize:18];
-        pLable.textColor = COLOR_FONT_3;
+        pLable.textColor = COLOR_FONT_7;
        // pLable.text = @"168000.00";
         pLable.tag = 1002;
         pLable.textAlignment = NSTextAlignmentRight;
         [pBkView addSubview:pLable];
         
         //提示
-        pLable = [[UILabel alloc] initWithFrame:CGRectMake(160, 25, 130, 20)];
+        pLable = [[UILabel alloc] initWithFrame:CGRectMake(160, 30, 130, 30)];
         pLable.backgroundColor = [UIColor clearColor];
         pLable.font = [UIFont systemFontOfSize:12];
         pLable.textColor = COLOR_FONT_2;
@@ -455,7 +452,7 @@
         
         //背景
         UIView* pBkCellView = [[UIView alloc] initWithFrame:CGRectMake(10,0, self.view.frame.size.width-20, 210)];
-        pBkCellView.backgroundColor = COLOR_VIEW_BK_01;
+        pBkCellView.backgroundColor = [UIColor colorWithRed:0.97 green:0.97 blue:0.97 alpha:1];
         pBkCellView.layer.borderWidth = 1.0f;
         pBkCellView.layer.borderColor = COLOR_BTN_BORDER_1.CGColor;
         pBkCellView.layer.cornerRadius = 5.0f;
@@ -463,7 +460,7 @@
         
         //顶部背景
         UIView* pBarView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width-20, 50)];
-        pBarView.backgroundColor = COLOR_VIEW_BK_02;
+        pBarView.backgroundColor = [UIColor colorWithRed:0.94 green:0.94 blue:0.93 alpha:1];
         pBarView.layer.borderColor = COLOR_BTN_BORDER_1.CGColor;
         pBarView.layer.borderWidth = 1.0f;
         pBarView.layer.cornerRadius = 5.0f;
@@ -605,7 +602,7 @@
         pLable.textAlignment = NSTextAlignmentLeft;
         pLable.backgroundColor = [UIColor clearColor];
         pLable.font = [UIFont systemFontOfSize:12];
-        pLable.textColor = COLOR_FONT_3;
+        pLable.textColor = COLOR_FONT_7;
         //pLable.text = @"还款中...";
         pLable.tag = 1012;
         [pBkCellView addSubview:pLable];
@@ -613,23 +610,28 @@
         UIButton* pButton = [UIButton buttonWithType:UIButtonTypeCustom];
         pButton.frame = CGRectMake(120, 168, 80, 35);
         pButton.layer.borderWidth = 1.0f;
-        pButton.layer.borderColor = COLOR_FONT_2.CGColor;
+        pButton.layer.borderColor = [UIColor colorWithRed:0.93 green:0.93 blue:0.93 alpha:1].CGColor;
         pButton.layer.cornerRadius = 5.0f;
         pButton.backgroundColor = [UIColor whiteColor];
         [pButton setTitleColor:COLOR_FONT_1 forState:UIControlStateNormal];
         pButton.titleLabel.font = [UIFont systemFontOfSize:14];
         pButton.tag = 2001;
-        [pButton setTitle:@"查看合同" forState:UIControlStateNormal];
+        [pButton setTitle:@"合同" forState:UIControlStateNormal];
         [pButton addTarget:self action:@selector(actionViewHetongClicked:) forControlEvents:UIControlEventTouchUpInside];
         [pBkCellView addSubview:pButton];
         
         pButton = [UIButton buttonWithType:UIButtonTypeCustom];
         pButton.frame = CGRectMake(210, 168, 80, 35);
         
-        [UIOwnSkin setButtonBackground:pButton];
+        //[UIOwnSkin setButtonBackground:pButton];
+        pButton.layer.borderWidth = 1.0f;
+        pButton.layer.borderColor = [UIColor colorWithRed:0.93 green:0.93 blue:0.93 alpha:1].CGColor;
+        pButton.layer.cornerRadius = 5.0f;
+        pButton.backgroundColor = [UIColor whiteColor];
+        [pButton setTitleColor:COLOR_FONT_1 forState:UIControlStateNormal];
         pButton.titleLabel.font = [UIFont systemFontOfSize:14];
         pButton.tag = 2002;
-        [pButton setTitle:@"回款计划" forState:UIControlStateNormal];
+        [pButton setTitle:@"回款" forState:UIControlStateNormal];
         [pButton addTarget:self action:@selector(actionBackMoneyLogClicked:) forControlEvents:UIControlEventTouchUpInside];
         [pBkCellView addSubview:pButton];
         
@@ -692,18 +694,37 @@
         if(iPayStatus == 2)
         {
             strPayStatus = @"投标中";
+            pLabel.textColor = COLOR_FONT_7;
+            //绿色转让
         }
         else if(iPayStatus == 3)
         {
             strPayStatus = @"还款中";
+            pLabel.textColor = COLOR_FONT_7;
+            //绿色转让
         }
         else if(iPayStatus == 4)
         {
             strPayStatus = @"还款结束";
+            pLabel.textColor = COLOR_FONT_7;
+            //没有转让按钮
         }
-        else
+        else if(iPayStatus == 5)
+        {
+            strPayStatus = @"转让中";
+            pLabel.textColor = [UIColor colorWithRed:0.42 green:0.73 blue:0.69 alpha:1];
+            //橙色取消转让
+            
+        }else if(iPayStatus == 6)
+        {
+            strPayStatus = @"已转让";
+            pLabel.textColor = [UIColor colorWithRed:0.42 green:0.73 blue:0.69 alpha:1];
+            //没有转让按钮
+        }else
         {
             strPayStatus = @"";
+            pLabel.textColor = COLOR_FONT_7;
+            //没有转让按钮
         }
         
         pLabel.text = strPayStatus;

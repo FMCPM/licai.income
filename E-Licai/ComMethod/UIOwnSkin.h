@@ -56,6 +56,8 @@
 
 //根据当前的ios的版本信息，获取正确的视图的位置;
 +(CGRect)getViewRectByIosVersion:(CGRect)frame;
+//设置按钮的背景
++(void)setButtonBackground:(UIButton*)pButton bgColor:(UIColor *)bgColor tColor:(UIColor *)tColor;
 //设置按钮的默认背景
 +(void)setButtonBackground:(UIButton*)pButton;
 //给按钮设置指定的背景色

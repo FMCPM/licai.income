@@ -501,6 +501,10 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     
+    if(indexPath.section == 1) {
+        [self actionDDCenterButtonClicked:(indexPath.row + 1)];
+    }
+    
     if(indexPath.section == 2) {
         if(indexPath.row == 0)//交易记录
         {

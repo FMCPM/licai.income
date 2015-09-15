@@ -307,13 +307,30 @@
 }
 
 //设置按钮的背景
++(void)setButtonBackground:(UIButton*)pButton bgColor:(UIColor *)bgColor tColor:(UIColor *)tColor
+{
+    if(pButton == nil)
+        return;
+    [pButton setBackgroundColor:bgColor];
+    pButton.layer.borderWidth = 1.0f;
+    pButton.layer.borderColor = bgColor.CGColor;
+    [pButton.layer setMasksToBounds:YES];
+    pButton.layer.cornerRadius = 5.0f;
+    [pButton setTitleColor:tColor forState:UIControlStateNormal];
+    [pButton setTitleColor:tColor forState:UIControlStateHighlighted];
+    [pButton setTitleColor:tColor forState:UIControlStateSelected];
+    pButton.titleLabel.font = [UIFont systemFontOfSize:14];
+    
+}
+
+//设置按钮的背景
 +(void)setButtonBackground:(UIButton*)pButton 
 {
     if(pButton == nil)
         return;
-    [pButton setBackgroundColor:COLOR_FONT_7];
+    [pButton setBackgroundColor:COLOR_BUTTON_RECT];
     pButton.layer.borderWidth = 1.0f;
-    pButton.layer.borderColor = COLOR_FONT_7.CGColor;
+    pButton.layer.borderColor = COLOR_BUTTON_RECT.CGColor;
     [pButton.layer setMasksToBounds:YES];
     pButton.layer.cornerRadius = 5.0f;
     [pButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
