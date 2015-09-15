@@ -58,13 +58,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "E-Licai/MainViews/InComeMngHomePageView.m"
-            timestampString = "463848676.598118"
+            timestampString = "464011232.365064"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "482"
-            endingLineNumber = "482"
-            landmarkName = "-onSelectedNoLoadInSystem"
-            landmarkType = "5">
+            startingLineNumber = "552"
+            endingLineNumber = "552"
+            landmarkName = "@implementation InComeMngHomePageView"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "E-Licai/MainViews/InComeMngHomePageView.m"
-            timestampString = "463849126.863332"
+            timestampString = "464011121.819704"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "241"
-            endingLineNumber = "241"
+            startingLineNumber = "248"
+            endingLineNumber = "248"
             landmarkName = "-LoadMyDdDefaultInfo_Web"
             landmarkType = "5">
          </BreakpointContent>

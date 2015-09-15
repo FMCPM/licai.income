@@ -35,7 +35,7 @@
     UIView* pLineView = [self.contentView viewWithTag:1005];
     if(pLineView)
     {
-        pLineView.backgroundColor = [UIColor colorWithRed:0.77 green:0.26 blue:0.28 alpha:1];
+        pLineView.backgroundColor = [UIColor colorWithRed:0.93 green:0.61 blue:0 alpha:1];
     }
 }
 

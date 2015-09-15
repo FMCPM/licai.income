@@ -452,6 +452,14 @@
 		E0CA02C81A22FE060030B6C5 /* DDBillCenterInfoPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = E0CA02C71A22FE060030B6C5 /* DDBillCenterInfoPageView.m */; };
 		E0F47BE91A84ADE200325788 /* walletResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E0F47BE71A84ADE200325788 /* walletResources.bundle */; };
 		E0F47BEC1A84B37800325788 /* UserIdSignInfoPopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = E0F47BEB1A84B37800325788 /* UserIdSignInfoPopupView.m */; };
+		FCE923841BA82F3A008D8412 /* MyDdCenterNewMidTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE923821BA82F3A008D8412 /* MyDdCenterNewMidTableCell.m */; };
+		FCE923851BA82F3A008D8412 /* MyDdCenterNewMidTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCE923831BA82F3A008D8412 /* MyDdCenterNewMidTableCell.xib */; };
+		FCE9238A1BA830C4008D8412 /* icon_more_item_10.png in Resources */ = {isa = PBXBuildFile; fileRef = FCE923861BA830C4008D8412 /* icon_more_item_10.png */; };
+		FCE9238B1BA830C4008D8412 /* icon_more_item_11.png in Resources */ = {isa = PBXBuildFile; fileRef = FCE923871BA830C4008D8412 /* icon_more_item_11.png */; };
+		FCE9238C1BA830C4008D8412 /* icon_more_item_12.png in Resources */ = {isa = PBXBuildFile; fileRef = FCE923881BA830C4008D8412 /* icon_more_item_12.png */; };
+		FCE9238D1BA830C4008D8412 /* icon_more_item_14.png in Resources */ = {isa = PBXBuildFile; fileRef = FCE923891BA830C4008D8412 /* icon_more_item_14.png */; };
+		FCE923911BA835C4008D8412 /* MyDdCenterNewBottomTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE9238F1BA835C4008D8412 /* MyDdCenterNewBottomTableCell.m */; };
+		FCE923921BA835C4008D8412 /* MyDdCenterNewBottomTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCE923901BA835C4008D8412 /* MyDdCenterNewBottomTableCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -1150,6 +1158,16 @@
 		E0F47BE71A84ADE200325788 /* walletResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = walletResources.bundle; sourceTree = "<group>"; };
 		E0F47BEA1A84B37800325788 /* UserIdSignInfoPopupView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserIdSignInfoPopupView.h; sourceTree = "<group>"; };
 		E0F47BEB1A84B37800325788 /* UserIdSignInfoPopupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserIdSignInfoPopupView.m; sourceTree = "<group>"; };
+		FCE923811BA82F3A008D8412 /* MyDdCenterNewMidTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyDdCenterNewMidTableCell.h; sourceTree = "<group>"; };
+		FCE923821BA82F3A008D8412 /* MyDdCenterNewMidTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyDdCenterNewMidTableCell.m; sourceTree = "<group>"; };
+		FCE923831BA82F3A008D8412 /* MyDdCenterNewMidTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyDdCenterNewMidTableCell.xib; sourceTree = "<group>"; };
+		FCE923861BA830C4008D8412 /* icon_more_item_10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_more_item_10.png; sourceTree = "<group>"; };
+		FCE923871BA830C4008D8412 /* icon_more_item_11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_more_item_11.png; sourceTree = "<group>"; };
+		FCE923881BA830C4008D8412 /* icon_more_item_12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_more_item_12.png; sourceTree = "<group>"; };
+		FCE923891BA830C4008D8412 /* icon_more_item_14.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_more_item_14.png; sourceTree = "<group>"; };
+		FCE9238E1BA835C4008D8412 /* MyDdCenterNewBottomTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyDdCenterNewBottomTableCell.h; sourceTree = "<group>"; };
+		FCE9238F1BA835C4008D8412 /* MyDdCenterNewBottomTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyDdCenterNewBottomTableCell.m; sourceTree = "<group>"; };
+		FCE923901BA835C4008D8412 /* MyDdCenterNewBottomTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyDdCenterNewBottomTableCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1671,6 +1689,12 @@
 				E02EE3081A12E67F008A8C8B /* HomePageInfoCell.h */,
 				E02EE3091A12E67F008A8C8B /* HomePageInfoCell.m */,
 				E02EE30A1A12E67F008A8C8B /* HomePageInfoCell.xib */,
+				FCE923811BA82F3A008D8412 /* MyDdCenterNewMidTableCell.h */,
+				FCE923821BA82F3A008D8412 /* MyDdCenterNewMidTableCell.m */,
+				FCE923831BA82F3A008D8412 /* MyDdCenterNewMidTableCell.xib */,
+				FCE9238E1BA835C4008D8412 /* MyDdCenterNewBottomTableCell.h */,
+				FCE9238F1BA835C4008D8412 /* MyDdCenterNewBottomTableCell.m */,
+				FCE923901BA835C4008D8412 /* MyDdCenterNewBottomTableCell.xib */,
 			);
 			path = TableCell;
 			sourceTree = "<group>";
@@ -1748,6 +1772,10 @@
 				E0A095041A237168001ED4A9 /* icon_more_item_6.png */,
 				E0A095051A237168001ED4A9 /* icon_more_item_7.png */,
 				E0A095061A237168001ED4A9 /* icon_more_item_8.png */,
+				FCE923861BA830C4008D8412 /* icon_more_item_10.png */,
+				FCE923871BA830C4008D8412 /* icon_more_item_11.png */,
+				FCE923881BA830C4008D8412 /* icon_more_item_12.png */,
+				FCE923891BA830C4008D8412 /* icon_more_item_14.png */,
 				E0A094FC1A236FCE001ED4A9 /* icon_more_half.png */,
 				E0A094EA1A2366F1001ED4A9 /* cell_arrow.png */,
 				E0A094EB1A2366F1001ED4A9 /* icon_account_0.png */,
@@ -2644,6 +2672,7 @@
 				E02EEC971A132C5D008A8C8B /* Tab_ProductList@2x.png in Resources */,
 				E079FD1B1A19B09C006E372B /* MoreViewController.xib in Resources */,
 				E079FE111A19B1F5006E372B /* combo_bg.png in Resources */,
+				FCE9238C1BA830C4008D8412 /* icon_more_item_12.png in Resources */,
 				E02EEC7E1A132C5D008A8C8B /* btn_havecollect.png in Resources */,
 				E02C249F1A218CB500B8C9B5 /* water_55.png in Resources */,
 				E06B53671A65377200A8A5C0 /* WeiboSDK.bundle in Resources */,
@@ -2684,6 +2713,7 @@
 				E02EE4B81A12E67F008A8C8B /* zbar-back.png in Resources */,
 				E02C24A51A218CB500B8C9B5 /* water_85.png in Resources */,
 				E02C249E1A218CB500B8C9B5 /* water_50.png in Resources */,
+				FCE923851BA82F3A008D8412 /* MyDdCenterNewMidTableCell.xib in Resources */,
 				E02C249C1A218CB500B8C9B5 /* water_40.png in Resources */,
 				E03E52D01A2EFCE7005315F1 /* arrow_down.png in Resources */,
 				E05B9BA81A862A2000F56AC7 /* ShareSDKFlatShareViewUI.bundle in Resources */,
@@ -2699,6 +2729,7 @@
 				E0239E311A29E8C000AD21EF /* ico_product_item_0.png in Resources */,
 				E0C917EC1A66074A0075AAC8 /* sns_qq.png in Resources */,
 				E02C24A11A218CB500B8C9B5 /* water_65.png in Resources */,
+				FCE923921BA835C4008D8412 /* MyDdCenterNewBottomTableCell.xib in Resources */,
 				E0129F7F1A63BF910040EFAF /* icon_select_i.png in Resources */,
 				E02EE3B31A12E67F008A8C8B /* QBImagePickerController.bundle in Resources */,
 				E02EE5C41A12E680008A8C8B /* user.plist in Resources */,
@@ -2748,11 +2779,13 @@
 				E0A095091A237168001ED4A9 /* icon_more_item_2.png in Resources */,
 				E0A0950D1A237168001ED4A9 /* icon_more_item_6.png in Resources */,
 				E079FE221A19B1F5006E372B /* arrow.png in Resources */,
+				FCE9238D1BA830C4008D8412 /* icon_more_item_14.png in Resources */,
 				E0195FC31A24A59C00B45E0C /* icon_password.png in Resources */,
 				E079FE231A19B1F5006E372B /* arrow@2x.png in Resources */,
 				E02EEC891A132C5D008A8C8B /* navbar_back.png in Resources */,
 				E02C24A21A218CB500B8C9B5 /* water_70.png in Resources */,
 				E02EEC7F1A132C5D008A8C8B /* btn_search.png in Resources */,
+				FCE9238A1BA830C4008D8412 /* icon_more_item_10.png in Resources */,
 				E02C247D1A218CA000B8C9B5 /* banks_95588.png in Resources */,
 				E02EEC751A132C5D008A8C8B /* bg_noLogoImg.png in Resources */,
 				E02EE5D61A12E680008A8C8B /* UserInfoEditViewController.xib in Resources */,
@@ -2761,6 +2794,7 @@
 				E079FD171A19B09C006E372B /* InComeMngHomePageView.xib in Resources */,
 				E02C249D1A218CB500B8C9B5 /* water_45.png in Resources */,
 				E02C24971A218CB500B8C9B5 /* water_15.png in Resources */,
+				FCE9238B1BA830C4008D8412 /* icon_more_item_11.png in Resources */,
 				E044944D1A161BC700194DEB /* Tab_ProductList_h@2x.png in Resources */,
 				E02EEC791A132C5D008A8C8B /* bg_syssetup.png in Resources */,
 				E02C24961A218CB500B8C9B5 /* water_10.png in Resources */,
@@ -2851,6 +2885,7 @@
 				E079FE2A1A19B1F5006E372B /* SVProgressHUD.m in Sources */,
 				E02EE3C31A12E67F008A8C8B /* CKHttpImageHelper.m in Sources */,
 				E02EE39C1A12E67F008A8C8B /* UISearchBar+CKSearch.m in Sources */,
+				FCE923911BA835C4008D8412 /* MyDdCenterNewBottomTableCell.m in Sources */,
 				E02EE48D1A12E67F008A8C8B /* DownToUpPopupView.m in Sources */,
 				E079FE131A19B1F5006E372B /* OwnDrawing.m in Sources */,
 				E02EE3C51A12E67F008A8C8B /* CKUrlCache.m in Sources */,
@@ -2920,6 +2955,7 @@
 				E079FE451A19B1F5006E372B /* WCGalleryView.m in Sources */,
 				E079FE5E1A19B586006E372B /* SYPaginatorScrollView.m in Sources */,
 				E02EE3A31A12E67F008A8C8B /* CSjqMessageObj.m in Sources */,
+				FCE923841BA82F3A008D8412 /* MyDdCenterNewMidTableCell.m in Sources */,
 				E03D08221A1E26FD0031C607 /* DdBillDetailTableCell.m in Sources */,
 				E02EE3C21A12E67F008A8C8B /* CKHttpHelper.m in Sources */,
 				E079FE181A19B1F5006E372B /* PrettyNavigationBar.m in Sources */,
@@ -3140,7 +3176,7 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/E-Licai/E-Licai-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_MAP_FILE_PATH = "";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3189,7 +3225,7 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/E-Licai/E-Licai-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/E-Licai/libs",

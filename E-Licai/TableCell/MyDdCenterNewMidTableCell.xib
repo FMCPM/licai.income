@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="MyDdCenterNewMidTableCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_more_item_14.png" translatesAutoresizingMaskIntoConstraints="NO" id="vza-IY-ha3">
+                        <rect key="frame" x="10" y="12" width="25" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="7VA-CS-bqI"/>
+                            <constraint firstAttribute="width" constant="25" id="bOy-hs-F2S"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="总资产" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W3b-aZ-bZq">
+                        <rect key="frame" x="40" y="0.0" width="280" height="49.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="741127.73" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ByA-vO-NKi">
+                        <rect key="frame" x="40" y="0.0" width="270" height="49.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="W3b-aZ-bZq" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="0ho-A2-ueb"/>
+                    <constraint firstItem="W3b-aZ-bZq" firstAttribute="leading" secondItem="vza-IY-ha3" secondAttribute="trailing" constant="5" id="1Ig-DB-f64"/>
+                    <constraint firstItem="W3b-aZ-bZq" firstAttribute="leading" secondItem="ByA-vO-NKi" secondAttribute="leading" id="8Sy-2W-Jde"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="W3b-aZ-bZq" secondAttribute="trailing" constant="-8" id="CNd-lK-fbH"/>
+                    <constraint firstItem="ByA-vO-NKi" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="PpB-dG-yp9"/>
+                    <constraint firstAttribute="trailing" secondItem="ByA-vO-NKi" secondAttribute="trailing" constant="10" id="YoJ-xA-qeR"/>
+                    <constraint firstItem="vza-IY-ha3" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="n7f-NF-4mS"/>
+                    <constraint firstAttribute="centerY" secondItem="vza-IY-ha3" secondAttribute="centerY" id="qn2-JY-Lq5"/>
+                    <constraint firstAttribute="bottom" secondItem="ByA-vO-NKi" secondAttribute="bottom" id="wLk-gF-rAX"/>
+                    <constraint firstAttribute="bottom" secondItem="W3b-aZ-bZq" secondAttribute="bottom" id="xqL-0J-WAO"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="contentLabel" destination="W3b-aZ-bZq" id="I8m-Lp-Grq"/>
+                <outlet property="iconImage" destination="vza-IY-ha3" id="jRj-4b-CEk"/>
+                <outlet property="moneyLabel" destination="ByA-vO-NKi" id="IQU-TL-8pK"/>
+            </connections>
+            <point key="canvasLocation" x="308" y="258"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="icon_more_item_14.png" width="40" height="40"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

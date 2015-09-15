@@ -24,6 +24,8 @@
 #import "JsonXmlParserObj.h"
 #import "AppInitDataMethod.h"
 #import "MoreHelpCenterInfoPageView.h"
+#import "MyDdCenterNewMidTableCell.h"
+#import "MyDdCenterNewBottomTableCell.h"
 
 @interface InComeMngHomePageView ()
 
@@ -90,7 +92,12 @@
     self.view.backgroundColor = COLOR_VIEW_BACKGROUND;
     //m_MyDdInfoData = nil;
     m_iLoadViewFlag = 0;
-   
+
+    [self.m_uiMainTable registerNib:[UINib nibWithNibName:@"MyDdCenterNewMidTableCell" bundle:nil] forCellReuseIdentifier:@"MyDdCenterNewMidTableCell"];
+    [self.m_uiMainTable registerNib:[UINib nibWithNibName:@"MyDdCenterNewBottomTableCell" bundle:nil] forCellReuseIdentifier:@"MyDdCenterNewBottomTableCell"];
+    
+    self.m_uiMainTable.tableFooterView = [[UIView alloc] init];
+
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -252,25 +259,51 @@
 {
     if(m_MyDdInfoData == nil)
         return 0;
-	return 1;
+	return 3;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-	return 4;
+    switch (section) {
+        case 0:
+            return 1;
+            break;
+        case 1:
+            return 3;
+            break;
+        case 2:
+            return 2;
+            break;
+            
+        default:
+            return 0;
+            break;
+    }
 }
 
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if(indexPath.row == 0)
+
+    if(indexPath.section == 0 && indexPath.row == 0)
         return 105;
     
-    if(indexPath.row == 1)
-    {
-        return 240;
-    }
 	return 50 ;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    if(section == 2) {
+        return 8;
+    }
+    return 0;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    UIView *view = [[UIView alloc] init];
+    view.frame = CGRectMake(0, 0, self.view.frame.size.width, 8);
+    view.backgroundColor = [UIColor colorWithRed:0.95 green:0.95 blue:0.95 alpha:1];
+    
+    return view;
 }
 
 -(UITableViewCell*)getDdTopBarTableCell:(UITableView*)tableView andIndexPath:(NSIndexPath*)indexPath
@@ -303,51 +336,10 @@
     return  pCellObj;
 }
 
-//
--(UITableViewCell*)getDdMidButtonTableCell:(UITableView*)tableView andIndexPath:(NSIndexPath*)indexPath
+-(UITableViewCell*)getDdBottomBarTableCell:(UITableView*)tableView andIndexPath:(NSIndexPath*)indexPath
 {
-    static NSString *strDdMidButtonTableCellId = @"DdMidButtonTableCellId";
-    MyDdCenterMidTableCell *pCellObj = (MyDdCenterMidTableCell*)[tableView dequeueReusableCellWithIdentifier:strDdMidButtonTableCellId];
-    if (!pCellObj)
-    {
-        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"MyDdCenterMidTableCell" owner:self options:nil];
-        pCellObj = [nib objectAtIndex:0];
-        
-        pCellObj.contentView.backgroundColor = [UIColor whiteColor];
-        pCellObj.selectionStyle = UITableViewCellSelectionStyleNone;
-        [pCellObj initCellDefaultSet];
-        pCellObj.m_pCellDelegate = self;
-        
-    }
-
-    //持有资产
-    NSString* strHoldMoney = [AppInitDataMethod convertMoneyShow:[m_MyDdInfoData getFeildValue:0 andColumn:@"assets"]];
-
-    //账户余额
-    NSString*  strLeftMoney= [AppInitDataMethod convertMoneyShow:[m_MyDdInfoData getFeildValue:0 andColumn:@"balance"]];
-    
-    //总资产
-    NSString* strTotalMoney = [NSString stringWithFormat:@"%.2f",[QDataSetObj convertToFloat:strHoldMoney]+[QDataSetObj convertToFloat:strLeftMoney]];
-    [pCellObj showMidCellInfo:strTotalMoney andHoldMoney:strHoldMoney andLeftMoney:strLeftMoney];
-    return  pCellObj;
-}
-
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    UITableViewCell* pCellObj = nil;
-    if(indexPath.row == 0)
-    {
-        pCellObj = [self getDdTopBarTableCell:tableView andIndexPath:indexPath];
-        return pCellObj;
-    }
-    if(indexPath.row == 1)
-    {
-        pCellObj = [self getDdMidButtonTableCell:tableView andIndexPath:indexPath];
-    
-        return pCellObj;
-    }
     static NSString *strDdCenterComCellId = @"DdCenterComCellId";
-    pCellObj = (UITableViewCell*)[tableView dequeueReusableCellWithIdentifier:strDdCenterComCellId];
+    UITableViewCell *pCellObj = (UITableViewCell*)[tableView dequeueReusableCellWithIdentifier:strDdCenterComCellId];
     if (pCellObj == nil)
     {
         
@@ -385,44 +377,147 @@
     UILabel*pLabel2 = (UILabel*)[pCellObj.contentView viewWithTag:1002];
     if(pLabel1 == nil || pLabel2 == nil )
         return pCellObj;
-
+    
     if(indexPath.row == 2 )
     {
         pLabel1.text = @"交易记录";
         pLabel2.text = @"查看记录";
-
+        
     }
     
     else if(indexPath.row == 3)
     {
-
+        
         pLabel1.text = @"总积分";
         pLabel2.text = [NSString stringWithFormat:@"%@分",[m_MyDdInfoData getFeildValue:0 andColumn:@"integePoints"]];
     }
     return  pCellObj;
+    
 }
 
+//
+-(UITableViewCell*)getDdMidButtonTableCell:(UITableView*)tableView andIndexPath:(NSIndexPath*)indexPath
+{
+    static NSString *strDdMidButtonTableCellId = @"DdMidButtonTableCellId";
+    MyDdCenterMidTableCell *pCellObj = (MyDdCenterMidTableCell*)[tableView dequeueReusableCellWithIdentifier:strDdMidButtonTableCellId];
+    if (!pCellObj)
+    {
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"MyDdCenterMidTableCell" owner:self options:nil];
+        pCellObj = [nib objectAtIndex:0];
+        
+        pCellObj.contentView.backgroundColor = [UIColor whiteColor];
+        pCellObj.selectionStyle = UITableViewCellSelectionStyleNone;
+        [pCellObj initCellDefaultSet];
+        pCellObj.m_pCellDelegate = self;
+        
+    }
 
+    //持有资产
+    NSString* strHoldMoney = [AppInitDataMethod convertMoneyShow:[m_MyDdInfoData getFeildValue:0 andColumn:@"assets"]];
 
+    //账户余额
+    NSString*  strLeftMoney= [AppInitDataMethod convertMoneyShow:[m_MyDdInfoData getFeildValue:0 andColumn:@"balance"]];
+    
+    //总资产
+    NSString* strTotalMoney = [NSString stringWithFormat:@"%.2f",[QDataSetObj convertToFloat:strHoldMoney]+[QDataSetObj convertToFloat:strLeftMoney]];
+    [pCellObj showMidCellInfo:strTotalMoney andHoldMoney:strHoldMoney andLeftMoney:strLeftMoney];
+    return  pCellObj;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell* pCellObj = nil;
+    if(indexPath.section == 0)
+    {
+        pCellObj = [self getDdTopBarTableCell:tableView andIndexPath:indexPath];
+        return pCellObj;
+    }else if(indexPath.section == 1)
+    {
+        //持有资产
+        NSString* strHoldMoney = [AppInitDataMethod convertMoneyShow:[m_MyDdInfoData getFeildValue:0 andColumn:@"assets"]];
+        
+        //账户余额
+        NSString*  strLeftMoney= [AppInitDataMethod convertMoneyShow:[m_MyDdInfoData getFeildValue:0 andColumn:@"balance"]];
+        
+        //总资产
+        NSString* strTotalMoney = [NSString stringWithFormat:@"%.2f",[QDataSetObj convertToFloat:strHoldMoney]+[QDataSetObj convertToFloat:strLeftMoney]];
+        
+        MyDdCenterNewMidTableCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MyDdCenterNewMidTableCell" forIndexPath:indexPath];
+        cell.separatorInset = UIEdgeInsetsMake(0, self.view.frame.size.width/2.0, 0, self.view.frame.size.width/2.0);
+        switch (indexPath.row) {
+            case 0:
+            {
+                cell.contentLabel.text = @"总资产(元)";
+                cell.moneyLabel.text = strTotalMoney;
+                
+            }
+                break;
+            case 1:
+            {
+                NSMutableAttributedString *attrubutedString = [[NSMutableAttributedString alloc] initWithString:@"持有资产(元)(含未结算受益)"];
+
+                [attrubutedString addAttribute:NSForegroundColorAttributeName value:COLOR_FONT_2 range:NSMakeRange(7, 8)];
+                [attrubutedString addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:12.0f] range:NSMakeRange(7, 8)];
+
+                cell.contentLabel.attributedText = attrubutedString;
+                cell.moneyLabel.text = strHoldMoney;
+            }
+                break;
+            case 2:
+            {
+                cell.contentLabel.text = @"账户余额(元)";
+                cell.moneyLabel.text = strLeftMoney;
+            }
+                break;
+        }
+        
+        return cell;
+    } else if (indexPath.section == 2) {
+        MyDdCenterNewBottomTableCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MyDdCenterNewBottomTableCell" forIndexPath:indexPath];
+        
+        switch (indexPath.row) {
+            case 0:
+            {
+                cell.contentLabel.text = @"交易记录";
+                cell.iconImage.image = [UIImage imageNamed:@"icon_more_item_11"];
+            }
+                break;
+            case 1:
+            {
+                cell.contentLabel.text = @"转让记录";
+                cell.iconImage.image = [UIImage imageNamed:@"icon_more_item_12"];
+            }
+                break;
+            default:
+                break;
+        }
+        
+        return cell;
+    }
+    return nil;
+}
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	
-    if(indexPath.row == 2)//交易记录
-    {
-        DDTradeLogPageView* pTradeLogView = [[DDTradeLogPageView alloc] init];
-        pTradeLogView.hidesBottomBarWhenPushed = YES;
-        [self.navigationController pushViewController:pTradeLogView animated:YES];
-        
-    }
-    else if(indexPath.row == 3)//积分
-    {
-        DDIntegralInfoPageView* pIntegralView = [[DDIntegralInfoPageView alloc] init];
-        pIntegralView.hidesBottomBarWhenPushed = YES;
-        
-        NSString* strTotalPoints = [m_MyDdInfoData getFeildValue:0 andColumn:@"integePoints"];
-        pIntegralView.m_iTotalIntegralValue = [QDataSetObj convertToInt:strTotalPoints];
-        [self.navigationController pushViewController:pIntegralView animated:YES];
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    
+    if(indexPath.section == 2) {
+        if(indexPath.row == 0)//交易记录
+        {
+            DDTradeLogPageView* pTradeLogView = [[DDTradeLogPageView alloc] init];
+            pTradeLogView.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:pTradeLogView animated:YES];
+            
+        }
+        else if(indexPath.row == 1)//转让记录
+        {
+            DDIntegralInfoPageView* pIntegralView = [[DDIntegralInfoPageView alloc] init];
+            pIntegralView.hidesBottomBarWhenPushed = YES;
+            
+            NSString* strTotalPoints = [m_MyDdInfoData getFeildValue:0 andColumn:@"integePoints"];
+            pIntegralView.m_iTotalIntegralValue = [QDataSetObj convertToInt:strTotalPoints];
+            [self.navigationController pushViewController:pIntegralView animated:YES];
+        }
     }
 }
 
