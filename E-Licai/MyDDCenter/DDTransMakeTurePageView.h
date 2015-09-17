@@ -17,4 +17,6 @@
 @property (nonatomic,copy) NSString *lastTimeNum;
 @property (nonatomic,copy) NSString *transShouyiMoneyNum;
 
+@property (nonatomic,copy) NSString *relId;
+
 @end

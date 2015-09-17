@@ -11,6 +11,8 @@
 #import "GlobalDefine.h"
 #import "CKHttpHelper.h"
 #import "UaConfiguration.h"
+#import "JsonXmlParserObj.h"
+#import "QDataSetObj.h"
 
 @interface DDTransMakeTurePageView ()
 
@@ -34,6 +36,8 @@
     self.navigationItem.leftBarButtonItem = [UIOwnSkin backItemTarget:self action:@selector(backNavButtonAction:)];
     
     [self initUI];
+
+    [self loadTransInfo_Web];
 }
 
 - (void)initUI {
@@ -50,7 +54,7 @@
     
     self.lastTime.text = [NSString stringWithFormat:@"剩余期限: %@",self.lastTimeNum];
     
-    self.transShouyiMoney.attributedText = [self getAttributedStringWith:@"已结算收益" extraStr:self.transShouyiMoneyNum];
+    self.transShouyiMoney.attributedText = [self getAttributedStringWith:@"转让收益" extraStr:self.transShouyiMoneyNum];
 }
 
 - (NSMutableAttributedString *)getAttributedStringWith:(NSString *)originStr extraStr:(NSString *)extraStr {
@@ -65,39 +69,73 @@
 
 - (NSString *)transName {
     if(!_transName) {
-        _transName = @"12121";
+        _transName = @"";
     }
     return _transName;
 }
 - (NSString *)transMoneyNum {
     if(!_transMoneyNum) {
-        _transMoneyNum = @"1";
+        _transMoneyNum = @"";
     }
     return _transMoneyNum;
 }
 - (NSString *)shouyiMoneyNum {
     if(!_shouyiMoneyNum) {
-        _shouyiMoneyNum = @"2";
+        _shouyiMoneyNum = @"";
     }
     return _shouyiMoneyNum;
 }
 - (NSString *)yijiesuanMoneyNum {
     if(!_yijiesuanMoneyNum) {
-        _yijiesuanMoneyNum = @"3";
+        _yijiesuanMoneyNum = @"";
     }
     return _yijiesuanMoneyNum;
 }
 - (NSString *)lastTimeNum {
     if(!_lastTimeNum) {
-        _lastTimeNum = @"4";
+        _lastTimeNum = @"";
     }
     return _lastTimeNum;
 }
 - (NSString *)transShouyiMoneyNum {
     if(!_transShouyiMoneyNum) {
-        _transShouyiMoneyNum = @"5";
+        _transShouyiMoneyNum = @"";
     }
     return _transShouyiMoneyNum;
+}
+//获取转让产品明细
+-(void)loadTransInfo_Web
+{
+    CKHttpHelper*  pHttpHelper = [CKHttpHelper httpHelperWithOwner:self];
+    pHttpHelper.m_iWebServerType = 1;
+    pHttpHelper.methodType = CKHttpMethodTypePost_Page;
+    //设置webservice方法名
+    [pHttpHelper setMethodName:@"productInfo/queryOnemProRel"];
+    [pHttpHelper addParam:[NSString stringWithFormat:@"%d",[UaConfiguration sharedInstance].m_setLoginState.m_iUserMemberID] forName:@"memberId"];
+    [pHttpHelper addParam:self.relId forName:@"relId"];
+    
+    [pHttpHelper setCompleteBlock:^(id dataSet)
+     {
+         
+         [SVProgressHUD dismiss];
+         JsonXmlParserObj* pJsonObj = dataSet;
+
+         self.lastTimeNum = [pJsonObj getJsonValueByKey:@"leftTime"];
+         self.yijiesuanMoneyNum = [pJsonObj getJsonValueByKey:@"hassy"];
+         self.transMoneyNum = [pJsonObj getJsonValueByKey:@"bidAmount"];
+         self.shouyiMoneyNum = [pJsonObj getJsonValueByKey:@"expectual"];
+         self.transShouyiMoneyNum = [pJsonObj getJsonValueByKey:@"notsy"];
+
+         [self initUI];
+     }];
+    
+    [pHttpHelper setStartBlock:^{
+        [SVProgressHUD showWithStatus:HINT_WEBDATA_LOADING];
+    }];
+    
+    
+    [pHttpHelper start];
+    
 }
 
 -(void)backNavButtonAction:(id)sender
@@ -113,13 +151,21 @@
     
     [pHttpHelper clearParams];
     //专业市场的id
-    [pHttpHelper setMethodName:[NSString stringWithFormat:@"debtorInfo/ transProduct"]];
+    [pHttpHelper setMethodName:[NSString stringWithFormat:@"productInfo/transDebot"]];
     [pHttpHelper addParam:[NSString stringWithFormat:@"%d",[UaConfiguration sharedInstance].m_setLoginState.m_iUserMemberID] forName:@"memberId"];
+    [pHttpHelper addParam:self.relId forName:@"dataId"];
     
     [pHttpHelper setCompleteBlock:^(id dataSet) {
         
-        
+        [SVProgressHUD dismiss];
+//        JsonXmlParserObj* pJsonObj = dataSet;
     }];
+    
+    [pHttpHelper setStartBlock:^{
+        [SVProgressHUD showWithStatus:HINT_WEBDATA_LOADING];
+    }];
+    
+    [pHttpHelper start];
 
 }
 

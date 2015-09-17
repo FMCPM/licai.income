@@ -103,7 +103,7 @@
     _uiMainTableView.autoresizingMask = UIViewAutoresizingFlexibleHeight;
     _uiMainTableView.showsHorizontalScrollIndicator = NO;
     _uiMainTableView.showsVerticalScrollIndicator = NO;
-    _uiMainTableView.backgroundColor = [UIColor whiteColor];
+    _uiMainTableView.backgroundColor = [UIColor colorWithRed:0.95 green:0.95 blue:0.95 alpha:1];
     _uiMainTableView.dataSource = self;
     _uiMainTableView.delegate = self;
     [self.view addSubview:_uiMainTableView];
