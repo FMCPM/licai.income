@@ -1,7 +1,7 @@
 //
 //  DDTradeLogPageView.h
 
-//  我的叮叮 - 交易记录
+//  我的叮叮 - 转让纪录
 //
 //  Created on 2014-11-23.
 //
@@ -13,7 +13,7 @@
 #import "CKHttpImageHelper.h"
 
 
-@interface DDTradeLogPageView : UIViewController <UITableViewDataSource ,UITableViewDelegate>
+@interface DDTransListLogPageView : UIViewController <UITableViewDataSource ,UITableViewDelegate>
 {
     
     QDataSetObj*    m_pInfoDataSet;
@@ -23,7 +23,6 @@
 }
 
 @property (strong, nonatomic) IBOutlet UITableView  *m_uiMainTableView;
-
 
 
 @end

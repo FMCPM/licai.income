@@ -202,4 +202,5 @@ if(_theDelegate != nil && [_theDelegate respondsToSelector:_selector]) { \
 #define SELLER_FLAG_ID   2
 //本地最多的记录行数
 #define MAXCOUNT_ROW_LOCALDB   1000
+
 @end

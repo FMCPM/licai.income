@@ -10,4 +10,11 @@
 
 @interface DDTransMakeTurePageView : UIViewController
 
+@property (nonatomic,copy) NSString *transName;
+@property (nonatomic,copy) NSString *transMoneyNum;
+@property (nonatomic,copy) NSString *shouyiMoneyNum;
+@property (nonatomic,copy) NSString *yijiesuanMoneyNum;
+@property (nonatomic,copy) NSString *lastTimeNum;
+@property (nonatomic,copy) NSString *transShouyiMoneyNum;
+
 @end

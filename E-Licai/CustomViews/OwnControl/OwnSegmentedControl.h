@@ -27,6 +27,8 @@
 
 - (id)initWithFrame:(CGRect)frame items:(NSArray*)segItems;
 
+- (id)initWithFrame:(CGRect)frame items:(NSArray*)segItems tintColor:(UIColor *)color;
+
 @property (nonatomic,strong) id<OwnSegmentedControlDelegate> m_segDelegate;
 
 @end

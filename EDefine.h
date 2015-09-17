@@ -6,8 +6,6 @@
 //  Copyright (c) 2015年 ytinfo. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+extern NSString *const kEUserName;
 
-@interface EDefine : NSObject
-
-@end
+extern NSString *const kEUserPassword;

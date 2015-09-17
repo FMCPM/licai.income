@@ -12,8 +12,6 @@
 	<dict>
 		<key>45000e01-792f-ac49-abb5-1900ff332195++1029</key>
 		<string>https://115.29.248.32/svn/kunzhong</string>
-		<key>BC17A59CEA37D1501615D9FB1ED2FF132349E5AE</key>
-		<string>github.com:chaiweiwei/cww_licai.income.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>E-Licai.xcodeproj</string>
@@ -21,22 +19,20 @@
 	<dict>
 		<key>45000e01-792f-ac49-abb5-1900ff332195++1029</key>
 		<string>../..</string>
-		<key>BC17A59CEA37D1501615D9FB1ED2FF132349E5AE</key>
-		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>github.com:chaiweiwei/cww_licai.income.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>BC17A59CEA37D1501615D9FB1ED2FF132349E5AE</string>
+	<string>45000e01-792f-ac49-abb5-1900ff332195++1029</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>BC17A59CEA37D1501615D9FB1ED2FF132349E5AE</string>
+			<string>45000e01-792f-ac49-abb5-1900ff332195++1029</string>
 			<key>IDESourceControlWCCName</key>
 			<string>cww_licai.income</string>
 		</dict>

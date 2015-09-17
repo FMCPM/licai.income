@@ -6,17 +6,17 @@
 //  Created  on 2014-11-23.
 //
 
-#import "DDTradeLogPageView.h"
+#import "DDTransListLogPageView.h"
 #import "UaConfiguration.h"
 #import "UIOwnSkin.h"
 #import "JsonXmlParserObj.h"
 #import "AppInitDataMethod.h"
 
-@interface DDTradeLogPageView ()
+@interface DDTransListLogPageView ()
 
 @end
 
-@implementation DDTradeLogPageView
+@implementation DDTransListLogPageView
 
 @synthesize m_uiMainTableView = _uiMainTableView;
 ;
@@ -37,7 +37,7 @@
     self.navigationController.navigationBar.translucent = NO;
     m_muImageListDic = [[NSMutableDictionary alloc]initWithCapacity:0];
     //标题
-    self.navigationItem.titleView = [UIOwnSkin navibarTitleView:@"交易记录" andFrame:CGRectMake(0, 0, 100, 40)];
+    self.navigationItem.titleView = [UIOwnSkin navibarTitleView:@"积分记录" andFrame:CGRectMake(0, 0, 100, 40)];
     
     //左边返回按钮
     self.navigationItem.leftBarButtonItem = [UIOwnSkin backItemTarget:self action:@selector(backNavButtonAction:)];
@@ -94,7 +94,7 @@
     
     [pHttpHelper clearParams];
     //专业市场的id
-    [pHttpHelper setMethodName:[NSString stringWithFormat:@"memberInfo/outPayDtl"]];
+    [pHttpHelper setMethodName:[NSString stringWithFormat:@"debtorInfo/queryTransListApp"]];
     [pHttpHelper addParam:[NSString stringWithFormat:@"%d",[UaConfiguration sharedInstance].m_setLoginState.m_iUserMemberID] forName:@"memberId"];
 
   
@@ -109,7 +109,7 @@
              return ;
          }
          
-         QDataSetObj* pDataSet = [pJsonObj parsetoDataSet:@"outPayList"];
+         QDataSetObj* pDataSet = [pJsonObj parsetoDataSet:@"data"];
          if(pDataSet == nil)
              return;
          
@@ -204,7 +204,7 @@
         pLabel.textColor = COLOR_FONT_2;
         //pLabel.text = @"投标";
         pLabel.tag = 1003;
-        [pCellObj.contentView addSubview:pLabel];
+        //[pCellObj.contentView addSubview:pLabel];
         
         //交易金额去
         pLabel = [[UILabel alloc] initWithFrame:CGRectMake(220, 20, 90, 20)];
@@ -243,12 +243,10 @@
     pLabel = (UILabel*)[pCellObj.contentView viewWithTag:1002];
     if(pLabel)
     {
-        NSString* strTime = [m_pInfoDataSet getFeildValue:iDataRow andColumn:@"bidDate"];
+        NSString* strTime = [m_pInfoDataSet getFeildValue:iDataRow andColumn:@"apllyDate"];
         strTime = [AppInitDataMethod convertToShowTime2:strTime];
         pLabel.text = strTime;//[AppInitDataMethod convertToShowTime:[QDataSetObj convertToInt:strTime]];
     }
-    
-
     
     pLabel = (UILabel*)[pCellObj.contentView viewWithTag:1003];
     if(pLabel)
@@ -271,21 +269,26 @@
     pLabel = (UILabel*)[pCellObj.contentView viewWithTag:1005];
     if(pLabel)
     {
-        NSString* strPayStatus = [m_pInfoDataSet getFeildValue:0 andColumn:@"payStatus"];
-        int iPayStatus = [QDataSetObj convertToInt:strPayStatus];
+        NSString* strPayStatus = [m_pInfoDataSet getFeildValue:0 andColumn:@"status"];
+        int iStatus = [QDataSetObj convertToInt:strPayStatus];
         // payStatus: 1:待支付2:支付成功3:交易失败
-        if(iPayStatus == 1)
+        if(iStatus == 1)
         {
-            pLabel.text = @"待支付";
+            pLabel.text = @"待转让";
         }
-        else if(iPayStatus == 2)
+        else if(iStatus == 2)
         {
-            pLabel.text = @"支付成功";
+            pLabel.text = @"转让中";
         }
-        else if(iPayStatus == 3)
+        else if(iStatus == 3)
         {
-            pLabel.text = @"交易失败";
+            pLabel.text = @"转让成功";
         }
+        else if(iStatus == 4)
+        {
+            pLabel.text = @"过期";
+        }
+
     }
     return pCellObj;
 }

@@ -14,6 +14,8 @@
 
 @interface OwnSegmentedControl()
 
+@property (nonatomic,copy) UIColor *defColor;
+
 @end
 
 
@@ -104,6 +106,28 @@
     return self;
 }
 
+- (id)initWithFrame:(CGRect)frame items:(NSArray*)segItems tintColor:(UIColor *)color {
+    self = [self initWithFrame:frame items:segItems];
+    
+    self.defColor = color;
+    
+    m_pLeftCorner.layer.borderColor = color.CGColor;
+    m_pRightCorner.layer.borderColor = color.CGColor;
+
+    self.layer.borderColor = color.CGColor;
+    
+    [self setButtonShowType:m_pCurButton andSel:YES];
+    
+    return self;
+}
+
+- (UIColor *)defColor {
+    if(!_defColor) {
+        _defColor = COLOR_FONT_3;
+    }
+    return _defColor;
+}
+
 #pragma mark - Actions
 -(void)segmentSelected:(id)sender
 {
@@ -138,8 +162,8 @@
     {
         if(blSelFlag == YES)//选中
         {
-            m_pLeftCorner.backgroundColor = COLOR_FONT_3;
-            [pButton setBackgroundColor:COLOR_VIEW_BK_03];
+            m_pLeftCorner.backgroundColor = self.defColor;
+            [pButton setBackgroundColor:self.defColor];
             [pButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         }
         else
@@ -157,8 +181,8 @@
     {
         if(blSelFlag == YES)//选中
         {
-            m_pRightCorner.backgroundColor = COLOR_FONT_3;
-            [pButton setBackgroundColor:COLOR_FONT_3];
+            m_pRightCorner.backgroundColor = self.defColor;
+            [pButton setBackgroundColor:self.defColor];
             [pButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         }
         else
@@ -173,7 +197,7 @@
     
     if(blSelFlag == YES)
     {
-        [pButton setBackgroundColor:COLOR_FONT_3];
+        [pButton setBackgroundColor:self.defColor];
         [pButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
 
     }

@@ -6,8 +6,6 @@
 //  Copyright (c) 2015年 ytinfo. All rights reserved.
 //
 
-#import "EDefine.h"
+NSString *const kEUserName = @"kEUserName";
 
-@implementation EDefine
-
-@end
+NSString *const kEUserPassword = @"kEUserPassword";

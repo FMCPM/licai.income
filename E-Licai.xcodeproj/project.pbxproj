@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3886FDA71BAAFF98004F1842 /* DDLeftMoneyTableCellI.m in Sources */ = {isa = PBXBuildFile; fileRef = 3886FDA51BAAFF98004F1842 /* DDLeftMoneyTableCellI.m */; };
+		3886FDA81BAAFF98004F1842 /* DDLeftMoneyTableCellI.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3886FDA61BAAFF98004F1842 /* DDLeftMoneyTableCellI.xib */; };
+		3886FDAC1BAB09CE004F1842 /* DDCanUsedMoneyTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3886FDAA1BAB09CE004F1842 /* DDCanUsedMoneyTableCell.m */; };
+		3886FDAD1BAB09CE004F1842 /* DDCanUsedMoneyTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3886FDAB1BAB09CE004F1842 /* DDCanUsedMoneyTableCell.xib */; };
+		38AC693C1BA9A24C00D60D62 /* EDefine.m in Sources */ = {isa = PBXBuildFile; fileRef = 38AC693B1BA9A24C00D60D62 /* EDefine.m */; };
+		38AC693F1BA9B2B400D60D62 /* DDTransListLogPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 38AC693E1BA9B2B400D60D62 /* DDTransListLogPageView.m */; };
+		38AC69431BA9B95C00D60D62 /* DDTransMakeTurePageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 38AC69411BA9B95C00D60D62 /* DDTransMakeTurePageView.m */; };
+		38AC69441BA9B95C00D60D62 /* DDTransMakeTurePageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38AC69421BA9B95C00D60D62 /* DDTransMakeTurePageView.xib */; };
 		E00C161D1A85DCAE00C49EC1 /* libPaySdkColor.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E00C161C1A85DCAE00C49EC1 /* libPaySdkColor.a */; };
 		E00FCF6B1A1789D900F7D258 /* Car_LoanTenderInfoListView.m in Sources */ = {isa = PBXBuildFile; fileRef = E00FCF6A1A1789D900F7D258 /* Car_LoanTenderInfoListView.m */; };
 		E0129F7F1A63BF910040EFAF /* icon_select_i.png in Resources */ = {isa = PBXBuildFile; fileRef = E0129F7E1A63BF910040EFAF /* icon_select_i.png */; };
@@ -465,6 +473,19 @@
 /* Begin PBXFileReference section */
 		18011A161689A0AC0019D414 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		180B83021696C0CC00C68593 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		3886FDA41BAAFF98004F1842 /* DDLeftMoneyTableCellI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDLeftMoneyTableCellI.h; sourceTree = "<group>"; };
+		3886FDA51BAAFF98004F1842 /* DDLeftMoneyTableCellI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDLeftMoneyTableCellI.m; sourceTree = "<group>"; };
+		3886FDA61BAAFF98004F1842 /* DDLeftMoneyTableCellI.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DDLeftMoneyTableCellI.xib; sourceTree = "<group>"; };
+		3886FDA91BAB09CE004F1842 /* DDCanUsedMoneyTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDCanUsedMoneyTableCell.h; sourceTree = "<group>"; };
+		3886FDAA1BAB09CE004F1842 /* DDCanUsedMoneyTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDCanUsedMoneyTableCell.m; sourceTree = "<group>"; };
+		3886FDAB1BAB09CE004F1842 /* DDCanUsedMoneyTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DDCanUsedMoneyTableCell.xib; sourceTree = "<group>"; };
+		38AC693A1BA9A24C00D60D62 /* EDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EDefine.h; path = ../EDefine.h; sourceTree = "<group>"; };
+		38AC693B1BA9A24C00D60D62 /* EDefine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EDefine.m; path = ../EDefine.m; sourceTree = "<group>"; };
+		38AC693D1BA9B2B400D60D62 /* DDTransListLogPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDTransListLogPageView.h; sourceTree = "<group>"; };
+		38AC693E1BA9B2B400D60D62 /* DDTransListLogPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDTransListLogPageView.m; sourceTree = "<group>"; };
+		38AC69401BA9B95C00D60D62 /* DDTransMakeTurePageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDTransMakeTurePageView.h; sourceTree = "<group>"; };
+		38AC69411BA9B95C00D60D62 /* DDTransMakeTurePageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDTransMakeTurePageView.m; sourceTree = "<group>"; };
+		38AC69421BA9B95C00D60D62 /* DDTransMakeTurePageView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DDTransMakeTurePageView.xib; sourceTree = "<group>"; };
 		B412A0EF177C0B99001C7AEE /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		B419812F168443E80064B267 /* LiCai.InCome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LiCai.InCome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4198133168443E80064B267 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -1730,6 +1751,8 @@
 		E02EE6221A130178008A8C8B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				38AC693A1BA9A24C00D60D62 /* EDefine.h */,
+				38AC693B1BA9A24C00D60D62 /* EDefine.m */,
 				E02EEC461A1305DB008A8C8B /* E-Licai-Info.plist */,
 				E02EEC471A1305DB008A8C8B /* E-Licai-Prefix.pch */,
 				E02EE3171A12E67F008A8C8B /* user.plist */,
@@ -1921,6 +1944,8 @@
 		E0484B741A1B85190021393D /* MyDDCenter */ = {
 			isa = PBXGroup;
 			children = (
+				38AC693D1BA9B2B400D60D62 /* DDTransListLogPageView.h */,
+				38AC693E1BA9B2B400D60D62 /* DDTransListLogPageView.m */,
 				E054FBF61A5AA5C8002577AB /* MyHoldBackMoneyPlanView.h */,
 				E054FBF71A5AA5C8002577AB /* MyHoldBackMoneyPlanView.m */,
 				E054FBF81A5AA5C8002577AB /* MyHoldBackMoneyPlanView.xib */,
@@ -1951,6 +1976,15 @@
 				E0484B751A1B85190021393D /* MyHoldAssetsPageView.h */,
 				E0484B761A1B85190021393D /* MyHoldAssetsPageView.m */,
 				E0484B771A1B85190021393D /* MyHoldAssetsPageView.xib */,
+				38AC69401BA9B95C00D60D62 /* DDTransMakeTurePageView.h */,
+				38AC69411BA9B95C00D60D62 /* DDTransMakeTurePageView.m */,
+				38AC69421BA9B95C00D60D62 /* DDTransMakeTurePageView.xib */,
+				3886FDA41BAAFF98004F1842 /* DDLeftMoneyTableCellI.h */,
+				3886FDA51BAAFF98004F1842 /* DDLeftMoneyTableCellI.m */,
+				3886FDA61BAAFF98004F1842 /* DDLeftMoneyTableCellI.xib */,
+				3886FDA91BAB09CE004F1842 /* DDCanUsedMoneyTableCell.h */,
+				3886FDAA1BAB09CE004F1842 /* DDCanUsedMoneyTableCell.m */,
+				3886FDAB1BAB09CE004F1842 /* DDCanUsedMoneyTableCell.xib */,
 			);
 			path = MyDDCenter;
 			sourceTree = "<group>";
@@ -2687,6 +2721,7 @@
 				E02EE4BB1A12E67F008A8C8B /* zbar-samples.png in Resources */,
 				E015FB201A1898FD00644B50 /* Car_EstimateInComePageView.xib in Resources */,
 				E079FE201A19B1F5006E372B /* star1.png in Resources */,
+				38AC69441BA9B95C00D60D62 /* DDTransMakeTurePageView.xib in Resources */,
 				E02C24A31A218CB500B8C9B5 /* water_75.png in Resources */,
 				E0ADD6E81A2B398B0073E0AE /* icon_arrow_right_yellow.png in Resources */,
 				E02EEC9E1A1344A5008A8C8B /* topimg3@2x.png in Resources */,
@@ -2771,6 +2806,7 @@
 				E02EEC821A132C5D008A8C8B /* cell_delete_2.png in Resources */,
 				E044944F1A161CC900194DEB /* bg_top_navbar@2x.png in Resources */,
 				E0C917ED1A66074A0075AAC8 /* sns_sina.png in Resources */,
+				3886FDAD1BAB09CE004F1842 /* DDCanUsedMoneyTableCell.xib in Resources */,
 				E02EEC721A132C5D008A8C8B /* bg_downarrow.png in Resources */,
 				E0195FC61A24A59C00B45E0C /* point_green.png in Resources */,
 				E02EEC481A1305DB008A8C8B /* E-Licai-Info.plist in Resources */,
@@ -2832,6 +2868,7 @@
 				E044944B1A161BC700194DEB /* Tab_Money_h@2x.png in Resources */,
 				E015FB141A187B2000644B50 /* checkbox_nil.png in Resources */,
 				E02C07121A16EE95003200FA /* right_arrow_orange.png in Resources */,
+				3886FDA81BAAFF98004F1842 /* DDLeftMoneyTableCellI.xib in Resources */,
 				E0A0950C1A237168001ED4A9 /* icon_more_item_5.png in Resources */,
 				E05B9BAC1A862A2000F56AC7 /* ShareSDKiPadSimpleShareViewUI.bundle in Resources */,
 				E0A094F11A2366F1001ED4A9 /* icon_account_0.png in Resources */,
@@ -2937,6 +2974,7 @@
 				E079FD1A1A19B09C006E372B /* MoreViewController.m in Sources */,
 				E02641611A24254600F191B1 /* DDChangeTradePassword_2.m in Sources */,
 				E02EE38E1A12E67F008A8C8B /* CKKit1.m in Sources */,
+				38AC693C1BA9A24C00D60D62 /* EDefine.m in Sources */,
 				E02EE5D11A12E680008A8C8B /* UserAddrInfoEditPageView.m in Sources */,
 				E079FE1C1A19B1F5006E372B /* PrettyToolbar.m in Sources */,
 				E079FE3B1A19B1F5006E372B /* UAGradientBackground.m in Sources */,
@@ -2971,6 +3009,7 @@
 				E015FB031A18408D00644B50 /* Car_LoanProjectInfoView.m in Sources */,
 				E02EE3BA1A12E67F008A8C8B /* UaConfiguration.m in Sources */,
 				E079FD131A19B09C006E372B /* AboutUsViewController.m in Sources */,
+				3886FDA71BAAFF98004F1842 /* DDLeftMoneyTableCellI.m in Sources */,
 				E02EE38F1A12E67F008A8C8B /* MPNotificationView.m in Sources */,
 				E02EE3CB1A12E67F008A8C8B /* WebServiceHelper.m in Sources */,
 				E02EE5C91A12E680008A8C8B /* ForgotPasswordView.m in Sources */,
@@ -3007,6 +3046,7 @@
 				E02EDE0C1A12E5F3008A8C8B /* main.m in Sources */,
 				E02EE39A1A12E67F008A8C8B /* UILabel+CKKit.m in Sources */,
 				E079FE3E1A19B1F5006E372B /* UIGlossyButton.m in Sources */,
+				3886FDAC1BAB09CE004F1842 /* DDCanUsedMoneyTableCell.m in Sources */,
 				E079FE401A19B1F5006E372B /* MoviePlayerView.m in Sources */,
 				E0F47BEC1A84B37800325788 /* UserIdSignInfoPopupView.m in Sources */,
 				E02EE3991A12E67F008A8C8B /* UIImageView+LBBlurredImage.m in Sources */,
@@ -3026,6 +3066,7 @@
 				E079FD241A19B09C006E372B /* YISplashScreen.m in Sources */,
 				E02807041A1DB59800F13968 /* MyHoldBackMoneyLogView.m in Sources */,
 				E0239E2C1A29E4E200AD21EF /* CarLoanInfoTableCell.m in Sources */,
+				38AC693F1BA9B2B400D60D62 /* DDTransListLogPageView.m in Sources */,
 				E079FDF81A19B1F5006E372B /* CustomTabItem.m in Sources */,
 				E02EE3CD1A12E67F008A8C8B /* WebserviceParser.m in Sources */,
 				E02641641A244AE200F191B1 /* DDIntegralInfoPageView.m in Sources */,
@@ -3048,6 +3089,7 @@
 				E079FD151A19B09C006E372B /* HomeViewController.m in Sources */,
 				E0B5CF261A257A4A00B0DFC1 /* MoreMessageDetailPageView.m in Sources */,
 				E00FCF6B1A1789D900F7D258 /* Car_LoanTenderInfoListView.m in Sources */,
+				38AC69431BA9B95C00D60D62 /* DDTransMakeTurePageView.m in Sources */,
 				E079FE1A1A19B1F5006E372B /* PrettyTabBar.m in Sources */,
 				E079FE2B1A19B1F5006E372B /* SWSnapshotStackView.m in Sources */,
 				E02EE3A61A12E67F008A8C8B /* LoginStateSet.m in Sources */,

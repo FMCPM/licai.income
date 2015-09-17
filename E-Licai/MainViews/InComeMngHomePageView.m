@@ -26,6 +26,7 @@
 #import "MoreHelpCenterInfoPageView.h"
 #import "MyDdCenterNewMidTableCell.h"
 #import "MyDdCenterNewBottomTableCell.h"
+#import "DDTransListLogPageView.h"
 
 @interface InComeMngHomePageView ()
 
@@ -515,12 +516,16 @@
         }
         else if(indexPath.row == 1)//转让记录
         {
-            DDIntegralInfoPageView* pIntegralView = [[DDIntegralInfoPageView alloc] init];
-            pIntegralView.hidesBottomBarWhenPushed = YES;
+//            DDIntegralInfoPageView* pIntegralView = [[DDIntegralInfoPageView alloc] init];
+//            pIntegralView.hidesBottomBarWhenPushed = YES;
+//            
+//            NSString* strTotalPoints = [m_MyDdInfoData getFeildValue:0 andColumn:@"integePoints"];
+//            pIntegralView.m_iTotalIntegralValue = [QDataSetObj convertToInt:strTotalPoints];
+//            [self.navigationController pushViewController:pIntegralView animated:YES];
             
-            NSString* strTotalPoints = [m_MyDdInfoData getFeildValue:0 andColumn:@"integePoints"];
-            pIntegralView.m_iTotalIntegralValue = [QDataSetObj convertToInt:strTotalPoints];
-            [self.navigationController pushViewController:pIntegralView animated:YES];
+            DDTransListLogPageView* pTransLogView = [[DDTransListLogPageView alloc] init];
+            pTransLogView.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:pTransLogView animated:YES];
         }
     }
 }

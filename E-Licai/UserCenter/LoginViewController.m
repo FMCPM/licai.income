@@ -65,7 +65,8 @@
                                              selector:@selector(keyboardWillShow:)
                                                  name:UIKeyboardWillShowNotification object:nil];
     [super viewDidLoad];
-
+    
+    
 }
 
 
@@ -165,6 +166,11 @@
 //点击登录
 -(void)actionLoginClicked:(id)sender
 {
+    m_blSelProtocol = YES;
+    //测试
+    m_strInputPhoneNum = @"13600523915";
+    m_strInputPassword = @"123456";
+    
     if(m_uiCurEditingField != nil)
     {
         [m_uiCurEditingField resignFirstResponder];
@@ -195,7 +201,7 @@
         [SVProgressHUD showErrorWithStatus:@"请阅读叮叮理财使用条款！" duration:1.8];
         return;
     }
-    //
+    
     CKHttpHelper *httpHelper = [CKHttpHelper httpHelperWithOwner:self];
     httpHelper.m_iWebServerType =1;
     httpHelper.methodType = CKHttpMethodTypePost_Page;
@@ -594,7 +600,7 @@
         pButton = [UIButton buttonWithType:UIButtonTypeCustom];
         pButton.frame = CGRectMake(10, 50, self.view.frame.size.width-20, 35);
         pButton.tag = 3004;
-        pButton.enabled = NO;
+        pButton.enabled = YES;
         [UIOwnSkin setButtonBackground:pButton andColor:COLOR_BTN_BORDER_1];
         [pButton setTitle:@"登录" forState:UIControlStateNormal];
         [pButton addTarget:self action:@selector(actionLoginClicked:) forControlEvents:UIControlEventTouchUpInside];

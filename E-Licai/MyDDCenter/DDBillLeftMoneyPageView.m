@@ -14,6 +14,8 @@
 #import "CKHttpHelper.h"
 #import "JsonXmlParserObj.h"
 #import "AppInitDataMethod.h"
+#import "DDLeftMoneyTableCellI.h"
+#import "DDCanUsedMoneyTableCell.h"
 
 @interface DDBillLeftMoneyPageView ()
 
@@ -77,7 +79,9 @@
     
     NSArray* arItems = [[NSArray alloc] initWithObjects:@"账户余额",@"收入明细",@"支出明细", nil];
     
-    OwnSegmentedControl* pSegControl = [[OwnSegmentedControl alloc] initWithFrame:CGRectMake(35, 7,250,25) items:arItems];
+    OwnSegmentedControl* pSegControl = [[OwnSegmentedControl alloc] initWithFrame:CGRectMake(35, 7,250,25)
+                                                                            items:arItems
+                                                                        tintColor:[UIColor colorWithRed:0.47 green:0.47 blue:0.47 alpha:1]];
     pSegControl.m_segDelegate = self;
     [_uiTopBarView addSubview:pSegControl];
     
@@ -106,6 +110,10 @@
 
     //第一个按钮选中
     m_iInfoType = 1;
+    
+    [_uiMainTableView registerNib:[UINib nibWithNibName:@"DDLeftMoneyTableCellI" bundle:nil] forCellReuseIdentifier:@"DDLeftMoneyTableCellI"];
+    
+    [_uiMainTableView registerNib:[UINib nibWithNibName:@"DDCanUsedMoneyTableCell" bundle:nil] forCellReuseIdentifier:@"DDCanUsedMoneyTableCell"];
     
     [self loadViewMultTypeInfoShow:0];
 }
@@ -255,11 +263,12 @@
 //
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if(m_iInfoType != 1)
+    if(m_iInfoType != 1){
         return 90;
+    }
     if(indexPath.row == 0)
-        return 60;
-    return 90;
+        return 90;
+    return 140;
 }
 
 
@@ -277,133 +286,161 @@
 //账号余额的信息
 -(UITableViewCell *)getLeftMoneyTableCell:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *strLeftMoneyTableCellId = @"LeftMoneyTableCellId";
-    UITableViewCell *pCellObj = (UITableViewCell*)[tableView dequeueReusableCellWithIdentifier:strLeftMoneyTableCellId];
-    if (!pCellObj)
-    {
-        pCellObj = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:strLeftMoneyTableCellId];
-        pCellObj.contentView.backgroundColor =  COLOR_VIEW_BK_02;
-        pCellObj.selectionStyle = UITableViewCellSelectionStyleNone;
-        
-        
-        //产品名称
-        UILabel*pLabel = [[UILabel alloc]initWithFrame:CGRectMake(20,15, 100, 30)];
-        pLabel.backgroundColor = [UIColor clearColor];
-        pLabel.textColor = COLOR_FONT_1;
-        
-        pLabel.font = [UIFont boldSystemFontOfSize:20.0f];
-        pLabel.numberOfLines = 0;
-        pLabel.textAlignment  = UITextAlignmentLeft;
-        pLabel.tag = 1001;
-        pLabel.text = @"账户余额";
-        [pCellObj.contentView addSubview:pLabel];
-        
-        //余额
-        pLabel = [[UILabel alloc] initWithFrame:CGRectMake(140, 15, 160, 30)];
-        pLabel.textAlignment  = UITextAlignmentRight;
-        pLabel.backgroundColor = [UIColor clearColor];
-        pLabel.font = [UIFont boldSystemFontOfSize:20.0f];
-        pLabel.textColor = COLOR_FONT_5;
-        pLabel.tag = 1002;
-        [pCellObj.contentView addSubview:pLabel];
-        
+//    static NSString *strLeftMoneyTableCellId = @"LeftMoneyTableCellId";
+//    UITableViewCell *pCellObj = (UITableViewCell*)[tableView dequeueReusableCellWithIdentifier:strLeftMoneyTableCellId];
+//    if (!pCellObj)
+//    {
+//        pCellObj = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:strLeftMoneyTableCellId];
+//        pCellObj.contentView.backgroundColor =  COLOR_VIEW_BK_02;
+//        pCellObj.selectionStyle = UITableViewCellSelectionStyleNone;
+//        
+//        
+//        //产品名称
+//        UILabel*pLabel = [[UILabel alloc]initWithFrame:CGRectMake(20,15, 100, 30)];
+//        pLabel.backgroundColor = [UIColor clearColor];
+//        pLabel.textColor = COLOR_FONT_1;
+//        
+//        pLabel.font = [UIFont boldSystemFontOfSize:20.0f];
+//        pLabel.numberOfLines = 0;
+//        pLabel.textAlignment  = UITextAlignmentLeft;
+//        pLabel.tag = 1001;
+//        pLabel.text = @"账户余额";
+//        [pCellObj.contentView addSubview:pLabel];
+//        
+//        //余额
+//        pLabel = [[UILabel alloc] initWithFrame:CGRectMake(140, 15, 160, 30)];
+//        pLabel.textAlignment  = UITextAlignmentRight;
+//        pLabel.backgroundColor = [UIColor clearColor];
+//        pLabel.font = [UIFont boldSystemFontOfSize:20.0f];
+//        pLabel.textColor = COLOR_FONT_5;
+//        pLabel.tag = 1002;
+//        [pCellObj.contentView addSubview:pLabel];
+//        
+//
+//    }
+//    
+//    UILabel*pLabel = (UILabel*)[pCellObj.contentView viewWithTag:1002];
+//    if(pLabel)
+//    {
+//        if(m_pInfoDataSet == nil)
+//        {
+//            pLabel.text = @"0.00";
+//        }
+//        else
+//        {
+//            NSString* strFeeValue1 = [m_pInfoDataSet getFeildValue:0 andColumn:@"balance"];
+//            NSString* strFeeValue2 = [m_pInfoDataSet getFeildValue:0 andColumn:@"wdFee"];
+//        
+//            float fTotalFee = [QDataSetObj convertToFloat:strFeeValue1]+[QDataSetObj convertToFloat:strFeeValue2];
+//            pLabel.text = [NSString stringWithFormat:@"%.2f",fTotalFee];
+//        }
+//        
+//    }
+//    
+//    return pCellObj;
+    DDLeftMoneyTableCellI *cell = (DDLeftMoneyTableCellI *)[tableView dequeueReusableCellWithIdentifier:@"DDLeftMoneyTableCellI" forIndexPath:indexPath];
 
-    }
-    
-    UILabel*pLabel = (UILabel*)[pCellObj.contentView viewWithTag:1002];
-    if(pLabel)
+    if(m_pInfoDataSet == nil)
     {
-        if(m_pInfoDataSet == nil)
-        {
-            pLabel.text = @"0.00";
-        }
-        else
-        {
-            NSString* strFeeValue1 = [m_pInfoDataSet getFeildValue:0 andColumn:@"balance"];
-            NSString* strFeeValue2 = [m_pInfoDataSet getFeildValue:0 andColumn:@"wdFee"];
-        
-            float fTotalFee = [QDataSetObj convertToFloat:strFeeValue1]+[QDataSetObj convertToFloat:strFeeValue2];
-            pLabel.text = [NSString stringWithFormat:@"%.2f",fTotalFee];
-        }
-        
+        cell.title = @"0.00";
     }
-    
-    return pCellObj;
+    else
+    {
+        NSString* strFeeValue1 = [m_pInfoDataSet getFeildValue:0 andColumn:@"balance"];
+        NSString* strFeeValue2 = [m_pInfoDataSet getFeildValue:0 andColumn:@"wdFee"];
 
+        float fTotalFee = [QDataSetObj convertToFloat:strFeeValue1]+[QDataSetObj convertToFloat:strFeeValue2];
+        cell.title = [NSString stringWithFormat:@"%.2f",fTotalFee];
+    }
+
+    return cell;
 }
 
 //可用余额和提现中余额的Cell
 -(UITableViewCell *)getCanUsedMoneyTableCell:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *strCanUsedMoneyTableCellId = @"CanUsedMoneyTableCellId";
-    UITableViewCell *pCellObj = (UITableViewCell*)[tableView dequeueReusableCellWithIdentifier:strCanUsedMoneyTableCellId];
-    if (!pCellObj)
-    {
-        pCellObj = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:strCanUsedMoneyTableCellId];
-        pCellObj.contentView.backgroundColor =  [UIColor whiteColor];
-        pCellObj.selectionStyle = UITableViewCellSelectionStyleNone;
-        
-        
-        //可用余额标题
-        UILabel*pLabel = [[UILabel alloc]initWithFrame:CGRectMake(20,15, 120, 20)];
-        pLabel.backgroundColor = [UIColor clearColor];
-        pLabel.textColor = COLOR_FONT_1;
-        
-        pLabel.font = [UIFont boldSystemFontOfSize:14.0f];
-        pLabel.numberOfLines = 0;
-        pLabel.textAlignment  = UITextAlignmentLeft;
-        pLabel.tag = 1001;
-        pLabel.text = @"可用余额（元）";
-        [pCellObj.contentView addSubview:pLabel];
-        
-        //可用余额值
-        pLabel = [[UILabel alloc] initWithFrame:CGRectMake(160, 20, 140, 20)];
-        pLabel.textAlignment  = UITextAlignmentRight;
-        pLabel.backgroundColor = [UIColor clearColor];
-        pLabel.font = [UIFont systemFontOfSize:14];
-        pLabel.textColor = COLOR_FONT_2;
-        //pLabel.text = @"10000";
-        pLabel.tag = 1002;
-        [pCellObj.contentView addSubview:pLabel];
-        
-        
-        //提现中余额标题
-        pLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 40, 120, 20)];
-        pLabel.backgroundColor = [UIColor clearColor];
-        pLabel.font = [UIFont systemFontOfSize:14];
-        pLabel.textColor = COLOR_FONT_1;
-        pLabel.tag = 1003;
-        pLabel.numberOfLines = 0;
-        pLabel.textAlignment = UITextAlignmentLeft;
-        pLabel.text = @"提现中余额（元）";
-        [pCellObj.contentView addSubview:pLabel];
-        
-        //提现中余额的值
-        pLabel = [[UILabel alloc] initWithFrame:CGRectMake(160, 40, 140, 20)];
-        pLabel.textAlignment  = UITextAlignmentRight;
-        pLabel.backgroundColor = [UIColor clearColor];
-        pLabel.font = [UIFont systemFontOfSize:14];
-        pLabel.textColor = COLOR_FONT_2;
-        pLabel.tag = 1004;
-        [pCellObj.contentView addSubview:pLabel];
-        
-        UIImageView*pLineView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 79, self.view.frame.size.width, 1)];
-        pLineView.backgroundColor = COLOR_CELL_LINE_DEFAULT;
-        [pCellObj.contentView addSubview:pLineView];
-        
-    }
-    UILabel* pLabel = (UILabel*)[pCellObj.contentView viewWithTag:1002];
-    if(pLabel)
-    {
-        pLabel.text = [AppInitDataMethod convertMoneyShow:[m_pInfoDataSet getFeildValue:0 andColumn:@"balance"]];
+//    static NSString *strCanUsedMoneyTableCellId = @"CanUsedMoneyTableCellId";
+//    UITableViewCell *pCellObj = (UITableViewCell*)[tableView dequeueReusableCellWithIdentifier:strCanUsedMoneyTableCellId];
+//    if (!pCellObj)
+//    {
+//        pCellObj = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:strCanUsedMoneyTableCellId];
+//        pCellObj.contentView.backgroundColor =  [UIColor whiteColor];
+//        pCellObj.selectionStyle = UITableViewCellSelectionStyleNone;
+//        
+//        
+//        //可用余额标题
+//        UILabel*pLabel = [[UILabel alloc]initWithFrame:CGRectMake(20,15, 120, 20)];
+//        pLabel.backgroundColor = [UIColor clearColor];
+//        pLabel.textColor = COLOR_FONT_1;
+//        
+//        pLabel.font = [UIFont boldSystemFontOfSize:14.0f];
+//        pLabel.numberOfLines = 0;
+//        pLabel.textAlignment  = UITextAlignmentLeft;
+//        pLabel.tag = 1001;
+//        pLabel.text = @"可用余额（元）";
+//        [pCellObj.contentView addSubview:pLabel];
+//        
+//        //可用余额值
+//        pLabel = [[UILabel alloc] initWithFrame:CGRectMake(160, 20, 140, 20)];
+//        pLabel.textAlignment  = UITextAlignmentRight;
+//        pLabel.backgroundColor = [UIColor clearColor];
+//        pLabel.font = [UIFont systemFontOfSize:14];
+//        pLabel.textColor = COLOR_FONT_2;
+//        //pLabel.text = @"10000";
+//        pLabel.tag = 1002;
+//        [pCellObj.contentView addSubview:pLabel];
+//        
+//        
+//        //提现中余额标题
+//        pLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 40, 120, 20)];
+//        pLabel.backgroundColor = [UIColor clearColor];
+//        pLabel.font = [UIFont systemFontOfSize:14];
+//        pLabel.textColor = COLOR_FONT_1;
+//        pLabel.tag = 1003;
+//        pLabel.numberOfLines = 0;
+//        pLabel.textAlignment = UITextAlignmentLeft;
+//        pLabel.text = @"提现中余额（元）";
+//        [pCellObj.contentView addSubview:pLabel];
+//        
+//        //提现中余额的值
+//        pLabel = [[UILabel alloc] initWithFrame:CGRectMake(160, 40, 140, 20)];
+//        pLabel.textAlignment  = UITextAlignmentRight;
+//        pLabel.backgroundColor = [UIColor clearColor];
+//        pLabel.font = [UIFont systemFontOfSize:14];
+//        pLabel.textColor = COLOR_FONT_2;
+//        pLabel.tag = 1004;
+//        [pCellObj.contentView addSubview:pLabel];
+//        
+//        UIImageView*pLineView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 79, self.view.frame.size.width, 1)];
+//        pLineView.backgroundColor = COLOR_CELL_LINE_DEFAULT;
+//        [pCellObj.contentView addSubview:pLineView];
+//        
+//    }
+//    UILabel* pLabel = (UILabel*)[pCellObj.contentView viewWithTag:1002];
+//    if(pLabel)
+//    {
+//        pLabel.text = [AppInitDataMethod convertMoneyShow:[m_pInfoDataSet getFeildValue:0 andColumn:@"balance"]];
+//    }
+//    
+//    pLabel = (UILabel*)[pCellObj.contentView viewWithTag:1004];
+//    if(pLabel)
+//    {
+//        pLabel.text = [AppInitDataMethod convertMoneyShow:[m_pInfoDataSet getFeildValue:0 andColumn:@"wdFee"]];
+//    }
+//    return pCellObj;
+    
+    DDCanUsedMoneyTableCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DDCanUsedMoneyTableCell" forIndexPath:indexPath];
+    cell.canUserMoneyLabel.text = [m_pInfoDataSet getFeildValue:0 andColumn:@"balance"];
+    cell.tixianMoneyLabel.text = [m_pInfoDataSet getFeildValue:0 andColumn:@"wdFee"];
+    
+    if(!cell.chongzhiActionBlockCallBack) {
+        [cell setChongzhiActionBlockCallBack:^{
+            
+           //充值操作
+        }];
     }
     
-    pLabel = (UILabel*)[pCellObj.contentView viewWithTag:1004];
-    if(pLabel)
-    {
-        pLabel.text = [AppInitDataMethod convertMoneyShow:[m_pInfoDataSet getFeildValue:0 andColumn:@"wdFee"]];
-    }
-    return pCellObj;
+    return cell;
 }
 
 
