@@ -50,7 +50,7 @@
     self.navigationItem.rightBarButtonItem = [UIOwnSkin navTextItemTarget:self action:@selector(onRightGetCashClicked:) text:@"提现" andWidth:40];
  
     [super viewDidLoad];
-    
+
 }
 
 //刷新
@@ -250,7 +250,7 @@
 //didSelectRowAtIndexPath
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
     
 }
 
@@ -521,6 +521,9 @@
     {
         pCellObj = [self getDDBillDetailTableCell:tableView cellForRowAtIndexPath:indexPath];
     }
+
+    pCellObj.selectionStyle = UITableViewCellSelectionStyleNone;
+    
     return pCellObj;
 }
 

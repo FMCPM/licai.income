@@ -55,6 +55,8 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [self initTableView];
+    
+    [self loadHoldAssetsInfo_Web ];
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -100,29 +102,38 @@
     
     m_pInfoDataSet = nil;
     //
-    [self loadHoldAssetsInfo_Web ];
     
 }
 
 //转让操作
 -(void)actionToCheckTransMoneyClicked:(id)sender {
-    //转让
-    UITableViewCell* pCellObj = [UIOwnSkin getSuperTableViewCell:sender];
-    NSIndexPath* indexPath = [_uiMainTableView indexPathForCell:pCellObj];
-    if(indexPath == nil)
-        return;
-    int iDataRow = indexPath.row-1;
-    if(iDataRow < 0 || iDataRow >= [m_pInfoDataSet getRowCount])
-        return;
     
-    NSString* strProductId = [m_pInfoDataSet getFeildValue:indexPath.row-1 andColumn:@"productId"];
-    NSString* strProductName = [m_pInfoDataSet getFeildValue:indexPath.row-1 andColumn:@"productName"];
+    UIButton *btn = (UIButton *)sender;
+    NSString *title = btn.titleLabel.text;
+    if([title isEqualToString:@"转让"]) {
+        //转让
+        UITableViewCell* pCellObj = [UIOwnSkin getSuperTableViewCell:sender];
+        NSIndexPath* indexPath = [_uiMainTableView indexPathForCell:pCellObj];
+        if(indexPath == nil)
+            return;
+        int iDataRow = indexPath.row-1;
+        if(iDataRow < 0 || iDataRow >= [m_pInfoDataSet getRowCount])
+            return;
+        
+        NSString* strProductId = [m_pInfoDataSet getFeildValue:indexPath.row-1 andColumn:@"productId"];
+        NSString* strProductName = [m_pInfoDataSet getFeildValue:indexPath.row-1 andColumn:@"productName"];
+        
+        DDTransMakeTurePageView *vc = [[DDTransMakeTurePageView alloc] init];
+        vc.relId = strProductId;
+        vc.transName = strProductName;
+        vc.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:vc animated:YES];
+    } else if([title isEqualToString:@"取消转让"]) {
+        
+    } else if([title isEqualToString:@"转让中"]) {
+        
+    }
     
-    DDTransMakeTurePageView *vc = [[DDTransMakeTurePageView alloc] init];
-    vc.relId = strProductId;
-    vc.transName = strProductName;
-    vc.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:vc animated:YES];
     //取消转让
     //转让中
     

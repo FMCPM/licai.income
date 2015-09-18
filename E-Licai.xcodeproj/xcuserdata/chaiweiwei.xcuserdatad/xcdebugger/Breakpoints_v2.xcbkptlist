@@ -57,28 +57,12 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "E-Licai/ComMethod/JsonXmlParserObj.m"
-            timestampString = "464198348.326351"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "131"
-            endingLineNumber = "131"
-            landmarkName = "-parseArrayList_Lev1:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "E-Licai/MyDDCenter/DDTransMakeTurePageView.m"
-            timestampString = "464198768.103747"
+            timestampString = "464281066.418923"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "159"
-            endingLineNumber = "159"
+            startingLineNumber = "161"
+            endingLineNumber = "161"
             landmarkName = "-actionMakeTureClick:"
             landmarkType = "5">
          </BreakpointContent>
@@ -89,13 +73,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "E-Licai/MyDDCenter/DDTransMakeTurePageView.m"
-            timestampString = "464198987.240147"
+            filePath = "E-Licai/MyDDCenter/MyHoldAssetsPageView.m"
+            timestampString = "464281451.892649"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "160"
-            endingLineNumber = "160"
-            landmarkName = "-actionMakeTureClick:"
+            startingLineNumber = "193"
+            endingLineNumber = "193"
+            landmarkName = "-loadHoldAssetsInfo_Web"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -105,13 +89,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "E-Licai/MyDDCenter/DDTransMakeTurePageView.m"
-            timestampString = "464199116.680173"
+            filePath = "E-Licai/MyDDCenter/DDTransListLogPageView.m"
+            timestampString = "464281780.902417"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "123"
-            endingLineNumber = "123"
-            landmarkName = "-loadTransInfo_Web"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
+            landmarkName = "-loadTradeLogInfo_Web"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "E-Licai/MyDDCenter/DDBillLeftMoneyPageView.m"
+            timestampString = "464282784.837395"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "439"
+            endingLineNumber = "439"
+            landmarkName = "-getCanUsedMoneyTableCell:cellForRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

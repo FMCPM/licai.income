@@ -151,14 +151,26 @@
     
     [pHttpHelper clearParams];
     //专业市场的id
-    [pHttpHelper setMethodName:[NSString stringWithFormat:@"productInfo/transDebot"]];
+    [pHttpHelper setMethodName:[NSString stringWithFormat:@"debtorInfo/transDebot"]];
     [pHttpHelper addParam:[NSString stringWithFormat:@"%d",[UaConfiguration sharedInstance].m_setLoginState.m_iUserMemberID] forName:@"memberId"];
     [pHttpHelper addParam:self.relId forName:@"dataId"];
     
     [pHttpHelper setCompleteBlock:^(id dataSet) {
         
         [SVProgressHUD dismiss];
-//        JsonXmlParserObj* pJsonObj = dataSet;
+        JsonXmlParserObj* pJsonObj = dataSet;
+        
+        NSString *flag = [pJsonObj getJsonValueByKey:@"operFlag"];
+        NSString *message = [pJsonObj getJsonValueByKey:@"message"];
+
+        if(flag.intValue>0) {
+            [SVProgressHUD showSuccessWithStatus:@"转让成功" duration:0.8];
+            
+//            [self.navigationController popViewControllerAnimated:YES];
+        } else {
+            [SVProgressHUD showSuccessWithStatus:message duration:0.8];
+//            [self.navigationController popViewControllerAnimated:YES];
+        }
     }];
     
     [pHttpHelper setStartBlock:^{
