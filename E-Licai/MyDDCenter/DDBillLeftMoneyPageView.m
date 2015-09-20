@@ -16,6 +16,7 @@
 #import "AppInitDataMethod.h"
 #import "DDLeftMoneyTableCellI.h"
 #import "DDCanUsedMoneyTableCell.h"
+#import "DDRechargeViewController.h"
 
 @interface DDBillLeftMoneyPageView ()
 
@@ -437,6 +438,9 @@
         [cell setChongzhiActionBlockCallBack:^{
             
            //充值操作
+            DDRechargeViewController *vc = [[DDRechargeViewController alloc] init];
+            vc.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:vc animated:YES];
         }];
     }
     

@@ -18,5 +18,6 @@
 @property (nonatomic,copy) NSString *transShouyiMoneyNum;
 
 @property (nonatomic,copy) NSString *relId;
+@property (nonatomic,copy) NSString *productId;
 
 @end

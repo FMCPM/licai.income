@@ -15,6 +15,8 @@
 		38AC693F1BA9B2B400D60D62 /* DDTransListLogPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 38AC693E1BA9B2B400D60D62 /* DDTransListLogPageView.m */; };
 		38AC69431BA9B95C00D60D62 /* DDTransMakeTurePageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 38AC69411BA9B95C00D60D62 /* DDTransMakeTurePageView.m */; };
 		38AC69441BA9B95C00D60D62 /* DDTransMakeTurePageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38AC69421BA9B95C00D60D62 /* DDTransMakeTurePageView.xib */; };
+		38DBA5AE1BAE896E00F724F4 /* DDRechargeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38DBA5AC1BAE896E00F724F4 /* DDRechargeViewController.m */; };
+		38DBA5AF1BAE896E00F724F4 /* DDRechargeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38DBA5AD1BAE896E00F724F4 /* DDRechargeViewController.xib */; };
 		E00C161D1A85DCAE00C49EC1 /* libPaySdkColor.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E00C161C1A85DCAE00C49EC1 /* libPaySdkColor.a */; };
 		E00FCF6B1A1789D900F7D258 /* Car_LoanTenderInfoListView.m in Sources */ = {isa = PBXBuildFile; fileRef = E00FCF6A1A1789D900F7D258 /* Car_LoanTenderInfoListView.m */; };
 		E0129F7F1A63BF910040EFAF /* icon_select_i.png in Resources */ = {isa = PBXBuildFile; fileRef = E0129F7E1A63BF910040EFAF /* icon_select_i.png */; };
@@ -486,6 +488,9 @@
 		38AC69401BA9B95C00D60D62 /* DDTransMakeTurePageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDTransMakeTurePageView.h; sourceTree = "<group>"; };
 		38AC69411BA9B95C00D60D62 /* DDTransMakeTurePageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDTransMakeTurePageView.m; sourceTree = "<group>"; };
 		38AC69421BA9B95C00D60D62 /* DDTransMakeTurePageView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DDTransMakeTurePageView.xib; sourceTree = "<group>"; };
+		38DBA5AB1BAE896E00F724F4 /* DDRechargeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDRechargeViewController.h; sourceTree = "<group>"; };
+		38DBA5AC1BAE896E00F724F4 /* DDRechargeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDRechargeViewController.m; sourceTree = "<group>"; };
+		38DBA5AD1BAE896E00F724F4 /* DDRechargeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DDRechargeViewController.xib; sourceTree = "<group>"; };
 		B412A0EF177C0B99001C7AEE /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		B419812F168443E80064B267 /* LiCai.InCome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LiCai.InCome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4198133168443E80064B267 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -1985,6 +1990,9 @@
 				3886FDA91BAB09CE004F1842 /* DDCanUsedMoneyTableCell.h */,
 				3886FDAA1BAB09CE004F1842 /* DDCanUsedMoneyTableCell.m */,
 				3886FDAB1BAB09CE004F1842 /* DDCanUsedMoneyTableCell.xib */,
+				38DBA5AB1BAE896E00F724F4 /* DDRechargeViewController.h */,
+				38DBA5AC1BAE896E00F724F4 /* DDRechargeViewController.m */,
+				38DBA5AD1BAE896E00F724F4 /* DDRechargeViewController.xib */,
 			);
 			path = MyDDCenter;
 			sourceTree = "<group>";
@@ -2832,6 +2840,7 @@
 				E02C24971A218CB500B8C9B5 /* water_15.png in Resources */,
 				FCE9238B1BA830C4008D8412 /* icon_more_item_11.png in Resources */,
 				E044944D1A161BC700194DEB /* Tab_ProductList_h@2x.png in Resources */,
+				38DBA5AF1BAE896E00F724F4 /* DDRechargeViewController.xib in Resources */,
 				E02EEC791A132C5D008A8C8B /* bg_syssetup.png in Resources */,
 				E02C24961A218CB500B8C9B5 /* water_10.png in Resources */,
 				E0F47BE91A84ADE200325788 /* walletResources.bundle in Resources */,
@@ -2998,6 +3007,7 @@
 				E02EE3C21A12E67F008A8C8B /* CKHttpHelper.m in Sources */,
 				E079FE181A19B1F5006E372B /* PrettyNavigationBar.m in Sources */,
 				E02EE39D1A12E67F008A8C8B /* UIView+CKKit.m in Sources */,
+				38DBA5AE1BAE896E00F724F4 /* DDRechargeViewController.m in Sources */,
 				E079FE171A19B1F5006E372B /* PrettyDrawing.m in Sources */,
 				E02EE3C01A12E67F008A8C8B /* BillDataSet.m in Sources */,
 				E03041CA1A57DD8E006DF331 /* MoreFeedbackInfoPageView.m in Sources */,

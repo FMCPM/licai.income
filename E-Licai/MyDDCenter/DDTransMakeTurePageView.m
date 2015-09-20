@@ -13,6 +13,7 @@
 #import "UaConfiguration.h"
 #import "JsonXmlParserObj.h"
 #import "QDataSetObj.h"
+#import "Car_LoanDetailInfoPageView.h"
 
 @interface DDTransMakeTurePageView ()
 
@@ -23,6 +24,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *lastTime;
 @property (weak, nonatomic) IBOutlet UILabel *transShouyiMoney;
 @property (weak, nonatomic) IBOutlet UIButton *makeTureButton;
+@property (weak, nonatomic) IBOutlet UIButton *checkOriginInfo;
 
 @end
 
@@ -46,63 +48,32 @@
 
     self.titleLabel.text = self.transName;
 
-    self.transMoney.attributedText = [self getAttributedStringWith:@"投资金额" extraStr:self.transMoneyNum];
+    self.transMoney.attributedText = [self getAttributedStringWith:@"投资金额" extraStr:self.transMoneyNum extraChar:@"元"];
     
-    self.shouyi.text = [NSString stringWithFormat:@"收益率: %@",self.shouyiMoneyNum];
+    self.shouyi.text = [NSString stringWithFormat:@"收益率: %@%%",self.shouyiMoneyNum];
     
-    self.yijiesuanMoney.attributedText = [self getAttributedStringWith:@"已结算收益" extraStr:self.yijiesuanMoneyNum];
+    self.yijiesuanMoney.attributedText = [self getAttributedStringWith:@"已结算收益" extraStr:self.yijiesuanMoneyNum extraChar:@"元"];
     
-    self.lastTime.text = [NSString stringWithFormat:@"剩余期限: %@",self.lastTimeNum];
+    self.lastTime.text = [NSString stringWithFormat:@"剩余期限: %@个月",self.lastTimeNum];
     
-    self.transShouyiMoney.attributedText = [self getAttributedStringWith:@"转让收益" extraStr:self.transShouyiMoneyNum];
+    self.transShouyiMoney.attributedText = [self getAttributedStringWith:@"转让收益" extraStr:self.transShouyiMoneyNum extraChar:@"元"];
+    
+    self.checkOriginInfo.layer.masksToBounds = YES;
+    self.checkOriginInfo.layer.cornerRadius = 5.0;
+    self.checkOriginInfo.layer.borderWidth = 1;
+    self.checkOriginInfo.layer.borderColor = [UIColor colorWithRed:0.77 green:0.77 blue:0.78 alpha:1].CGColor;
 }
 
-- (NSMutableAttributedString *)getAttributedStringWith:(NSString *)originStr extraStr:(NSString *)extraStr {
-    NSString *string = [NSString stringWithFormat:@"%@: %@",originStr,extraStr];
+- (NSMutableAttributedString *)getAttributedStringWith:(NSString *)originStr extraStr:(NSString *)extraStr extraChar:(NSString *)extraChar{
+    NSString *string = [NSString stringWithFormat:@"%@: %@%@",originStr,extraStr,extraChar];
     
     NSMutableAttributedString *attrubutedString = [[NSMutableAttributedString alloc] initWithString:string];
     
-    [attrubutedString addAttribute:NSForegroundColorAttributeName value:COLOR_FONT_7 range:NSMakeRange(string.length-extraStr.length, extraStr.length)];
+    [attrubutedString addAttribute:NSForegroundColorAttributeName value:COLOR_FONT_7 range:NSMakeRange(string.length-extraStr.length-extraChar.length, extraStr.length + extraChar.length)];
 
     return attrubutedString;
 }
 
-- (NSString *)transName {
-    if(!_transName) {
-        _transName = @"";
-    }
-    return _transName;
-}
-- (NSString *)transMoneyNum {
-    if(!_transMoneyNum) {
-        _transMoneyNum = @"";
-    }
-    return _transMoneyNum;
-}
-- (NSString *)shouyiMoneyNum {
-    if(!_shouyiMoneyNum) {
-        _shouyiMoneyNum = @"";
-    }
-    return _shouyiMoneyNum;
-}
-- (NSString *)yijiesuanMoneyNum {
-    if(!_yijiesuanMoneyNum) {
-        _yijiesuanMoneyNum = @"";
-    }
-    return _yijiesuanMoneyNum;
-}
-- (NSString *)lastTimeNum {
-    if(!_lastTimeNum) {
-        _lastTimeNum = @"";
-    }
-    return _lastTimeNum;
-}
-- (NSString *)transShouyiMoneyNum {
-    if(!_transShouyiMoneyNum) {
-        _transShouyiMoneyNum = @"";
-    }
-    return _transShouyiMoneyNum;
-}
 //获取转让产品明细
 -(void)loadTransInfo_Web
 {
@@ -135,6 +106,18 @@
     
     
     [pHttpHelper start];
+    
+}
+- (IBAction)checkOriginInfoAction:(id)sender {
+
+    NSString* strProductId = self.productId;
+
+    Car_LoanDetailInfoPageView *pLoanDetailView = [[Car_LoanDetailInfoPageView alloc] init];
+    pLoanDetailView.m_strProductId = strProductId;
+    pLoanDetailView.m_strProductName = self.transName;
+    pLoanDetailView.hidesBottomBarWhenPushed = YES;
+    
+    [self.navigationController pushViewController:pLoanDetailView animated:YES];
     
 }
 
@@ -186,5 +169,43 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (NSString *)transName {
+    if(!_transName) {
+        _transName = @"";
+    }
+    return _transName;
+}
+- (NSString *)transMoneyNum {
+    if(!_transMoneyNum) {
+        _transMoneyNum = @"";
+    }
+    return _transMoneyNum;
+}
+- (NSString *)shouyiMoneyNum {
+    if(!_shouyiMoneyNum) {
+        _shouyiMoneyNum = @"";
+    }
+    return _shouyiMoneyNum;
+}
+- (NSString *)yijiesuanMoneyNum {
+    if(!_yijiesuanMoneyNum) {
+        _yijiesuanMoneyNum = @"";
+    }
+    return _yijiesuanMoneyNum;
+}
+- (NSString *)lastTimeNum {
+    if(!_lastTimeNum) {
+        _lastTimeNum = @"";
+    }
+    return _lastTimeNum;
+}
+- (NSString *)transShouyiMoneyNum {
+    if(!_transShouyiMoneyNum) {
+        _transShouyiMoneyNum = @"";
+    }
+    return _transShouyiMoneyNum;
+}
+
 
 @end

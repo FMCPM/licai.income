@@ -110,33 +110,69 @@
     
     UIButton *btn = (UIButton *)sender;
     NSString *title = btn.titleLabel.text;
+    
+    UITableViewCell* pCellObj = [UIOwnSkin getSuperTableViewCell:sender];
+    NSIndexPath* indexPath = [_uiMainTableView indexPathForCell:pCellObj];
+    if(indexPath == nil)
+        return;
+    int iDataRow = indexPath.row-1;
+    if(iDataRow < 0 || iDataRow >= [m_pInfoDataSet getRowCount])
+        return;
+    
+    NSString* strRelId = [m_pInfoDataSet getFeildValue:indexPath.row-1 andColumn:@"relId"];
+    NSString* strProductName = [m_pInfoDataSet getFeildValue:indexPath.row-1 andColumn:@"productName"];
+    NSString* strProductId = [m_pInfoDataSet getFeildValue:indexPath.row-1 andColumn:@"productId"];
+
     if([title isEqualToString:@"转让"]) {
         //转让
-        UITableViewCell* pCellObj = [UIOwnSkin getSuperTableViewCell:sender];
-        NSIndexPath* indexPath = [_uiMainTableView indexPathForCell:pCellObj];
-        if(indexPath == nil)
-            return;
-        int iDataRow = indexPath.row-1;
-        if(iDataRow < 0 || iDataRow >= [m_pInfoDataSet getRowCount])
-            return;
-        
-        NSString* strProductId = [m_pInfoDataSet getFeildValue:indexPath.row-1 andColumn:@"productId"];
-        NSString* strProductName = [m_pInfoDataSet getFeildValue:indexPath.row-1 andColumn:@"productName"];
-        
         DDTransMakeTurePageView *vc = [[DDTransMakeTurePageView alloc] init];
-        vc.relId = strProductId;
+        vc.relId = strRelId;
+        vc.productId = strProductId;
         vc.transName = strProductName;
         vc.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:vc animated:YES];
     } else if([title isEqualToString:@"取消转让"]) {
+        CKHttpHelper*  pHttpHelper = [CKHttpHelper httpHelperWithOwner:self];
+        pHttpHelper.m_iWebServerType = 1;
+        pHttpHelper.methodType = CKHttpMethodTypePost_Page;
+        //设置webservice方法名
+        [pHttpHelper setMethodName:@"debtorInfo/cancelTransApp"];
+        [pHttpHelper addParam:[NSString stringWithFormat:@"%d",[UaConfiguration sharedInstance].m_setLoginState.m_iUserMemberID] forName:@"memberId"];
         
+        [pHttpHelper addParam:strRelId forName:@"dataId"];
+        
+        [pHttpHelper setCompleteBlock:^(id dataSet)
+         {
+             [SVProgressHUD dismiss];
+             JsonXmlParserObj* pJsonObj = dataSet;
+             if(pJsonObj == nil)
+             {
+                 [SVProgressHUD showErrorWithStatus:HINT_WEBDATA_NET_ERROR duration:1.8];
+                 return ;
+             }
+             NSString *operFlag = [pJsonObj getJsonValueByKey:@"operFlag"];
+             if(operFlag.boolValue) {
+                 [SVProgressHUD showSuccessWithStatus:@"取消成功" duration:1.8];
+             } else {
+                 [SVProgressHUD showSuccessWithStatus:@"取消失败" duration:1.8];
+             }
+             [self loadHoldAssetsInfo_Web];
+
+         }];
+        
+        [pHttpHelper setStartBlock:^{
+            [SVProgressHUD showWithStatus:HINT_WEBDATA_LOADING];
+        }];
+        
+        
+        [pHttpHelper start];
+
     } else if([title isEqualToString:@"转让中"]) {
         
     }
     
     //取消转让
     //转让中
-    
 }
 
 //查看还款记录
@@ -255,6 +291,7 @@
              //最近还款日
              [m_pInfoDataSet addDataSetRow_Ext:i andName:@"lastDay" andValue:[pDataSet getFeildValue:0 andColumn:[NSString stringWithFormat:@"productList_lastDay_%d",i]]];
              [m_pInfoDataSet addDataSetRow_Ext:i andName:@"payStatus" andValue:[pDataSet getFeildValue:0 andColumn:[NSString stringWithFormat:@"productList_payStatus_%d",i]]];
+             [m_pInfoDataSet addDataSetRow_Ext:i andName:@"tansStatus" andValue:[pDataSet getFeildValue:0 andColumn:[NSString stringWithFormat:@"productList_tansStatus_%d",i]]];
          }
          [_uiMainTableView reloadData];
      }];
@@ -753,58 +790,67 @@
         NSString* strPayStatus = [m_pInfoDataSet getFeildValue:iDataRow andColumn:@"payStatus"];
         
         int iPayStatus = [QDataSetObj convertToInt:strPayStatus];
+        
+        NSString* strTransStatus = [m_pInfoDataSet getFeildValue:iDataRow andColumn:@"tansStatus"];
+        
+        int iTransStatus = [QDataSetObj convertToInt:strTransStatus];
         // 2:投标中 3还款中 4还款结束
         if(iPayStatus == 2)
         {
             strPayStatus = @"投标中";
             pLabel.textColor = COLOR_FONT_7;
             //绿色转让
-            pZbutton.hidden = NO;
-            [pZbutton setTitle:@"转让" forState:UIControlStateNormal];
-            [pZbutton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-            pZbutton.backgroundColor = [UIColor colorWithRed:119/255.0 green:187/255.0 blue:183/255.0 alpha:1];
-            pHbutton.frame = CGRectMake(120, 168, pButtonWidth, 35);
-            pHKbutton.frame = CGRectMake(120 + pButtonWidth + 5, 168, pButtonWidth, 35);
-            
+            //绿色转让
+            if(iTransStatus == 2) {
+                //取消转让
+                pZbutton.hidden = NO;
+                [pZbutton setTitle:@"取消转让" forState:UIControlStateNormal];
+                [pZbutton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+                pZbutton.backgroundColor = COLOR_FONT_7;
+                pHbutton.frame = CGRectMake(120-20, 168, pButtonWidth, 35);
+                pHKbutton.frame = CGRectMake(120-20 + pButtonWidth + 5, 168, pButtonWidth, 35);
+                pZbutton.frame = CGRectMake(120-20 + (pButtonWidth + 5)*2, 168, pButtonWidth+20, 35);
+            }else {
+                //转让
+                pZbutton.hidden = NO;
+                [pZbutton setTitle:@"转让" forState:UIControlStateNormal];
+                [pZbutton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+                pZbutton.backgroundColor = [UIColor colorWithRed:119/255.0 green:187/255.0 blue:183/255.0 alpha:1];
+                pHbutton.frame = CGRectMake(120, 168, pButtonWidth, 35);
+                pHKbutton.frame = CGRectMake(120 + pButtonWidth + 5, 168, pButtonWidth, 35);
+                pZbutton.frame = CGRectMake(120 + (pButtonWidth + 5)*2, 168, pButtonWidth, 35);
+            }            
         }
         else if(iPayStatus == 3)
         {
             strPayStatus = @"还款中";
             pLabel.textColor = COLOR_FONT_7;
             //绿色转让
-            pZbutton.hidden = NO;
-            [pZbutton setTitle:@"转让" forState:UIControlStateNormal];
-            [pZbutton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-            pZbutton.backgroundColor = [UIColor colorWithRed:119/255.0 green:187/255.0 blue:183/255.0 alpha:1];
-            pHbutton.frame = CGRectMake(120, 168, pButtonWidth, 35);
-            pHKbutton.frame = CGRectMake(120 + pButtonWidth + 5, 168, pButtonWidth, 35);
-            pZbutton.frame = CGRectMake(120 + (pButtonWidth + 5)*2, 168, pButtonWidth, 35);
+            if(iTransStatus == 2) {
+                //取消转让
+                pZbutton.hidden = NO;
+                [pZbutton setTitle:@"取消转让" forState:UIControlStateNormal];
+                [pZbutton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+                pZbutton.backgroundColor = COLOR_FONT_7;
+                pHbutton.frame = CGRectMake(120-20, 168, pButtonWidth, 35);
+                pHKbutton.frame = CGRectMake(120-20 + pButtonWidth + 5, 168, pButtonWidth, 35);
+                pZbutton.frame = CGRectMake(120-20 + (pButtonWidth + 5)*2, 168, pButtonWidth+20, 35);
+            }else {
+                //转让
+                pZbutton.hidden = NO;
+                [pZbutton setTitle:@"转让" forState:UIControlStateNormal];
+                [pZbutton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+                pZbutton.backgroundColor = [UIColor colorWithRed:119/255.0 green:187/255.0 blue:183/255.0 alpha:1];
+                pHbutton.frame = CGRectMake(120, 168, pButtonWidth, 35);
+                pHKbutton.frame = CGRectMake(120 + pButtonWidth + 5, 168, pButtonWidth, 35);
+                pZbutton.frame = CGRectMake(120 + (pButtonWidth + 5)*2, 168, pButtonWidth, 35);
+            }
+            
         }
         else if(iPayStatus == 4)
         {
             strPayStatus = @"还款结束";
             pLabel.textColor = COLOR_FONT_7;
-            //没有转让按钮
-            pZbutton.hidden = YES;
-            pHbutton.frame = CGRectMake(120 + pButtonWidth + 5, 168, pButtonWidth, 35);
-            pHKbutton.frame = CGRectMake(120 + (pButtonWidth + 5)*2, 168, pButtonWidth, 35);
-        }
-        else if(iPayStatus == 5)
-        {
-            strPayStatus = @"转让中";
-            pLabel.textColor = [UIColor colorWithRed:0.42 green:0.73 blue:0.69 alpha:1];
-            //橙色取消转让
-            pZbutton.hidden = NO;
-            [pZbutton setTitle:@"取消转让" forState:UIControlStateNormal];
-            [pZbutton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-            pZbutton.backgroundColor = COLOR_FONT_7;
-            pHbutton.frame = CGRectMake(120-20, 168, pButtonWidth, 35);
-            pHKbutton.frame = CGRectMake(120-20 + pButtonWidth + 5, 168, pButtonWidth, 35);
-            pZbutton.frame = CGRectMake(120-20 + (pButtonWidth + 5)*2, 168, pButtonWidth+20, 35);
-        }else if(iPayStatus == 6)
-        {
-            strPayStatus = @"已转让";
-            pLabel.textColor = [UIColor colorWithRed:0.42 green:0.73 blue:0.69 alpha:1];
             //没有转让按钮
             pZbutton.hidden = YES;
             pHbutton.frame = CGRectMake(120 + pButtonWidth + 5, 168, pButtonWidth, 35);
@@ -818,7 +864,29 @@
             pHbutton.frame = CGRectMake(120 + pButtonWidth + 5, 168, pButtonWidth, 35);
             pHKbutton.frame = CGRectMake(120 + (pButtonWidth + 5)*2, 168, pButtonWidth, 35);
         }
-        
+
+//        else if(iPayStatus == 5)
+//        {
+//            strPayStatus = @"转让中";
+//            pLabel.textColor = [UIColor colorWithRed:0.42 green:0.73 blue:0.69 alpha:1];
+//            //橙色取消转让
+//            pZbutton.hidden = NO;
+//            [pZbutton setTitle:@"取消转让" forState:UIControlStateNormal];
+//            [pZbutton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+//            pZbutton.backgroundColor = COLOR_FONT_7;
+//            pHbutton.frame = CGRectMake(120-20, 168, pButtonWidth, 35);
+//            pHKbutton.frame = CGRectMake(120-20 + pButtonWidth + 5, 168, pButtonWidth, 35);
+//            pZbutton.frame = CGRectMake(120-20 + (pButtonWidth + 5)*2, 168, pButtonWidth+20, 35);
+//        }
+//        else if(iPayStatus == 6)
+//        {
+//            strPayStatus = @"已转让";
+//            pLabel.textColor = [UIColor colorWithRed:0.42 green:0.73 blue:0.69 alpha:1];
+//            //没有转让按钮
+//            pZbutton.hidden = YES;
+//            pHbutton.frame = CGRectMake(120 + pButtonWidth + 5, 168, pButtonWidth, 35);
+//            pHKbutton.frame = CGRectMake(120 + (pButtonWidth + 5)*2, 168, pButtonWidth, 35);
+//        }
         pLabel.text = strPayStatus;
     }
     

@@ -72,19 +72,35 @@
 {
     //self.navigationController.navigationBarHidden =YES;
     
-    if(_strWebUrl.length < 1)
+    if(_strWebUrl.length < 1 && self.m_strWebString.length < 1)
         return;
     if(_uiWebView != nil)
         return;
-    NSURL *nsRequestUrl = [NSURL URLWithString:_strWebUrl];
-    UIWebView *myWebView = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width,self.view.frame.size.height)];
-    myWebView.delegate =self;
-    myWebView.scalesPageToFit =YES;
-    [myWebView setUserInteractionEnabled:YES];
-    NSURLRequest  *request = [NSURLRequest requestWithURL:nsRequestUrl];
-    [myWebView loadRequest:request];
-    [self.view addSubview:myWebView];
+    if(_strWebUrl.length > 1) {
+        NSURL *nsRequestUrl = [NSURL URLWithString:_strWebUrl];
+        UIWebView *myWebView = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width,self.view.frame.size.height)];
+        myWebView.delegate =self;
+        myWebView.scalesPageToFit =YES;
+        [myWebView setUserInteractionEnabled:YES];
+        NSURLRequest  *request = [NSURLRequest requestWithURL:nsRequestUrl];
+        [myWebView loadRequest:request];
+        [self.view addSubview:myWebView];
+    } else if(self.m_strWebString.length > 1) {
+        UIWebView *myWebView = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width,self.view.frame.size.height)];
+        myWebView.delegate =self;
+        myWebView.scalesPageToFit =YES;
+        [myWebView setUserInteractionEnabled:YES];
+        [myWebView loadHTMLString:self.m_strWebString baseURL:nil];
+        [self.view addSubview:myWebView];
 
+    }
+
+}
+
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
+    
+    
+    return YES;
 }
 
 

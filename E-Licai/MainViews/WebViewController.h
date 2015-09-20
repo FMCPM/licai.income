@@ -14,6 +14,7 @@
 
 @property (strong ,nonatomic) UIWebView *m_uiWebView;
 @property (strong ,nonatomic) NSString *m_strWebUrl;
+@property (strong ,nonatomic) NSString *m_strWebString;
 @property (strong ,nonatomic) NSString *m_strViewTitle;
 
 @end

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DDRechargeViewController">
+            <connections>
+                <outlet property="passwordFieldTextView" destination="LW8-ad-31W" id="UHF-F8-CA2"/>
+                <outlet property="rechargeButton" destination="zON-mw-2o3" id="WFy-oe-1jU"/>
+                <outlet property="rechargeFieldTextView" destination="Mp7-VW-Cu2" id="TVh-Su-DDP"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="充值金额" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ds8-jR-ZDx">
+                    <rect key="frame" x="10" y="26" width="60" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="BMb-db-ehL"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="充值金额不少于100元" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mp7-VW-Cu2">
+                    <rect key="frame" x="80" y="19" width="230" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="U4s-nV-mA8"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" keyboardType="namePhonePad"/>
+                </textField>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mBK-4t-Mox">
+                    <rect key="frame" x="0.0" y="67" width="320" height="1"/>
+                    <color key="backgroundColor" red="0.96862745098039216" green="0.97254901960784312" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="Hq6-9A-Wrd"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NdA-jG-jxB">
+                    <rect key="frame" x="0.0" y="136" width="320" height="1"/>
+                    <color key="backgroundColor" red="0.96862745100000003" green="0.97254901959999995" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="YhQ-Kr-FfO"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zON-mw-2o3">
+                    <rect key="frame" x="10" y="150" width="300" height="35"/>
+                    <color key="backgroundColor" red="0.72156862745098038" green="0.72549019607843135" blue="0.72941176470588232" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="fsV-gE-4wB"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <state key="normal" title="充值">
+                        <color key="titleColor" red="0.96862745100000003" green="0.97254901959999995" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="rechargeAction:" destination="-1" eventType="touchUpInside" id="a7P-xb-sCh"/>
+                    </connections>
+                </button>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入交易密码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LW8-ad-31W">
+                    <rect key="frame" x="10" y="88" width="300" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="M2S-fa-YuN"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="mBK-4t-Mox" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="2sH-kl-mqO"/>
+                <constraint firstItem="zON-mw-2o3" firstAttribute="top" secondItem="NdA-jG-jxB" secondAttribute="bottom" constant="13" id="4S9-ST-8c9"/>
+                <constraint firstItem="NdA-jG-jxB" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="CLr-F9-e6L"/>
+                <constraint firstItem="LW8-ad-31W" firstAttribute="top" secondItem="mBK-4t-Mox" secondAttribute="bottom" constant="20" id="Et1-eC-38g"/>
+                <constraint firstAttribute="trailing" secondItem="LW8-ad-31W" secondAttribute="trailing" constant="10" id="GDA-6C-aEL"/>
+                <constraint firstItem="mBK-4t-Mox" firstAttribute="top" secondItem="Mp7-VW-Cu2" secondAttribute="bottom" constant="13" id="Goh-0Q-7kB"/>
+                <constraint firstItem="Mp7-VW-Cu2" firstAttribute="leading" secondItem="Ds8-jR-ZDx" secondAttribute="trailing" constant="10" id="KiL-QS-POH"/>
+                <constraint firstItem="Mp7-VW-Cu2" firstAttribute="leading" secondItem="Ds8-jR-ZDx" secondAttribute="trailing" constant="10" id="KkQ-m1-z9g"/>
+                <constraint firstItem="LW8-ad-31W" firstAttribute="top" secondItem="mBK-4t-Mox" secondAttribute="bottom" constant="20" id="ON3-nn-TXC"/>
+                <constraint firstItem="NdA-jG-jxB" firstAttribute="top" secondItem="LW8-ad-31W" secondAttribute="bottom" constant="13" id="Orx-Kb-gir"/>
+                <constraint firstItem="Mp7-VW-Cu2" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="19" id="Rcb-Tw-8OR"/>
+                <constraint firstItem="Ds8-jR-ZDx" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="26" id="XJh-Gi-xow"/>
+                <constraint firstAttribute="trailing" secondItem="zON-mw-2o3" secondAttribute="trailing" constant="10" id="aJ0-Vk-b2A"/>
+                <constraint firstAttribute="trailing" secondItem="mBK-4t-Mox" secondAttribute="trailing" id="bmf-1K-bfe"/>
+                <constraint firstItem="LW8-ad-31W" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="cpT-bV-9Ti"/>
+                <constraint firstAttribute="trailing" secondItem="NdA-jG-jxB" secondAttribute="trailing" id="hZk-TQ-UED"/>
+                <constraint firstItem="mBK-4t-Mox" firstAttribute="top" secondItem="Ds8-jR-ZDx" secondAttribute="bottom" constant="20" id="iU6-zw-fVB"/>
+                <constraint firstAttribute="trailing" secondItem="Mp7-VW-Cu2" secondAttribute="trailing" constant="10" id="oPr-DO-XJf"/>
+                <constraint firstItem="zON-mw-2o3" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="pBV-by-690"/>
+                <constraint firstItem="Ds8-jR-ZDx" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="zmC-WC-kkK"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <point key="canvasLocation" x="189" y="206"/>
+        </view>
+    </objects>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

@@ -73,7 +73,24 @@
     _uiMainTableView.delegate = self;
     [self.view addSubview:_uiMainTableView];
 
-    [self loadTradeLogInfo_Web];
+    //
+    m_refreshHeaderView = [[EGORefreshTableHeaderView alloc]
+                           initWithFrame:CGRectMake(0.0f,
+                                                    0.0f-_uiMainTableView.bounds.size.height,
+                                                    _uiMainTableView.bounds.size.width,
+                                                    _uiMainTableView.bounds.size.height)];
+    m_refreshHeaderView.delegate = self;
+    m_refreshHeaderView.textColor = [UIColor blackColor];
+    m_refreshHeaderView.backgroundColor = [UIColor clearColor];
+    [_uiMainTableView addSubview:m_refreshHeaderView];
+    
+    [m_refreshHeaderView refreshLastUpdatedDate];
+    //第一个按钮选中
+    m_iCurPageID = 0;
+    
+    m_isLoading = NO;
+
+    [self loadTradeLogInfo_Web:1];
 }
 
 
@@ -85,8 +102,16 @@
 
 
 //重新加载产品信息
--(void)loadTradeLogInfo_Web
+-(void)loadTradeLogInfo_Web:(NSInteger)iLoadFlag
 {
+    if(m_isLoading == YES)
+        return;
+    
+    if(iLoadFlag == 1)//重新加载
+    {
+        m_iCurPageID = 0;
+        m_pInfoDataSet = nil;
+    }
     
     CKHttpHelper* pHttpHelper = [CKHttpHelper httpHelperWithOwner:self];
     pHttpHelper.m_iWebServerType = 1;
@@ -96,12 +121,17 @@
     //专业市场的id
     [pHttpHelper setMethodName:[NSString stringWithFormat:@"debtorInfo/queryTransListApp"]];
     [pHttpHelper addParam:[NSString stringWithFormat:@"%d",[UaConfiguration sharedInstance].m_setLoginState.m_iUserMemberID] forName:@"memberId"];
+    [pHttpHelper addParam:@"10" forName:@"pageB.rowCount"];
+    m_iCurPageID++;
+    [pHttpHelper addParam:[NSString stringWithFormat:@"%d",m_iCurPageID] forName:@"pageB.pageIndex"];
 
   
     [pHttpHelper setCompleteBlock:^(id dataSet)
      {
          
          [SVProgressHUD dismiss];
+         m_isLoading = NO;
+         m_isToEndPage = YES;
          JsonXmlParserObj* pJsonObj = dataSet;
          if(pJsonObj == nil)
          {
@@ -109,7 +139,7 @@
              return ;
          }
          
-         QDataSetObj* pDataSet = [pJsonObj parsetoDataSet:@"data"];
+         QDataSetObj* pDataSet = [pJsonObj parsetoDataSet:@"transList"];
          if(pDataSet == nil)
              return;
          
@@ -124,6 +154,7 @@
         [SVProgressHUD showWithStatus:HINT_WEBDATA_LOADING];
     }];
     
+    m_isLoading = YES;
     [pHttpHelper start];
 
     
@@ -293,6 +324,39 @@
     return pCellObj;
 }
 
+#pragma mark -
+#pragma mark UIScrollViewDelegate Methods
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    
+    [m_refreshHeaderView egoRefreshScrollViewDidScroll:scrollView];
+    
+}
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
+    
+    [m_refreshHeaderView egoRefreshScrollViewDidEndDragging:scrollView];
+}
+
+#pragma mark -
+#pragma mark EGORefreshTableHeaderDelegate Methods
+
+- (void)egoRefreshTableHeaderDidTriggerRefresh:(EGORefreshTableHeaderView*)view{
+
+    [self loadTradeLogInfo_Web:1];
+    
+}
+
+- (BOOL)egoRefreshTableHeaderDataSourceIsLoading:(EGORefreshTableHeaderView*)view{
+    
+    return m_isLoading; // should return if data source model is reloading
+    
+}
+
+- (NSDate*)egoRefreshTableHeaderDataSourceLastUpdated:(EGORefreshTableHeaderView*)view{
+    
+    return [NSDate date]; // should return date data source was last changed
+    
+}
 
 
 @end

@@ -13,12 +13,17 @@
 #import "CKHttpImageHelper.h"
 
 
-@interface DDTransListLogPageView : UIViewController <UITableViewDataSource ,UITableViewDelegate>
+@interface DDTransListLogPageView : UIViewController <UITableViewDataSource ,UITableViewDelegate,EGORefreshTableHeaderDelegate>
 {
     
     QDataSetObj*    m_pInfoDataSet;
 
     NSMutableDictionary   *m_muImageListDic;
+    
+    EGORefreshTableHeaderView* m_refreshHeaderView;
+    BOOL        m_isLoading;
+    BOOL        m_isToEndPage;
+    int         m_iCurPageID;
     
 }
 
