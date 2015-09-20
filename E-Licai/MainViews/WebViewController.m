@@ -99,6 +99,11 @@
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
     
+    NSString *url = request.URL.relativeString;
+    if([url isEqualToString:@"xrjr://success"]) {
+        [self.navigationController popToRootViewControllerAnimated:YES];
+        return NO;
+    }
     
     return YES;
 }
