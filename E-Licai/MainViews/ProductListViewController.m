@@ -575,6 +575,8 @@
     NSString* strTotalValue = [pDataSet getFeildValue:iDataIndex andColumn:@"financingAmount"];
     NSString* strHaveValue =  [pDataSet getFeildValue:iDataIndex andColumn:@"hasFinancingAmount"];
     int iStatus = [pDataSet getFeildValue_Int:iDataIndex andColumn:@"status"];
+    if(iCellType == 1000)
+        iStatus = [pDataSet getFeildValue_Int:iDataIndex andColumn:@"transStatus"];
     //计算完成比例
     float fPcert1 = [AppInitDataMethod calculatePcert:strHaveValue andTotal:strTotalValue];
     [pCellObj setProductPcertValue:fPcert1 andType:iCellType andStatus:iStatus];

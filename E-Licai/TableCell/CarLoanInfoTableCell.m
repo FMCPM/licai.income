@@ -121,6 +121,7 @@
 -(void)setProductPcertValue:(float)fValue  andType:(NSInteger)iSellType andStatus:(NSInteger)iStatus
 {
     int iFontSize = 12;
+
     if(iSellType == 1)
     {
        // [_uiNewOrHottLabel setHidden:NO];

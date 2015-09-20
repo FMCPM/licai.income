@@ -96,7 +96,23 @@
 -(void)setPcertValue:(float)fPcert andFontSize:(NSInteger)iFontSize andType:(NSInteger)iSellType andStatus:(NSInteger)iStatus
 {
     m_uiPcertLabel.font = [UIFont systemFontOfSize:iFontSize];
-    if(iSellType == 1)//在售产品
+    if(iSellType == 1000) {
+        //1待转让 3:已转让 4：过期
+        if(iStatus == 1) {
+            m_uiPcertLabel.textColor = COLOR_FONT_1;
+            m_uiPcertImgView.image = [UIImage imageNamed:@"water_00"];
+            m_uiPcertLabel.text = @"待转让";
+        } else if (iStatus == 3) {
+            m_uiPcertLabel.textColor = COLOR_FONT_1;
+            m_uiPcertImgView.image = [UIImage imageNamed:@"water_gray.png"];
+            m_uiPcertLabel.text = @"已转让";
+        } else if(iStatus == 4) {
+            m_uiPcertLabel.textColor = COLOR_FONT_1;
+            m_uiPcertImgView.image = [UIImage imageNamed:@"water_gray.png"];
+            m_uiPcertLabel.text = @"过期";
+        }
+        
+    }else if(iSellType == 1)//在售产品
     {
         m_uiPcertLabel.textColor = COLOR_FONT_7;
         [self setPcertValue:fPcert];

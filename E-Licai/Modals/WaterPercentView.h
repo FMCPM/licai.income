@@ -23,6 +23,7 @@
 -(void)setPcertValue:(float)fPcert andFontSize:(NSInteger)iFontSize andType:(NSInteger)iSellType andStatus:(NSInteger)iStatus;
 
 -(void)addBackgroundButton:(UIButton*)pButton;
+
 @end
 
 

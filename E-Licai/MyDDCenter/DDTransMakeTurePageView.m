@@ -31,6 +31,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *checkOriginInfo;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topMasHeight;
 
+@property (nonatomic,strong) QDataSetObj *m_pJsonObj;
+
 @end
 
 @implementation DDTransMakeTurePageView
@@ -144,12 +146,17 @@
          
          [SVProgressHUD dismiss];
          JsonXmlParserObj* pJsonObj = dataSet;
+
+         self.lastTimeNum = [pJsonObj getDictJsonValueByKey:@"leftTime"];
+         self.yijiesuanMoneyNum = [pJsonObj getDictJsonValueByKey:@"hasSettleIncome"];
+         self.transMoneyNum = [pJsonObj getDictJsonValueByKey:@"bidAmount"];
+         self.transShouyiMoneyNum = [pJsonObj getDictJsonValueByKey:@"notSettleIncome"];
          
-         self.lastTimeNum = [pJsonObj getJsonValueByKey:@"leftTime"];
-         self.yijiesuanMoneyNum = [pJsonObj getJsonValueByKey:@"hasSettleIncome"];
-         self.transMoneyNum = [pJsonObj getJsonValueByKey:@"bidAmount"];
-         self.shouyiMoneyNum = [pJsonObj getJsonValueByKey:@"TProduct.expectAnnual"];
-         self.transShouyiMoneyNum = [pJsonObj getJsonValueByKey:@"notSettleIncome"];
+         QDataSetObj *product = [pJsonObj parseDictList_Lev1:@"TProduct"];
+         CGFloat expect = [[product getFeildValue:0 andColumn:@"expectAnnual"] floatValue];
+         
+         self.shouyiMoneyNum = [NSString stringWithFormat:@"%.2f",expect*100];
+         self.m_pJsonObj = product;
          
          [self initUI];
      }];
@@ -210,14 +217,18 @@
         return;
     }
     
+
     Car_TenderFlowView_Setp1* pStepView1 = [[Car_TenderFlowView_Setp1 alloc] init];
     pStepView1.hidesBottomBarWhenPushed = YES;
     pStepView1.m_strProductName = self.transName;
     pStepView1.m_strProductId = self.productId;
-    
-    pStepView1.m_strLimitTime = self.lastTimeNum;
-    pStepView1.m_strStartTenderMoney = @"1000";
-    pStepView1.m_strTotalTenderMoney = self.transMoneyNum;
+
+    pStepView1.m_strLimitTime = [self.m_pJsonObj getFeildValue:0 andColumn:@"limitTime"];
+    NSString* strMinMoney = [self.m_pJsonObj getFeildValue:0 andColumn:@"leastAmount"];
+    if(strMinMoney.length < 1)
+        strMinMoney = @"0";
+    pStepView1.m_strStartTenderMoney = strMinMoney;
+    pStepView1.m_strTotalTenderMoney = [self.m_pJsonObj getFeildValue:0 andColumn:@"financingAmount"];
     
     [self.navigationController pushViewController:pStepView1 animated:YES];
 
@@ -254,12 +265,12 @@
              pStepView1.m_strProductName = self.transName;
              pStepView1.m_strProductId = self.productId;
              
-//             pStepView1.m_strLimitTime = [m_pInfoDataSet getFeildValue:0 andColumn:@"limitTime"];
-//             NSString* strMinMoney = [m_pInfoDataSet getFeildValue:0 andColumn:@"leastAmount"];
-//             if(strMinMoney.length < 1)
-//                 strMinMoney = _strMinTenderMoney;
-//             pStepView1.m_strStartTenderMoney = strMinMoney;
-//             pStepView1.m_strTotalTenderMoney = [m_pInfoDataSet getFeildValue:0 andColumn:@"financingAmount"];
+             pStepView1.m_strLimitTime = [self.m_pJsonObj getFeildValue:0 andColumn:@"limitTime"];
+             NSString* strMinMoney = [self.m_pJsonObj getFeildValue:0 andColumn:@"leastAmount"];
+             if(strMinMoney.length < 1)
+                 strMinMoney = @"0";
+             pStepView1.m_strStartTenderMoney = strMinMoney;
+             pStepView1.m_strTotalTenderMoney = [self.m_pJsonObj getFeildValue:0 andColumn:@"financingAmount"];
              
              [self.navigationController pushViewController:pStepView1 animated:YES];
          }
