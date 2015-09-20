@@ -14,7 +14,7 @@
 #import "UserRegisterViewController.h"
 #import "JsonXmlParserObj.h"
 #import "AppInitDataMethod.h"
-
+#import "DDTransMakeTurePageView.h"
 
 @interface ProductListViewController ()
 
@@ -165,6 +165,7 @@
                                                     0.0f-_uiMainTableView.bounds.size.height,
                                                     _uiMainTableView.bounds.size.width,
                                                     _uiMainTableView.bounds.size.height)];
+    
     m_refreshHeaderView.delegate = self;
     m_refreshHeaderView.textColor = [UIColor blackColor];
     m_refreshHeaderView.backgroundColor = [UIColor clearColor];
@@ -220,8 +221,11 @@
         strTitle = @"车贷";
     else if(m_iInfoType == 2)
         strTitle = @"信用贷";
-    else
+    else if(m_iInfoType == 3)
         strTitle = @"企业贷";
+    else if(m_iInfoType == 1000) {
+        strTitle = @"债券转让";
+    }
     
     UILabel* pLabel = (UILabel*)[m_uiNavTitleButton viewWithTag:1001];
     if(pLabel != nil)
@@ -263,7 +267,10 @@
     newDict =  [[NSDictionary alloc]initWithObjectsAndKeys:@"3",@"CellCode",@"企业贷",@"CellName", nil];
     [arDataList addObject:newDict];
     
-    m_pMiddleShowView  = [[MiddleShowPopupView alloc] initWithFrame:CGRectMake(70, 0, 180, 120) andViewType:1 andData:arDataList];
+    newDict =  [[NSDictionary alloc]initWithObjectsAndKeys:@"1000",@"CellCode",@"债券转让",@"CellName", nil];
+    [arDataList addObject:newDict];
+    
+    m_pMiddleShowView  = [[MiddleShowPopupView alloc] initWithFrame:CGRectMake(70, 0, 180, 160) andViewType:1 andData:arDataList];
     m_pMiddleShowView.m_switchDelegate = self;
 
     [self.view addSubview:m_pMiddleShowView];
@@ -284,7 +291,7 @@
         m_pCurSellDataSet = nil;
         m_pEndSellDataSet = nil;
         m_pReadySellDataSet = nil;
-
+        m_pTransSellDataSet = nil;
     }
     
     CKHttpHelper* pHttpHelper = [CKHttpHelper httpHelperWithOwner:self];
@@ -297,8 +304,8 @@
     
     [pHttpHelper addParam:@"10" forName:@"pageB.rowCount"];
     
-  //  m_iCurPageID++;
-  //  [pHttpHelper addParam:[NSString stringWithFormat:@"%d",m_iCurPageID] forName:@"pageB.pageIndex"];
+    m_iCurPageID++;
+    [pHttpHelper addParam:[NSString stringWithFormat:@"%d",m_iCurPageID] forName:@"pageB.pageIndex"];
     
     // __block ProductListViewController *blockSelf = self;
     [pHttpHelper setCompleteBlock:^(id dataSet)
@@ -315,6 +322,8 @@
              m_pReadySellDataSet = [pJsonObj parsetoDataSet:@"readyList"];
              
              m_pEndSellDataSet = [pJsonObj parsetoDataSet:@"sucessList"];
+             
+             m_pTransSellDataSet = [pJsonObj parsetoDataSet:@"transList"];
          }
 
          if(m_pCellInfoDataSet == nil)
@@ -375,8 +384,21 @@
                  iAddRow++;
              }
          }
-
          
+         iAddRow = [m_pCellInfoDataSet getRowCount];
+         //转让
+         if(m_pTransSellDataSet != nil)
+         {
+             for(int i=0;i<[m_pTransSellDataSet getRowCount];i++)
+             {
+                 [m_pCellInfoDataSet addDataSetRow_Ext:iAddRow andName:@"cellType" andValue:@"1000"];
+                 [m_pCellInfoDataSet addDataSetRow_Ext:iAddRow andName:@"dataIndex" andValue:[NSString stringWithFormat:@"%d",i]];
+                 [m_pCellInfoDataSet addDataSetRow_Ext:iAddRow andName:@"cellTitle" andValue:@""];
+                 iAddRow++;
+             }
+         }
+
+
          [_uiMainTableView reloadData];
  
      }];
@@ -404,7 +426,20 @@
     
     int iCellType = [m_pCellInfoDataSet getFeildValue_Int:indexPath.row andColumn:@"cellType"];
     int iDataIndex = [m_pCellInfoDataSet getFeildValue_Int:indexPath.row andColumn:@"dataIndex"];
-    if(iCellType == 1)
+    
+    if(iCellType == 1000) {
+        strProductName = [m_pTransSellDataSet getFeildValue:iDataIndex andColumn:@"productName"];
+        strProductId = [m_pTransSellDataSet getFeildValue:iDataIndex andColumn:@"productId"];
+        
+        NSString *transId = [m_pTransSellDataSet getFeildValue:iDataIndex andColumn:@"transId"];
+        DDTransMakeTurePageView *vc = [[DDTransMakeTurePageView alloc] init];
+        vc.transId = transId;
+        vc.productId = strProductId;
+        vc.transName = strProductName;
+        vc.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:vc animated:YES];
+        return;
+    }else if(iCellType == 1)
     {
         strProductName = [m_pCurSellDataSet getFeildValue:iDataIndex andColumn:@"productName"];
         strProductId = [m_pCurSellDataSet getFeildValue:iDataIndex andColumn:@"productId"];
@@ -416,7 +451,7 @@
         strProductId = [m_pReadySellDataSet getFeildValue:iDataIndex andColumn:@"productId"];
         strMinTenderMoney = [m_pReadySellDataSet getFeildValue:iDataIndex andColumn:@"leastAmount"];
     }
-    else
+    else if(iCellType == 3)
     {
         strProductName = [m_pEndSellDataSet getFeildValue:iDataIndex andColumn:@"productName"];
         strProductId = [m_pEndSellDataSet getFeildValue:iDataIndex andColumn:@"productId"];
@@ -499,14 +534,25 @@
     if(iCellType == 1)
     {
         pDataSet = m_pCurSellDataSet;
+        pCellObj.limitTimeLabel.text = @"融资期限";
+        pCellObj.amountLabel.text = @"融资金额";
     }
     else if(iCellType == 2)
     {
         pDataSet = m_pReadySellDataSet;
+        pCellObj.limitTimeLabel.text = @"融资期限";
+        pCellObj.amountLabel.text = @"融资金额";
     }
-    else
+    else if(iCellType == 3)
     {
         pDataSet = m_pEndSellDataSet;
+        pCellObj.limitTimeLabel.text = @"融资期限";
+        pCellObj.amountLabel.text = @"融资金额";
+    } else if(iCellType == 1000)
+    {
+        pDataSet = m_pTransSellDataSet;
+        pCellObj.limitTimeLabel.text = @"剩余期限";
+        pCellObj.amountLabel.text = @"转让金额";
     }
     
     //产品名称
@@ -574,7 +620,6 @@
     return [NSDate date]; // should return date data source was last changed
     
 }
-
 
 #pragma OwnSegmentedControlDelegate
 -(void)didChangeSegmentedIndex:(UIButton *)pButton selectedIndex:(NSInteger)iBtnIndex

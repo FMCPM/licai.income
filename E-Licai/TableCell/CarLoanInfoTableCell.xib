@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <archive type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="8.00">
 	<data>
-		<int key="IBDocument.SystemTarget">1296</int>
+		<int key="IBDocument.SystemTarget">1536</int>
 		<string key="IBDocument.SystemVersion">14F27</string>
 		<string key="IBDocument.InterfaceBuilderVersion">7706</string>
 		<string key="IBDocument.AppKitVersion">1348.17</string>
@@ -87,21 +87,17 @@
 									<object class="IBUIImageView" id="97033965">
 										<reference key="NSNextResponder" ref="34823057"/>
 										<int key="NSvFlags">292</int>
-										<string key="NSFrame">{{288, 3}, {20, 20}}</string>
+										<string key="NSFrame">{{288, 0}, {20, 20}}</string>
 										<reference key="NSSuperview" ref="34823057"/>
 										<reference key="NSNextKeyView" ref="915864817"/>
 										<string key="NSHuggingPriority">{251, 251}</string>
 										<bool key="IBUIUserInteractionEnabled">NO</bool>
 										<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-										<object class="NSCustomResource" key="IBUIImage">
-											<string key="NSClassName">NSImage</string>
-											<string key="NSResourceName">point_red.png</string>
-										</object>
 									</object>
 									<object class="IBUILabel" id="915864817">
 										<reference key="NSNextResponder" ref="34823057"/>
 										<int key="NSvFlags">292</int>
-										<string key="NSFrame">{{292, 6}, {15, 15}}</string>
+										<string key="NSFrame">{{292, 0}, {15, 15}}</string>
 										<reference key="NSSuperview" ref="34823057"/>
 										<reference key="NSNextKeyView" ref="467692799"/>
 										<string key="NSHuggingPriority">{251, 251}</string>
@@ -111,9 +107,9 @@
 										<bool key="IBUIUserInteractionEnabled">NO</bool>
 										<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 										<string key="IBUIText">新</string>
-										<object class="NSColor" key="IBUITextColor" id="692415584">
-											<int key="NSColorSpace">3</int>
-											<bytes key="NSWhite">MQA</bytes>
+										<object class="NSColor" key="IBUITextColor">
+											<int key="NSColorSpace">1</int>
+											<bytes key="NSRGB">MC43ODAzOTIxNTY5IDAuMTUyOTQxMTc2NSAwAA</bytes>
 										</object>
 										<nil key="IBUIHighlightedColor"/>
 										<int key="IBUIBaselineAdjustment">0</int>
@@ -370,7 +366,10 @@
 								<string key="NSFrame">{{0, 30}, {320, 90}}</string>
 								<reference key="NSSuperview" ref="569854432"/>
 								<reference key="NSNextKeyView" ref="733609730"/>
-								<reference key="IBUIBackgroundColor" ref="692415584"/>
+								<object class="NSColor" key="IBUIBackgroundColor" id="692415584">
+									<int key="NSColorSpace">3</int>
+									<bytes key="NSWhite">MQA</bytes>
+								</object>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 							</object>
 							<object class="IBUILabel" id="681768976">
@@ -388,7 +387,6 @@
 								<object class="NSColor" key="IBUITextColor">
 									<int key="NSColorSpace">1</int>
 									<bytes key="NSRGB">MCAwIDAAA</bytes>
-									<string key="IBUIColorCocoaTouchKeyPath">darkTextColor</string>
 								</object>
 								<nil key="IBUIHighlightedColor"/>
 								<int key="IBUIBaselineAdjustment">0</int>
@@ -503,6 +501,22 @@
 						<reference key="destination" ref="34823057"/>
 					</object>
 					<int key="connectionID">235</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">limitTimeLabel</string>
+						<reference key="source" ref="828127738"/>
+						<reference key="destination" ref="534128477"/>
+					</object>
+					<int key="connectionID">236</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">amountLabel</string>
+						<reference key="source" ref="828127738"/>
+						<reference key="destination" ref="439705959"/>
+					</object>
+					<int key="connectionID">237</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -708,7 +722,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">235</int>
+			<int key="maxID">237</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes"/>
 		<int key="IBDocument.localizationMode">0</int>
@@ -724,7 +738,6 @@
 			<string key="ico_product_item_0.png">{20, 20}</string>
 			<string key="ico_product_item_1.png">{20, 20}</string>
 			<string key="ico_product_item_2.png">{20, 20}</string>
-			<string key="point_red.png">{60, 60}</string>
 		</dictionary>
 	</data>
 </archive>

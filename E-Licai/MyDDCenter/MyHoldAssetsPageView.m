@@ -129,6 +129,7 @@
         vc.relId = strRelId;
         vc.productId = strProductId;
         vc.transName = strProductName;
+        vc.hidenCheckButton = YES;
         vc.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:vc animated:YES];
     } else if([title isEqualToString:@"取消转让"]) {

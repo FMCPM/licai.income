@@ -27,6 +27,9 @@
 @property (nonatomic,strong) IBOutlet UILabel    *m_uiCellTitleLabel;
 @property (nonatomic,strong) IBOutlet UIView    *m_uiCellView;
 
+@property (weak, nonatomic) IBOutlet UILabel *limitTimeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *amountLabel;
+
 -(void)initCellDefaultShow;
 -(void)setProductPcertValue:(float)fValue andType:(NSInteger)iSellType andStatus:(NSInteger)iStatus;
 -(void)setNewOrHotShow:(int)iProductTag;

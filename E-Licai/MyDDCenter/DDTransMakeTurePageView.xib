@@ -12,6 +12,7 @@
                 <outlet property="makeTureButton" destination="KIq-we-u1t" id="g66-Qo-3Ao"/>
                 <outlet property="shouyi" destination="Uu9-rq-bNy" id="2Yo-yj-83D"/>
                 <outlet property="titleLabel" destination="Sac-GG-q5C" id="dVP-xB-l4a"/>
+                <outlet property="topMasHeight" destination="Hv7-p7-oaw" id="ng8-ve-16s"/>
                 <outlet property="transMoney" destination="Ubf-T3-tYl" id="CLf-ZM-SNN"/>
                 <outlet property="transShouyiMoney" destination="mPl-DH-tKh" id="lZR-66-gws"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -94,13 +95,10 @@
                         <constraint firstAttribute="height" constant="35" id="UKr-oK-G8Z"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                    <state key="normal" title="确认转让">
+                    <state key="normal" title="确认投资">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
-                    <connections>
-                        <action selector="actionMakeTureClick:" destination="-1" eventType="touchUpInside" id="1TC-wK-B9W"/>
-                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vCb-wx-dOo">
                     <rect key="frame" x="50" y="159" width="314" height="35"/>
@@ -125,8 +123,8 @@
                 <constraint firstItem="vCb-wx-dOo" firstAttribute="top" secondItem="jjk-0k-til" secondAttribute="bottom" constant="21" id="Ed2-AG-ziu"/>
                 <constraint firstItem="Ubf-T3-tYl" firstAttribute="top" secondItem="Sac-GG-q5C" secondAttribute="bottom" constant="8" id="GcU-bJ-UOP"/>
                 <constraint firstItem="ZqD-ys-het" firstAttribute="top" secondItem="Ubf-T3-tYl" secondAttribute="bottom" constant="8" id="Ge1-gs-uOC"/>
+                <constraint firstItem="ecD-BA-1iR" firstAttribute="bottom" secondItem="jjk-0k-til" secondAttribute="bottom" constant="81" id="Hv7-p7-oaw"/>
                 <constraint firstItem="KIq-we-u1t" firstAttribute="top" secondItem="ecD-BA-1iR" secondAttribute="bottom" constant="15" id="K5S-fP-Kw3"/>
-                <constraint firstItem="ecD-BA-1iR" firstAttribute="top" secondItem="vCb-wx-dOo" secondAttribute="bottom" constant="24" id="NGU-fF-9wv"/>
                 <constraint firstItem="Uu9-rq-bNy" firstAttribute="leading" secondItem="Ubf-T3-tYl" secondAttribute="trailing" id="R9x-7v-eOB"/>
                 <constraint firstItem="jjk-0k-til" firstAttribute="top" secondItem="ZqD-ys-het" secondAttribute="bottom" constant="8" id="TUZ-pk-wLV"/>
                 <constraint firstAttribute="trailing" secondItem="Sac-GG-q5C" secondAttribute="trailing" constant="50" id="Uaa-2y-Osj"/>
@@ -136,7 +134,7 @@
                 <constraint firstItem="jjk-0k-til" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="50" id="d2S-W6-8HY"/>
                 <constraint firstItem="mPl-DH-tKh" firstAttribute="leading" secondItem="jjk-0k-til" secondAttribute="trailing" id="eRV-8p-BDc"/>
                 <constraint firstAttribute="trailing" secondItem="vCb-wx-dOo" secondAttribute="trailing" constant="50" id="hN0-Mb-S1M"/>
-                <constraint firstItem="Sac-GG-q5C" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="30" id="kft-XX-Cu2"/>
+                <constraint firstItem="Sac-GG-q5C" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" priority="750" constant="30" id="kft-XX-Cu2"/>
                 <constraint firstAttribute="trailing" secondItem="ZqD-ys-het" secondAttribute="trailing" constant="50" id="nyD-LX-kNs"/>
                 <constraint firstAttribute="trailing" secondItem="ecD-BA-1iR" secondAttribute="trailing" id="osf-PO-360"/>
                 <constraint firstItem="Sac-GG-q5C" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="50" id="rqv-07-UVg"/>

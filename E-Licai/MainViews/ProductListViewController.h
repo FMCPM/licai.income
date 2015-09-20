@@ -14,7 +14,6 @@
 #import "OwnSegmentedControl.h"
 #import "MiddleShowPopupView.h"
 
-
 @interface ProductListViewController : UIViewController <UITableViewDataSource ,UITableViewDelegate,EGORefreshTableHeaderDelegate,OwnSegmentedControlDelegate,MiddleShowPopupViewDelegate>
 {
     QDataSetObj*    m_pCellInfoDataSet;
@@ -25,6 +24,8 @@
     QDataSetObj*    m_pReadySellDataSet;
     //销售完成的产品列表
     QDataSetObj*    m_pEndSellDataSet;
+    //转让列表
+    QDataSetObj*    m_pTransSellDataSet;
     
     UIButton*       m_uiNavTitleButton;
     

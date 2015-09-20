@@ -18,6 +18,9 @@
 @property (nonatomic,copy) NSString *transShouyiMoneyNum;
 
 @property (nonatomic,copy) NSString *relId;
+@property (nonatomic,copy) NSString *transId;
 @property (nonatomic,copy) NSString *productId;
+
+@property (nonatomic,assign) BOOL hidenCheckButton;
 
 @end
