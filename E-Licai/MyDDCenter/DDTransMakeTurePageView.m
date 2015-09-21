@@ -18,6 +18,7 @@
 #import "Car_TenderFlowView_Setp1.h"
 #import "DDAddBankCardPageInfo.h"
 #import "AppInitDataMethod.h"
+#import "Car_TenderFlowView_Setp2.h"
 
 @interface DDTransMakeTurePageView ()
 
@@ -216,21 +217,13 @@
         [self reloadUserBankInfo_Web];
         return;
     }
-    
 
-    Car_TenderFlowView_Setp1* pStepView1 = [[Car_TenderFlowView_Setp1 alloc] init];
-    pStepView1.hidesBottomBarWhenPushed = YES;
-    pStepView1.m_strProductName = self.transName;
-    pStepView1.m_strProductId = self.productId;
-
-    pStepView1.m_strLimitTime = [self.m_pJsonObj getFeildValue:0 andColumn:@"limitTime"];
-    NSString* strMinMoney = [self.m_pJsonObj getFeildValue:0 andColumn:@"leastAmount"];
-    if(strMinMoney.length < 1)
-        strMinMoney = @"0";
-    pStepView1.m_strStartTenderMoney = strMinMoney;
-    pStepView1.m_strTotalTenderMoney = [self.m_pJsonObj getFeildValue:0 andColumn:@"financingAmount"];
-    
-    [self.navigationController pushViewController:pStepView1 animated:YES];
+    Car_TenderFlowView_Setp2* pStepView2 = [[Car_TenderFlowView_Setp2 alloc] init];
+    pStepView2.m_strProductId = self.productId;
+    pStepView2.m_strProductName = self.transName;
+    pStepView2.m_strTenderMoney = self.transMoneyNum;
+    pStepView2.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:pStepView2 animated:YES];
 
 }
 //查询银行卡信息
@@ -260,19 +253,13 @@
          }
          else
          {
-             Car_TenderFlowView_Setp1* pStepView1 = [[Car_TenderFlowView_Setp1 alloc] init];
-             pStepView1.hidesBottomBarWhenPushed = YES;
-             pStepView1.m_strProductName = self.transName;
-             pStepView1.m_strProductId = self.productId;
-             
-             pStepView1.m_strLimitTime = [self.m_pJsonObj getFeildValue:0 andColumn:@"limitTime"];
-             NSString* strMinMoney = [self.m_pJsonObj getFeildValue:0 andColumn:@"leastAmount"];
-             if(strMinMoney.length < 1)
-                 strMinMoney = @"0";
-             pStepView1.m_strStartTenderMoney = strMinMoney;
-             pStepView1.m_strTotalTenderMoney = [self.m_pJsonObj getFeildValue:0 andColumn:@"financingAmount"];
-             
-             [self.navigationController pushViewController:pStepView1 animated:YES];
+             Car_TenderFlowView_Setp2* pStepView2 = [[Car_TenderFlowView_Setp2 alloc] init];
+             pStepView2.m_strProductId = self.productId;
+             pStepView2.m_strProductName = self.transName;
+             pStepView2.m_strTenderMoney = self.transMoneyNum;
+             pStepView2.hidesBottomBarWhenPushed = YES;
+             [self.navigationController pushViewController:pStepView2 animated:YES];
+
          }
          
          

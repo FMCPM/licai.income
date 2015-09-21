@@ -1108,13 +1108,13 @@
         pButton.frame = CGRectMake(20, iTopY, 280, 50);
         pButton.tag = 3002;
         [pButton addTarget:self action:@selector(actionFlowButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
-        [pCellObj.contentView addSubview:pButton];
+        //[pCellObj.contentView addSubview:pButton];
         
         //选择框
         pSelImgView = [[UIImageView alloc] initWithFrame:CGRectMake(5, 10, 20, 20)];
         pSelImgView.tag = 2002;
         pSelImgView.image = [UIImage imageNamed:@"checkbox_nil.png"];
-        [pButton addSubview:pSelImgView];
+        //[pButton addSubview:pSelImgView];
         
         //银行卡支付金额
         pLable = [[UILabel alloc] initWithFrame:CGRectMake(30, 10, 270, 20)];
@@ -1124,7 +1124,7 @@
         pLable.textColor = COLOR_FONT_2;
         pLable.tag = 1002;
         pLable.text = [NSString stringWithFormat:@"银行卡：0.00"];
-        [pButton addSubview:pLable];
+        //[pButton addSubview:pLable];
         
         //尾号显示
         pLable = [[UILabel alloc] initWithFrame:CGRectMake(30, 30, 270, 15)];
@@ -1145,7 +1145,7 @@
         
         pLable.text = [NSString stringWithFormat:@"%@ 尾号：%@",strBankName,strBankCardSno];
         
-        [pButton addSubview:pLable];
+        //[pButton addSubview:pLable];
         
         //end of 银行卡
         //代金券
@@ -1154,13 +1154,13 @@
         pButton.frame = CGRectMake(20, iTopY, 280, 40);
         pButton.tag = 3003;
         [pButton addTarget:self action:@selector(actionFlowButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
-        [pCellObj.contentView addSubview:pButton];
+        //[pCellObj.contentView addSubview:pButton];
         
         //选择框
         pSelImgView = [[UIImageView alloc] initWithFrame:CGRectMake(5, 10, 20, 20)];
         pSelImgView.tag = 2003;
         pSelImgView.image = [UIImage imageNamed:@"checkbox_nil.png"];
-        [pButton addSubview:pSelImgView];
+        //[pButton addSubview:pSelImgView];
         
         //代金券
         pLable = [[UILabel alloc] initWithFrame:CGRectMake(30, 10, 270, 20)];
@@ -1170,7 +1170,7 @@
         pLable.textColor = COLOR_FONT_2;
         pLable.tag = 1004;
         pLable.text = [NSString stringWithFormat:@"代金券（可用代金券0张）"];
-        [pButton addSubview:pLable];
+        //[pButton addSubview:pLable];
         
         //选择按钮
         pButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -1181,7 +1181,7 @@
         [pButton addTarget:self action:@selector(actionSelectCashBillClicked:) forControlEvents:UIControlEventTouchUpInside];
         
         [pButton setTitle:@"选择" forState:UIControlStateNormal];
-        [pCellObj.contentView addSubview:pButton];
+        //[pCellObj.contentView addSubview:pButton];
         
         
         UIImageView*pLineView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 149, self.view.frame.size.width, 1)];
@@ -1434,7 +1434,8 @@
     }
     if(indexPath.row == 1)
     {
-        return 150;
+        //return 150;
+        return 40;
     }
     if(indexPath.row == 2)
     {
