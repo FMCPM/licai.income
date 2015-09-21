@@ -35,6 +35,22 @@
 }
 
 
+- (MJRefreshBackNormalFooter *)footer {
+    if(!_footer) {
+
+        _footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+            if(m_iCurPageID < pageCount) {
+                [self loadProductListInfo_Web:0];
+            }else {
+                [_uiMainTableView.footer endRefreshing];
+            }
+        }];
+        
+    }
+    return  _footer;
+}
+
+
 - (void)viewDidLoad
 {
   
@@ -170,6 +186,8 @@
     m_refreshHeaderView.textColor = [UIColor blackColor];
     m_refreshHeaderView.backgroundColor = [UIColor clearColor];
     [_uiMainTableView addSubview:m_refreshHeaderView];
+    
+    _uiMainTableView.footer = self.footer;
     
     [m_refreshHeaderView refreshLastUpdatedDate];
     //第一个按钮选中
@@ -310,6 +328,7 @@
     // __block ProductListViewController *blockSelf = self;
     [pHttpHelper setCompleteBlock:^(id dataSet)
      {
+         [_uiMainTableView.footer endRefreshing];
          
          [SVProgressHUD dismiss];
          m_isLoading = NO;
@@ -324,6 +343,11 @@
              m_pEndSellDataSet = [pJsonObj parsetoDataSet:@"sucessList"];
              
              m_pTransSellDataSet = [pJsonObj parsetoDataSet:@"transList"];
+             
+             //得到分页数
+             QDataSetObj *pageDic = [pJsonObj parseDictList_Lev1:@"pageB"];
+             
+             pageCount = [pageDic getFeildValue_Int:0 andColumn:@"pageCount"];
          }
 
          if(m_pCellInfoDataSet == nil)

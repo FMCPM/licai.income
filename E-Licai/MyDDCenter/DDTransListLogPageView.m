@@ -30,6 +30,20 @@
     return self;
 }
 
+- (MJRefreshBackNormalFooter *)footer {
+    if(!_footer) {
+        
+        _footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+            if(m_iCurPageID < pageCount) {
+                [self loadTradeLogInfo_Web:0];
+            }else {
+                [_uiMainTableView.footer endRefreshing];
+            }
+        }];
+        
+    }
+    return  _footer;
+}
 
 - (void)viewDidLoad
 {
@@ -83,6 +97,8 @@
     m_refreshHeaderView.textColor = [UIColor blackColor];
     m_refreshHeaderView.backgroundColor = [UIColor clearColor];
     [_uiMainTableView addSubview:m_refreshHeaderView];
+    
+    _uiMainTableView.footer = self.footer;
     
     [m_refreshHeaderView refreshLastUpdatedDate];
     //第一个按钮选中
@@ -144,6 +160,11 @@
              return;
          
          m_pInfoDataSet = pDataSet;
+         
+         //得到分页数
+         QDataSetObj *pageDic = [pJsonObj parseDictList_Lev1:@"pageB"];
+         
+         pageCount = [pageDic getFeildValue_Int:0 andColumn:@"pageCount"];
          
          [_uiMainTableView reloadData];
          

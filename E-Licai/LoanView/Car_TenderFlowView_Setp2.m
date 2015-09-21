@@ -1154,7 +1154,7 @@
         pButton.frame = CGRectMake(20, iTopY, 280, 40);
         pButton.tag = 3003;
         [pButton addTarget:self action:@selector(actionFlowButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
-        //[pCellObj.contentView addSubview:pButton];
+       // [pCellObj.contentView addSubview:pButton];
         
         //选择框
         pSelImgView = [[UIImageView alloc] initWithFrame:CGRectMake(5, 10, 20, 20)];
@@ -1184,7 +1184,7 @@
         //[pCellObj.contentView addSubview:pButton];
         
         
-        UIImageView*pLineView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 149, self.view.frame.size.width, 1)];
+        UIImageView*pLineView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 50, self.view.frame.size.width, 1)];
         pLineView.backgroundColor = COLOR_CELL_LINE_DEFAULT;
         [pCellObj.contentView addSubview:pLineView];
         
@@ -1435,7 +1435,7 @@
     if(indexPath.row == 1)
     {
         //return 150;
-        return 40;
+        return 50;
     }
     if(indexPath.row == 2)
     {

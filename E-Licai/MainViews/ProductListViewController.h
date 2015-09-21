@@ -35,13 +35,17 @@
     int         m_iInfoType;
     int         m_iCurPageID;
     
+    
     //取消订单的弹出视图
     MiddleShowPopupView *m_pMiddleShowView;
+    int pageCount;
 
 }
 
 @property (strong, nonatomic) IBOutlet UITableView  *m_uiMainTableView;
 @property (strong, nonatomic) IBOutlet UIView  *m_uiTopBarView;
+
+@property (nonatomic, strong) MJRefreshBackNormalFooter *footer;
 
 
 @end

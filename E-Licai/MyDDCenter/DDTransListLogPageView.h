@@ -25,9 +25,11 @@
     BOOL        m_isToEndPage;
     int         m_iCurPageID;
     
+    int pageCount;
 }
 
 @property (strong, nonatomic) IBOutlet UITableView  *m_uiMainTableView;
 
+@property (nonatomic, strong) MJRefreshBackNormalFooter *footer;
 
 @end
