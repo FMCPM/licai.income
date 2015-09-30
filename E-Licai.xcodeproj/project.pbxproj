@@ -200,7 +200,7 @@
 		E02EE6101A12FEF3008A8C8B /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E04E992F18F4E9D10000224B /* CoreText.framework */; };
 		E02EE6111A12FEFD008A8C8B /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E04E992B18F4E89A0000224B /* CoreTelephony.framework */; };
 		E02EE6131A12FF16008A8C8B /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E01883CD18CDB34F006DC467 /* libiconv.dylib */; };
-		E02EE6151A12FF1F008A8C8B /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E02EE6141A12FF1F008A8C8B /* SenTestingKit.framework */; };
+		E02EE6151A12FF1F008A8C8B /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E02EE6141A12FF1F008A8C8B /* SenTestingKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		E02EE6161A12FF26008A8C8B /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01883C918CDB2B9006DC467 /* CoreVideo.framework */; };
 		E02EE6171A12FF34008A8C8B /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01883C718CDB2AE006DC467 /* CoreMedia.framework */; };
 		E02EE6181A12FF4E008A8C8B /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B412A0EF177C0B99001C7AEE /* CFNetwork.framework */; };

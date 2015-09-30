@@ -44,6 +44,7 @@
             }else {
                 [_uiMainTableView.footer endRefreshing];
             }
+            [_uiMainTableView.footer endRefreshing];
         }];
         
     }
@@ -298,14 +299,14 @@
 -(void)loadProductListInfo_Web:(NSInteger)iLoadFlag
 {
 
-
+    m_pCellInfoDataSet = nil;
+    
     if(m_isLoading == YES)
         return;
 
     if(iLoadFlag == 1)//重新加载
     {
         m_iCurPageID = 0;
-        m_pCellInfoDataSet = nil;
         m_pCurSellDataSet = nil;
         m_pEndSellDataSet = nil;
         m_pReadySellDataSet = nil;
@@ -336,14 +337,42 @@
          JsonXmlParserObj* pJsonObj = dataSet;
          if(pJsonObj)
          {
-             m_pCurSellDataSet = [pJsonObj parsetoDataSet:@"productList"];
+             if(m_iCurPageID == 1) {
+                 m_pCurSellDataSet = [pJsonObj parsetoDataSet:@"productList"];
+                 
+                 m_pReadySellDataSet = [pJsonObj parsetoDataSet:@"readyList"];
+                 
+                 m_pEndSellDataSet = [pJsonObj parsetoDataSet:@"sucessList"];
+                 
+                 m_pTransSellDataSet = [pJsonObj parsetoDataSet:@"transList"];
              
-             m_pReadySellDataSet = [pJsonObj parsetoDataSet:@"readyList"];
-             
-             m_pEndSellDataSet = [pJsonObj parsetoDataSet:@"sucessList"];
-             
-             m_pTransSellDataSet = [pJsonObj parsetoDataSet:@"transList"];
-             
+             } else {
+                 QDataSetObj *tempObj = [pJsonObj parsetoDataSet:@"productList"];
+                 int count = [tempObj getRowCount];
+                 for (int i = 0; i < count; i++) {
+                     [m_pCurSellDataSet addDataSetRow:[tempObj getRowObj:i]];
+                 }
+                 
+                 tempObj = [pJsonObj parsetoDataSet:@"readyList"];
+                 count = [tempObj getRowCount];
+                 for (int i = 0; i < count; i++) {
+                     [m_pReadySellDataSet addDataSetRow:[tempObj getRowObj:i]];
+                 }
+                 
+                 tempObj = [pJsonObj parsetoDataSet:@"sucessList"];
+                 count = [tempObj getRowCount];
+                 for (int i = 0; i < count; i++) {
+                     [m_pEndSellDataSet addDataSetRow:[tempObj getRowObj:i]];
+                 }
+                 
+                 tempObj = [pJsonObj parsetoDataSet:@"transList"];
+                 count = [tempObj getRowCount];
+                 for (int i = 0; i < count; i++) {
+                     [m_pTransSellDataSet addDataSetRow:[tempObj getRowObj:i]];
+                 }
+
+             }
+         
              //得到分页数
              QDataSetObj *pageDic = [pJsonObj parseDictList_Lev1:@"pageB"];
              

@@ -683,26 +683,34 @@
     pHttpHelper.m_iWebServerType = 1;
     pHttpHelper.methodType = CKHttpMethodTypePost_Page;
     //设置webservice方法名
-    [pHttpHelper setMethodName:@"productInfo/toLianLianPay"];
-    //
-    [pHttpHelper addParam:_strProductId forName:@"productId"];
-    [pHttpHelper addParam:[NSString stringWithFormat:@"%d",[UaConfiguration sharedInstance].m_setLoginState.m_iUserMemberID] forName:@"memberId"];
-    //投标金额
-    [pHttpHelper addParam:_strTenderMoney forName:@"bidFee"];
-    //代金券的id
-    NSString* strCashBillId = @"";
-    
-    if(m_iSelectedCashBillId != 0 && m_isUsedCashBill == YES)
-    {
-        strCashBillId = [NSString stringWithFormat:@"%d",m_iSelectedCashBillId];
+    if(self.m_strTransId.length > 0) {
+        [pHttpHelper setMethodName:@"debtorInfo/ transProduct"];
+        [pHttpHelper addParam:[NSString stringWithFormat:@"%d",[UaConfiguration sharedInstance].m_setLoginState.m_iUserMemberID] forName:@"memberId"];
+        [pHttpHelper addParam:self.m_strTransId forName:@"dataId"];
+        [pHttpHelper addParam:m_strInputTradePwd forName:@"payPwd"];
+        
+    } else {
+        [pHttpHelper setMethodName:@"productInfo/toLianLianPay"];
+        //
+        [pHttpHelper addParam:_strProductId forName:@"productId"];
+        [pHttpHelper addParam:[NSString stringWithFormat:@"%d",[UaConfiguration sharedInstance].m_setLoginState.m_iUserMemberID] forName:@"memberId"];
+        //投标金额
+        [pHttpHelper addParam:_strTenderMoney forName:@"bidFee"];
+        //代金券的id
+        NSString* strCashBillId = @"";
+        
+        if(m_iSelectedCashBillId != 0 && m_isUsedCashBill == YES)
+        {
+            strCashBillId = [NSString stringWithFormat:@"%d",m_iSelectedCashBillId];
+        }
+        [pHttpHelper addParam:strCashBillId forName:@"dkId"];
+        //useAccount：是否使用账户可用余额支付 1 使用 0不使用
+        int iUsedLeftMoney = 1;
+        if(m_isUsedLeftMoney == NO)
+            iUsedLeftMoney = 0;
+        [pHttpHelper addParam:[NSString stringWithFormat:@"%d",iUsedLeftMoney] forName:@"useAccount"];
+        [pHttpHelper addParam:m_strInputTradePwd forName:@"payPwd"];
     }
-    [pHttpHelper addParam:strCashBillId forName:@"dkId"];
-    //useAccount：是否使用账户可用余额支付 1 使用 0不使用
-    int iUsedLeftMoney = 1;
-    if(m_isUsedLeftMoney == NO)
-        iUsedLeftMoney = 0;
-    [pHttpHelper addParam:[NSString stringWithFormat:@"%d",iUsedLeftMoney] forName:@"useAccount"];
-    [pHttpHelper addParam:m_strInputTradePwd forName:@"payPwd"];
     
     //设置结束block（webservice方法结束后，会自动调用）
     [pHttpHelper setCompleteBlock:^(id dataSet)
@@ -715,31 +723,53 @@
              [SVProgressHUD showErrorWithStatus:HINT_WEBDATA_NET_ERROR duration:1.8];
              return ;
          }
-         QDataSetObj* pDataSet = [pJsonObj parsetoDataSet:@"data"];
-         NSString* strOpeFlag= [pJsonObj getJsonValueByKey:@"operFlag"];
-         int iOpeFlag = [QDataSetObj convertToInt:strOpeFlag];
-         if(iOpeFlag == 0)
-         {
-             NSString* strMessage = [pDataSet getFeildValue:0 andColumn:@"message"];
-             [SVProgressHUD showErrorWithStatus:strMessage duration:1.8];
-             return;
-         }
-         //1_投标成功;2_需要调用连连支付接口
-         if(iOpeFlag == 1)
-         {
-             Car_TenderFlowView_Setp3* pStepView3 = [[Car_TenderFlowView_Setp3 alloc] init];
-             pStepView3.m_strProductId = _strProductId;
-             pStepView3.m_strProductName = _strProductName;
-             pStepView3.m_strTenderFeeValue = _strTenderMoney;
-             pStepView3.hidesBottomBarWhenPushed = YES;
-             [self.navigationController pushViewController:pStepView3 animated:YES];
-             return;
-         }
-         
-         //需要连连支付
-         if(iOpeFlag == 2)
-         {
-             [self startLLWallketPay:pDataSet];
+        if(self.m_strTransId.length > 0) {
+            NSString* strOpeFlag= [pJsonObj getJsonValueByKey:@"operFlag"];
+            NSString* message= [pJsonObj getJsonValueByKey:@"message"];
+            int iOpeFlag = [QDataSetObj convertToInt:strOpeFlag];
+            
+             if(iOpeFlag == 0)
+             {
+                 NSString* strMessage = message;
+                 [SVProgressHUD showErrorWithStatus:strMessage duration:1.8];
+                 return;
+             } else if(iOpeFlag == 1) {
+                 NSString* strMessage = @"转让成功";
+                 [SVProgressHUD showSuccessWithStatus:strMessage duration:1.8];
+                 return;
+             } else if(iOpeFlag == 3) {
+                 NSString* strMessage = @"余额不足";
+                 [SVProgressHUD showErrorWithStatus:strMessage duration:1.8];
+                 return;
+             }
+
+         } else {
+             QDataSetObj* pDataSet = [pJsonObj parsetoDataSet:@"data"];
+             NSString* strOpeFlag= [pJsonObj getJsonValueByKey:@"operFlag"];
+             int iOpeFlag = [QDataSetObj convertToInt:strOpeFlag];
+            if(iOpeFlag == 0)
+             {
+                 NSString* strMessage = [pDataSet getFeildValue:0 andColumn:@"message"];
+                 [SVProgressHUD showErrorWithStatus:strMessage duration:1.8];
+                 return;
+             }
+             //1_投标成功;2_需要调用连连支付接口
+             if(iOpeFlag == 1)
+             {
+                 Car_TenderFlowView_Setp3* pStepView3 = [[Car_TenderFlowView_Setp3 alloc] init];
+                 pStepView3.m_strProductId = _strProductId;
+                 pStepView3.m_strProductName = _strProductName;
+                 pStepView3.m_strTenderFeeValue = _strTenderMoney;
+                 pStepView3.hidesBottomBarWhenPushed = YES;
+                 [self.navigationController pushViewController:pStepView3 animated:YES];
+                 return;
+             }
+             
+             //需要连连支付
+             if(iOpeFlag == 2)
+             {
+                 [self startLLWallketPay:pDataSet];
+             }
          }
 
          

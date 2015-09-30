@@ -166,10 +166,10 @@
 //点击登录
 -(void)actionLoginClicked:(id)sender
 {
-    m_blSelProtocol = YES;
-    //测试
-    m_strInputPhoneNum = @"13600523915";
-    m_strInputPassword = @"123456";
+//    m_blSelProtocol = YES;
+//    //测试
+//    m_strInputPhoneNum = @"13600523915";
+//    m_strInputPassword = @"123456";
     
     if(m_uiCurEditingField != nil)
     {

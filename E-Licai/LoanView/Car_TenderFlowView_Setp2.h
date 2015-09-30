@@ -69,4 +69,6 @@
 @property (strong, nonatomic) NSString*     m_strProductId;
 @property (strong, nonatomic) NSString*     m_strTenderMoney;
 
+@property (strong, nonatomic) NSString  *m_strTransId;
+
 @end

@@ -30,26 +30,26 @@
 		<string>https://115.29.248.32/svn/kunzhong</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://115.29.248.32/svn/kunzhong/mycode/licai/licai.income/E-Licai.xcodeproj/project.xcworkspace</string>
+	<string>https://github.com/FMCPM/licai.income.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>45000e01-792f-ac49-abb5-1900ff332195++1029</string>
+	<string>BC17A59CEA37D1501615D9FB1ED2FF132349E5AE</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
-		<dict>
-			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
-			<string>public.vcs.subversion</string>
-			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>45000e01-792f-ac49-abb5-1900ff332195++1029</string>
-			<key>IDESourceControlWCCName</key>
-			<string>cww_licai.income</string>
-		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>BC17A59CEA37D1501615D9FB1ED2FF132349E5AE</string>
+			<key>IDESourceControlWCCName</key>
+			<string>cww_licai.income</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.subversion</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>45000e01-792f-ac49-abb5-1900ff332195++1029</string>
 			<key>IDESourceControlWCCName</key>
 			<string>cww_licai.income</string>
 		</dict>

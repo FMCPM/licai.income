@@ -222,6 +222,7 @@
     pStepView2.m_strProductId = self.productId;
     pStepView2.m_strProductName = self.transName;
     pStepView2.m_strTenderMoney = self.transMoneyNum;
+    pStepView2.m_strTransId = self.transId;
     pStepView2.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:pStepView2 animated:YES];
 
@@ -257,6 +258,7 @@
              pStepView2.m_strProductId = self.productId;
              pStepView2.m_strProductName = self.transName;
              pStepView2.m_strTenderMoney = self.transMoneyNum;
+             pStepView2.m_strTransId = self.transId;
              pStepView2.hidesBottomBarWhenPushed = YES;
              [self.navigationController pushViewController:pStepView2 animated:YES];
 

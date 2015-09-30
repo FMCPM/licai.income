@@ -34,11 +34,12 @@
     if(!_footer) {
         
         _footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
-            if(m_iCurPageID < pageCount) {
-                [self loadTradeLogInfo_Web:0];
-            }else {
-                [_uiMainTableView.footer endRefreshing];
-            }
+//            if(m_iCurPageID < pageCount) {
+//                [self loadTradeLogInfo_Web:0];
+//            }else {
+//                [_uiMainTableView.footer endRefreshing];
+//            }
+            [_uiMainTableView.footer endRefreshing];
         }];
         
     }
@@ -160,12 +161,7 @@
              return;
          
          m_pInfoDataSet = pDataSet;
-         
-         //得到分页数
-         QDataSetObj *pageDic = [pJsonObj parseDictList_Lev1:@"pageB"];
-         
-         pageCount = [pageDic getFeildValue_Int:0 andColumn:@"pageCount"];
-         
+
          [_uiMainTableView reloadData];
          
 
